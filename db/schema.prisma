@@ -1,0 +1,71 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Author {
+  id           Int            @id @default(autoincrement())
+  name         String         @unique
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  BooksAuthors BooksAuthors[]
+}
+
+model Genre {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  books     Book[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Shelf {
+  id        Int              @id @default(autoincrement())
+  name      String           @unique
+  pages     Int
+  books     BooksOnShelves[]
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+}
+
+model Book {
+  id           Int              @id @default(autoincrement())
+  ISBN         String?
+  lcId         Int              @unique
+  pages        Int
+  rating       Int
+  title        String           @unique
+  url          String
+  genre        Genre?           @relation(fields: [genreId], references: [id])
+  genreId      Int?
+  shelves      BooksOnShelves[]
+  BooksAuthors BooksAuthors[]
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+}
+
+model BooksAuthors {
+  book      Book     @relation(fields: [bookId], references: [id])
+  bookId    Int
+  author    Author   @relation(fields: [authorId], references: [id])
+  authorId  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@id([bookId, authorId])
+}
+
+model BooksOnShelves {
+  book      Book     @relation(fields: [bookId], references: [id])
+  bookId    Int
+  shelf     Shelf    @relation(fields: [shelfId], references: [id])
+  shelfId   Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@id([bookId, shelfId])
+}

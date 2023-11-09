@@ -14,4 +14,7 @@ export class CreateBookDto extends PickType(BookEntity, [
 
   @ApiProperty()
   genre: string;
+
+  @ApiProperty()
+  shelfs: string[];
 }

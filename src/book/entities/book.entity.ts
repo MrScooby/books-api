@@ -24,8 +24,11 @@ export class BookEntity implements Book {
   url: string;
 
   @ApiProperty()
-  authorId: number;
+  genreId: number;
 
   @ApiProperty()
-  genreId: number;
+  createdAt: Date;
+
+  @ApiProperty()
+  updatedAt: Date;
 }
