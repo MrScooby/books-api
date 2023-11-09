@@ -6,7 +6,7 @@ export class BookEntity implements Book {
   id: number;
 
   @ApiProperty()
-  ISBN: number;
+  ISBN: string | undefined;
 
   @ApiProperty()
   lcId: number;
@@ -24,7 +24,7 @@ export class BookEntity implements Book {
   url: string;
 
   @ApiProperty()
-  genreId: number;
+  genreId: number | undefined;
 
   @ApiProperty()
   createdAt: Date;
