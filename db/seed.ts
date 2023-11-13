@@ -103,7 +103,7 @@ async function main() {
       },
       {
         bookId: book1.id,
-        authorId: author1.id
+        authorId: author2.id
       }
     ]
   })
