@@ -16,11 +16,11 @@ model Author {
 }
 
 model Genre {
-  id        Int      @id @default(autoincrement())
-  name      String   @unique
-  books     Book[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id           Int      @id @default(autoincrement())
+  name         String   @unique
+  books        Book[]
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
 
 model Shelf {

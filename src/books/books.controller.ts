@@ -1,5 +1,10 @@
-import { Controller, Get } from '@nestjs/common';
-import { BooksService } from './books.service';
+import { Controller, Get, Query } from '@nestjs/common'
+import { BooksService } from './books.service'
+import { BookEntity } from './entities/book.entity'
+import {
+  PaginatedResults,
+  SearchPaginatedData
+} from 'common/interfaces/pagination'
 
 @Controller('books')
 export class BooksController {
@@ -11,8 +16,10 @@ export class BooksController {
   // }
 
   @Get()
-  findAll() {
-    return this.bookService.findAll();
+  async findAll(
+    @Query() query: SearchPaginatedData
+  ): Promise<PaginatedResults<BookEntity>> {
+    return await this.bookService.findAll(query)
   }
 
   // @Get(':id')
