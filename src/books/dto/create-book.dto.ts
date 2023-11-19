@@ -1,20 +1,19 @@
-import { ApiProperty, PickType } from '@nestjs/swagger';
-import { BookEntity } from '../entities/book.entity';
+import { ApiProperty } from '@nestjs/swagger'
+import { ArrayNotEmpty, IsNumber, IsString, Max, Min } from 'class-validator'
 
-export class CreateBookDto extends PickType(BookEntity, [
-  'ISBN',
-  'lcId',
-  'pages',
-  'rating',
-  'title',
-  'url'
-]) {
+export class CreateBookDto {
   @ApiProperty()
-  author: string;
+  @IsString()
+  url: string
 
   @ApiProperty()
-  genre: string;
+  @IsNumber()
+  @Min(1)
+  @Max(10)
+  rating: number
 
   @ApiProperty()
-  shelves: string[];
+  @IsString({ each: true })
+  @ArrayNotEmpty()
+  shelves: string[]
 }

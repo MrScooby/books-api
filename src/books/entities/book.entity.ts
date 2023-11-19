@@ -1,34 +1,37 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { Book } from '@prisma/client';
+import { ApiProperty } from '@nestjs/swagger'
+import { Book } from '@prisma/client'
 
 export class BookEntity implements Book {
   @ApiProperty()
-  id: number;
+  id: number
 
   @ApiProperty()
-  ISBN: string | undefined;
+  ISBN: string | undefined
 
   @ApiProperty()
-  lcId: number;
+  lcId: number
 
   @ApiProperty()
-  pages: number;
+  pages: number
 
   @ApiProperty()
-  rating: number;
+  rating: number
 
   @ApiProperty()
-  title: string;
+  title: string
 
   @ApiProperty()
-  url: string;
+  url: string
 
   @ApiProperty()
-  genreId: number | undefined;
+  genreId: number | undefined
 
   @ApiProperty()
-  createdAt: Date;
+  imgUrl: string
 
   @ApiProperty()
-  updatedAt: Date;
+  createdAt: Date
+
+  @ApiProperty()
+  updatedAt: Date
 }

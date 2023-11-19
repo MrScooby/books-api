@@ -1,7 +1,7 @@
 /* One time use script to migrate data previously kept in firebase */
 
 import { PrismaClient } from '@prisma/client'
-import firebase_data from './firebase_data'
+import firebase_data from '../../database/firebase_data'
 
 const prisma = new PrismaClient()
 
@@ -73,7 +73,8 @@ async function main() {
       rating: book.rating,
       title: book.title,
       url: book.url,
-      genreId: dbGenresNameToId[book.genre]
+      genreId: dbGenresNameToId[book.genre],
+      imgUrl: book.imgUrl || 'placeholder' // TODO: remove after adding img to firebase db
     }))
   })
 
