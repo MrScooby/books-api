@@ -6,14 +6,135 @@ import {
   SearchPaginatedData
 } from 'common/interfaces/pagination'
 import { defaultPaginationOptions } from 'common/constants'
+import { CreateBookDto } from './dto/create-book.dto'
+import scrapBookData, { URLdata } from 'common/scripts/scrap_book_data'
 
 @Injectable()
 export class BooksService {
   constructor(private db: DBService) {}
 
-  // create() {
-  //   return 'This action adds a new book';
-  // }
+  async create(body: CreateBookDto): Promise<number> {
+    const bookData: URLdata = await scrapBookData(body.url)
+
+    const newBookId = await this.db.$transaction(
+      async (tx): Promise<number> => {
+        const authorsIds = await Promise.all(
+          bookData.authors.map(async (authorName) => {
+            // TODO: move to dedicated services
+            const author = await tx.authors.findUnique({
+              where: {
+                name: authorName
+              },
+              select: {
+                id: true
+              }
+            })
+
+            if (author) {
+              return author.id
+            }
+
+            const newAuthor = await tx.authors.create({
+              data: {
+                name: authorName
+              },
+              select: {
+                id: true
+              }
+            })
+
+            return newAuthor.id
+          })
+        )
+
+        // TODO: move to dedicated services
+        let genre = await tx.genres.findUnique({
+          where: {
+            name: bookData.genre
+          }
+        })
+
+        if (!genre) {
+          genre = await tx.genres.create({
+            data: {
+              name: bookData.genre
+            }
+          })
+        }
+
+        // TODO: move to dedicated services
+        const shelvesIds = await Promise.all(
+          body.shelves.map(async (shelfName) => {
+            const shelf = await tx.shelves.findUnique({
+              where: {
+                name: shelfName
+              },
+              select: {
+                id: true
+              }
+            })
+
+            if (shelf) {
+              return shelf.id
+            }
+
+            const newShelf = await tx.shelves.create({
+              data: {
+                name: shelfName,
+                pages: 0
+              },
+              select: {
+                id: true
+              }
+            })
+
+            return newShelf.id
+          })
+        )
+
+        const newBook = await tx.books.create({
+          data: {
+            title: bookData.title,
+            lcId: bookData.lcId,
+            pages: bookData.pages,
+            rating: body.rating,
+            url: body.url,
+            imgUrl: bookData.imgUrl,
+            genre: {
+              connect: {
+                id: genre.id
+              }
+            },
+            shelves: {
+              create: shelvesIds.map((shelfId) => ({
+                shelf: {
+                  connect: {
+                    id: shelfId
+                  }
+                }
+              }))
+            },
+            authors: {
+              create: authorsIds.map((authorId) => ({
+                author: {
+                  connect: {
+                    id: authorId
+                  }
+                }
+              }))
+            }
+          },
+          select: {
+            id: true
+          }
+        })
+
+        return newBook.id
+      }
+    )
+    // TODO: add error handling for transaction (client transaction with custom errors?)
+    return newBookId
+  }
 
   async findAll(
     query: SearchPaginatedData
@@ -23,8 +144,8 @@ export class BooksService {
 
     const skip = page > 1 ? (page - 1) * perPage : 0
 
-    const totalPromise = this.db.book.count()
-    const dataPromise = this.db.book.findMany({
+    const totalPromise = this.db.books.count()
+    const dataPromise = this.db.books.findMany({
       skip: skip,
       take: perPage
     })
@@ -43,16 +164,4 @@ export class BooksService {
       }
     }
   }
-
-  // findOne(id: number) {
-  //   return `This action returns a #${id} book`;
-  // }
-
-  // update(id: number) {
-  //   return `This action updates a #${id} book`;
-  // }
-
-  // remove(id: number) {
-  //   return `This action removes a #${id} book`;
-  // }
 }

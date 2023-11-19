@@ -34,38 +34,38 @@ async function main() {
 
   // create authors in db
   // create map from results for easier access later on
-  await prisma.author.createMany({
+  await prisma.authors.createMany({
     data: authors.map((auth) => ({ name: auth }))
   })
   const dbAuthorsNameToId = new Map()
-  const dbAuthors = await prisma.author.findMany()
+  const dbAuthors = await prisma.authors.findMany()
   dbAuthors.forEach((el) => {
     dbAuthorsNameToId.set(el.name, el.id)
   })
 
   // create genres in db
   // create map from results for easier access later on
-  await prisma.genre.createMany({
+  await prisma.genres.createMany({
     data: genres.map((genre) => ({ name: genre }))
   })
   const dbGenresNameToId = new Map()
-  const dbGenres = await prisma.genre.findMany()
+  const dbGenres = await prisma.genres.findMany()
   dbGenres.forEach((el) => {
     dbGenresNameToId.set(el.name, el.id)
   })
 
   // create shelves in db
-  await prisma.shelf.createMany({
+  await prisma.shelves.createMany({
     data: shelves.map((shelf) => ({
       name: shelf.shelf,
       pages: shelf.numberOfPages
     }))
   })
-  const dbShelves = await prisma.shelf.findMany()
+  const dbShelves = await prisma.shelves.findMany()
 
   // create books in db
   // create map from results for easier access later on
-  await prisma.book.createMany({
+  await prisma.books.createMany({
     data: firebaseBooks.map((book) => ({
       ISBN: book.ISBN && String(book.ISBN),
       lcId: Number(book.id),
@@ -78,7 +78,7 @@ async function main() {
     }))
   })
 
-  const dbBooks = await prisma.book.findMany()
+  const dbBooks = await prisma.books.findMany()
   const dbBooksLcIdToId = new Map()
   dbBooks.forEach((el) => {
     dbBooksLcIdToId.set(el.lcId, el.id)
@@ -99,7 +99,7 @@ async function main() {
     })
   }
 
-  await prisma.booksAuthors.createMany({
+  await prisma.authorsBooks.createMany({
     data: bookAuthor
   })
 

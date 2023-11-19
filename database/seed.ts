@@ -3,42 +3,42 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 async function main() {
-  const author1 = await prisma.author.create({
+  const author1 = await prisma.authors.create({
     data: {
       name: 'Stephen King'
     }
   })
-  const author2 = await prisma.author.create({
+  const author2 = await prisma.authors.create({
     data: {
       name: 'Jan  Kowalski'
     }
   })
 
-  const genre1 = await prisma.genre.create({
+  const genre1 = await prisma.genres.create({
     data: {
       name: 'Horror'
     }
   })
-  const genre2 = await prisma.genre.create({
+  const genre2 = await prisma.genres.create({
     data: {
       name: 'Fantasy'
     }
   })
 
-  const shelf1 = await prisma.shelf.create({
+  const shelf1 = await prisma.shelves.create({
     data: {
       name: 'Przeczytane',
       pages: 0
     }
   })
-  const shelf2 = await prisma.shelf.create({
+  const shelf2 = await prisma.shelves.create({
     data: {
       name: '2023',
       pages: 0
     }
   })
 
-  const book1 = await prisma.book.create({
+  const book1 = await prisma.books.create({
     data: {
       ISBN: '234234234',
       lcId: 432,
@@ -46,10 +46,11 @@ async function main() {
       rating: 5,
       title: 'Taka tam ksiazka',
       url: 'lcz.pl',
-      genreId: genre1.id
+      genreId: genre1.id,
+      imgUrl: 'placeholder'
     }
   })
-  const book2 = await prisma.book.create({
+  const book2 = await prisma.books.create({
     data: {
       ISBN: '646454',
       lcId: 64,
@@ -57,10 +58,11 @@ async function main() {
       rating: 2,
       title: 'Taka tam ksiazka 2',
       url: 'lcz.pl',
-      genreId: genre2.id
+      genreId: genre2.id,
+      imgUrl: 'placeholder'
     }
   })
-  const book3 = await prisma.book.create({
+  const book3 = await prisma.books.create({
     data: {
       ISBN: '6575675',
       lcId: 677,
@@ -68,10 +70,11 @@ async function main() {
       rating: 8,
       title: 'Asd asd',
       url: 'lcz.pl',
-      genreId: genre1.id
+      genreId: genre1.id,
+      imgUrl: 'placeholder'
     }
   })
-  const book4 = await prisma.book.create({
+  const book4 = await prisma.books.create({
     data: {
       ISBN: '879797',
       lcId: 890,
@@ -79,11 +82,12 @@ async function main() {
       rating: 5,
       title: 'Asd asd 2',
       url: 'lcz.pl',
-      genreId: genre2.id
+      genreId: genre2.id,
+      imgUrl: 'placeholder'
     }
   })
 
-  await prisma.booksAuthors.createMany({
+  await prisma.authorsBooks.createMany({
     data: [
       {
         bookId: book1.id,
