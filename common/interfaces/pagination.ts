@@ -5,6 +5,7 @@ export interface PaginatedResults<T> {
   data: T[]
   meta: {
     total: number
+    totalPages: number
     perPage: number
     page: number
   }

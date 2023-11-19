@@ -31,10 +31,13 @@ export class BooksService {
 
     const [total, data] = await Promise.all([totalPromise, dataPromise])
 
+    const totalPages = Math.ceil(total / perPage)
+
     return {
       data,
       meta: {
         total,
+        totalPages,
         perPage,
         page
       }
