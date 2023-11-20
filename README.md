@@ -35,3 +35,7 @@ $ npm run start:prod
 ## Test
 
 No tests available for now.
+
+## Deployment
+
+I'm working on it locally for now. DB is deployed on vercel.
