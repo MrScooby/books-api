@@ -41,9 +41,9 @@ model Books {
   rating    Int
   title     String           @unique
   url       String
-  genre     Genres?           @relation(fields: [genreId], references: [id])
+  genre     Genres?          @relation(fields: [genreId], references: [id])
   genreId   Int?
-  shelves   BooksOnShelves[]
+  shelves   BooksOnShelves[] // TODO: add cascade delete for connected fields
   authors   AuthorsBooks[]
   imgUrl    String
   createdAt DateTime         @default(now())
@@ -51,9 +51,9 @@ model Books {
 }
 
 model AuthorsBooks {
-  book      Books     @relation(fields: [bookId], references: [id])
+  book      Books    @relation(fields: [bookId], references: [id])
   bookId    Int
-  author    Authors   @relation(fields: [authorId], references: [id])
+  author    Authors  @relation(fields: [authorId], references: [id])
   authorId  Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -62,9 +62,9 @@ model AuthorsBooks {
 }
 
 model BooksOnShelves {
-  book      Books     @relation(fields: [bookId], references: [id])
+  book      Books    @relation(fields: [bookId], references: [id])
   bookId    Int
-  shelf     Shelves    @relation(fields: [shelfId], references: [id])
+  shelf     Shelves  @relation(fields: [shelfId], references: [id])
   shelfId   Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

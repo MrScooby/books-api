@@ -1,3 +1,7 @@
+/* ####################
+    OLD _ DO NOT USE
+   #################### */
+
 /* One time use script to migrate data previously kept in firebase */
 
 import { PrismaClient } from '@prisma/client'
@@ -66,16 +70,21 @@ async function main() {
   // create books in db
   // create map from results for easier access later on
   await prisma.books.createMany({
-    data: firebaseBooks.map((book) => ({
-      ISBN: book.ISBN && String(book.ISBN),
-      lcId: Number(book.id),
-      pages: book.pages,
-      rating: book.rating,
-      title: book.title,
-      url: book.url,
-      genreId: dbGenresNameToId[book.genre],
-      imgUrl: book.imgUrl || 'placeholder' // TODO: remove after adding img to firebase db
-    }))
+    data: firebaseBooks.map((book) => {
+      let url = book.url.replace(' ', '')
+      url = url.replace('http:', 'https:')
+
+      return {
+        ISBN: book.ISBN && String(book.ISBN),
+        lcId: Number(book.id),
+        pages: book.pages,
+        rating: book.rating,
+        title: book.title,
+        url: url,
+        genreId: dbGenresNameToId.get(book.genre),
+        imgUrl: book.imgUrl || 'placeholder' // TODO: remove after adding img to firebase db
+      }
+    })
   })
 
   const dbBooks = await prisma.books.findMany()
@@ -86,7 +95,7 @@ async function main() {
 
   // combine data from books and authors and insert it to db
   const bookAuthor = []
-  for (let i = 0; i < 1; i++) {
+  for (let i = 0; i < firebaseBooks.length; i++) {
     const book = firebaseBooks[i]
     const authors =
       typeof book.author === 'string' ? [book.author] : book.author
