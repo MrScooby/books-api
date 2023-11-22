@@ -3,7 +3,7 @@ import { Books } from '@prisma/client'
 
 export class BookEntity implements Books {
   @ApiProperty()
-  id: number
+  id: string
 
   @ApiProperty()
   ISBN: string | undefined
@@ -24,7 +24,7 @@ export class BookEntity implements Books {
   url: string
 
   @ApiProperty()
-  genreId: number | undefined
+  genreId: string | undefined
 
   @ApiProperty()
   imgUrl: string

@@ -8,7 +8,7 @@ datasource db {
 }
 
 model Authors {
-  id        Int            @id @default(autoincrement())
+  id        String         @id @default(uuid())
   name      String         @unique
   createdAt DateTime       @default(now())
   updatedAt DateTime       @updatedAt
@@ -17,7 +17,7 @@ model Authors {
 
 // TODO: add connected table instead of simple array
 model Genres {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(uuid())
   name      String   @unique
   books     Books[]
   createdAt DateTime @default(now())
@@ -25,7 +25,7 @@ model Genres {
 }
 
 model Shelves {
-  id        Int              @id @default(autoincrement())
+  id        String           @id @default(uuid())
   name      String           @unique
   pages     Int
   books     BooksOnShelves[]
@@ -34,7 +34,7 @@ model Shelves {
 }
 
 model Books {
-  id        Int              @id @default(autoincrement())
+  id        String           @id @default(uuid())
   ISBN      String?
   lcId      Int              @unique
   pages     Int
@@ -42,7 +42,7 @@ model Books {
   title     String           @unique
   url       String
   genre     Genres?          @relation(fields: [genreId], references: [id])
-  genreId   Int?
+  genreId   String?
   shelves   BooksOnShelves[] // TODO: add cascade delete for connected fields
   authors   AuthorsBooks[]
   imgUrl    String
@@ -52,9 +52,9 @@ model Books {
 
 model AuthorsBooks {
   book      Books    @relation(fields: [bookId], references: [id])
-  bookId    Int
+  bookId    String
   author    Authors  @relation(fields: [authorId], references: [id])
-  authorId  Int
+  authorId  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -63,9 +63,9 @@ model AuthorsBooks {
 
 model BooksOnShelves {
   book      Books    @relation(fields: [bookId], references: [id])
-  bookId    Int
+  bookId    String
   shelf     Shelves  @relation(fields: [shelfId], references: [id])
-  shelfId   Int
+  shelfId   String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 

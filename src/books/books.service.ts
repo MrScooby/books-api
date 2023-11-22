@@ -13,11 +13,11 @@ import scrapBookData, { URLdata } from 'common/scripts/scrap_book_data'
 export class BooksService {
   constructor(private db: DBService) {}
 
-  async create(body: CreateBookDto): Promise<number> {
+  async create(body: CreateBookDto): Promise<string> {
     const bookData: URLdata = await scrapBookData(body.url)
 
     const newBookId = await this.db.$transaction(
-      async (tx): Promise<number> => {
+      async (tx): Promise<string> => {
         const authorsIds = await Promise.all(
           bookData.authors.map(async (authorName) => {
             // TODO: move to dedicated services
