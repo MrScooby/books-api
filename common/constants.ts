@@ -7,6 +7,6 @@ export enum Order {
 
 export const defaultPaginationOptions: SearchPaginatedData = {
   page: 1,
-  perPage: 10,
+  perPage: 20,
   orderDirection: Order.DESC
 }
