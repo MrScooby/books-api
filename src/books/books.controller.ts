@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Query } from '@nestjs/common'
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common'
 import { BooksService } from './books.service'
 import { BookEntity } from './entities/book.entity'
 import {
@@ -31,10 +31,15 @@ export class BooksController {
     return await this.bookService.findAll(query)
   }
 
-  // @Get(':id')
-  // findOne(@Param('id') id: string) {
-  //   return this.bookService.findOne(+id);
-  // }
+  @Get(':id')
+  async findOne(@Param('id') id: string): Promise<BookEntity> {
+    return this.bookService.findOne(id)
+  }
+
+  @Get('title/:id')
+  async getTitle(@Param('id') id: string): Promise<string> {
+    return this.bookService.getTitle(id)
+  }
 
   // @Patch(':id')
   // update(@Param('id') id: string, @Body() updateBookDto: UpdateBookDto) {

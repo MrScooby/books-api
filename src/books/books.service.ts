@@ -164,4 +164,22 @@ export class BooksService {
       }
     }
   }
+
+  async findOne(id: string): Promise<BookEntity> {
+    const book = await this.db.books.findUnique({
+      where: {
+        id
+      }
+    })
+
+    // TODO: add shelves, genre and author data
+
+    return book
+  }
+
+  async getTitle(id: string): Promise<string> {
+    const book = await this.findOne(id)
+
+    return book.title
+  }
 }
