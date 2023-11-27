@@ -39,3 +39,11 @@ No tests available for now.
 ## Deployment
 
 I'm working on it locally for now. DB is deployed on vercel.
+
+## Deployment
+
+Swagger documentation available on
+
+```bash
+localhost:3000/documentation
+```

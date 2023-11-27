@@ -3,7 +3,8 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
 
 export function setupSwagger(app: INestApplication): void {
   const options = new DocumentBuilder()
-    .setTitle('NestJS TypeORM Pagination')
+    .setTitle('Books')
+    .setDescription('Simple api for private use')
     .setVersion('1.0.0')
     .build()
 

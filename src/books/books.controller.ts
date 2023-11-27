@@ -6,13 +6,14 @@ import {
   SearchPaginatedData
 } from 'common/interfaces/pagination'
 import { CreateBookDto } from './dto/create-book.dto'
+import { BookDto } from './dto/book.dto'
 
 @Controller('books')
 export class BooksController {
   constructor(private readonly bookService: BooksService) {}
 
   @Post()
-  async create(@Body() createBookDto: CreateBookDto): Promise<number> {
+  async create(@Body() createBookDto: CreateBookDto): Promise<string> {
     let bookId
 
     try {
@@ -32,7 +33,7 @@ export class BooksController {
   }
 
   @Get(':id')
-  async findOne(@Param('id') id: string): Promise<BookEntity> {
+  async findOne(@Param('id') id: string): Promise<BookDto> {
     return this.bookService.findOne(id)
   }
 

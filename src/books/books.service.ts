@@ -8,6 +8,7 @@ import {
 import { defaultPaginationOptions } from 'common/constants'
 import { CreateBookDto } from './dto/create-book.dto'
 import scrapBookData, { URLdata } from 'common/scripts/scrap_book_data'
+import { BookDto } from './dto/book.dto'
 
 @Injectable()
 export class BooksService {
@@ -165,16 +166,42 @@ export class BooksService {
     }
   }
 
-  async findOne(id: string): Promise<BookEntity> {
+  // exclude<T, Key extends keyof T>(
+  //   entity: T,
+  //   keysToOmit: Key
+  // ) {}
+
+  async findOne(id: string): Promise<BookDto> {
     const book = await this.db.books.findUnique({
       where: {
         id
       }
     })
 
-    // TODO: add shelves, genre and author data
+    // TODO: create generic function to omit some values
+    // const asd = this.exclude(book, ['title'])
 
-    return book
+    const { createdAt, updatedAt, lcId, ...rest } = book
+
+    const booksOnShelves = await this.db.booksOnShelves.findMany({
+      where: {
+        bookId: id
+      }
+    })
+
+    const authorsBooks = await this.db.authorsBooks.findMany({
+      where: {
+        bookId: id
+      }
+    })
+
+    const bookData: BookDto = {
+      ...rest,
+      shelvesIds: booksOnShelves.map((bs) => bs.shelfId),
+      authorsIds: authorsBooks.map((ab) => ab.authorId)
+    }
+
+    return bookData
   }
 
   async getTitle(id: string): Promise<string> {
