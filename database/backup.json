@@ -8033,6 +8033,45 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/34000/34408/352x500.jpg",
       "createdAt": "2023-11-22T22:13:27.940Z",
       "updatedAt": "2023-11-22T22:13:27.940Z"
+    },
+    {
+      "id": "fcf50f88-ba54-4172-9038-51d96ed09b00",
+      "ISBN": "9788396481221",
+      "lcId": 5014374,
+      "pages": 250,
+      "rating": 8,
+      "title": "Ucieczka z Chinatown",
+      "url": "https://lubimyczytac.pl/ksiazka/5014374/ucieczka-z-chinatown",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5014000/5014374/979115-352x500.jpg",
+      "createdAt": "1701376706283",
+      "updatedAt": "1701376706283"
+    },
+    {
+      "id": "a3a9c45f-cc20-4d39-85a7-b1f221f954b1",
+      "ISBN": "9788380499812",
+      "lcId": 4910992,
+      "pages": 376,
+      "rating": 4,
+      "title": "Król darknetu. Polowanie na genialnego cyberprzestępcę",
+      "url": "https://lubimyczytac.pl/ksiazka/4910992/krol-darknetu-polowanie-na-genialnego-cyberprzestepce",
+      "genreId": "e9ac4deb-2a32-49a2-a1bf-cbc091c4564f",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4910000/4910992/798810-352x500.jpg",
+      "createdAt": "1701376822759",
+      "updatedAt": "1701376822759"
+    },
+    {
+      "id": "3092245a-d995-47c9-97f4-f18b1f1a7aeb",
+      "ISBN": "9788375363616",
+      "lcId": 114733,
+      "pages": 176,
+      "rating": 4,
+      "title": "Cygan to Cygan",
+      "url": "https://lubimyczytac.pl/ksiazka/114733/cygan-to-cygan",
+      "genreId": "e9ac4deb-2a32-49a2-a1bf-cbc091c4564f",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/114000/114733/352x500.jpg",
+      "createdAt": "1701376927159",
+      "updatedAt": "1701376927159"
     }
   ],
   "genres": [
@@ -10491,6 +10530,24 @@
       "name": "Joseph Heller",
       "createdAt": "2023-11-22T22:13:27.460Z",
       "updatedAt": "2023-11-22T22:13:27.460Z"
+    },
+    {
+      "name": "Charles Yu",
+      "id": "3ed61f24-5ab4-42cb-bbdc-7681c43e1601",
+      "createdAt": "1701376706283",
+      "updatedAt": "1701376706283"
+    },
+    {
+      "name": "Nick Bilton",
+      "id": "674233a9-7eb7-4f2e-940f-64fd90ec36c1",
+      "createdAt": "1701376822759",
+      "updatedAt": "1701376822759"
+    },
+    {
+      "name": "Lidia Ostałowska",
+      "id": "e4a87000-b5c6-415e-b3d6-cc5b7acafc64",
+      "createdAt": "1701376927159",
+      "updatedAt": "1701376927159"
     }
   ],
   "booksOnShelves": [
@@ -16727,6 +16784,42 @@
       "shelfId": "d293a830-9cbe-467d-9ea1-cc2745d50c44",
       "createdAt": "2023-11-22T22:13:28.178Z",
       "updatedAt": "2023-11-22T22:13:28.178Z"
+    },
+    {
+      "bookId": "fcf50f88-ba54-4172-9038-51d96ed09b00",
+      "shelfId": "ba3e8396-14c2-4671-a496-c46fac6aa9b8",
+      "createdAt": "1701376706283",
+      "updatedAt": "1701376706283"
+    },
+    {
+      "bookId": "fcf50f88-ba54-4172-9038-51d96ed09b00",
+      "shelfId": "bcc34c22-4896-4559-8084-e8ada46ecaf9",
+      "createdAt": "1701376706283",
+      "updatedAt": "1701376706283"
+    },
+    {
+      "bookId": "a3a9c45f-cc20-4d39-85a7-b1f221f954b1",
+      "shelfId": "ba3e8396-14c2-4671-a496-c46fac6aa9b8",
+      "createdAt": "1701376822759",
+      "updatedAt": "1701376822759"
+    },
+    {
+      "bookId": "a3a9c45f-cc20-4d39-85a7-b1f221f954b1",
+      "shelfId": "bcc34c22-4896-4559-8084-e8ada46ecaf9",
+      "createdAt": "1701376822759",
+      "updatedAt": "1701376822759"
+    },
+    {
+      "bookId": "3092245a-d995-47c9-97f4-f18b1f1a7aeb",
+      "shelfId": "ba3e8396-14c2-4671-a496-c46fac6aa9b8",
+      "createdAt": "1701376927159",
+      "updatedAt": "1701376927159"
+    },
+    {
+      "bookId": "3092245a-d995-47c9-97f4-f18b1f1a7aeb",
+      "shelfId": "bcc34c22-4896-4559-8084-e8ada46ecaf9",
+      "createdAt": "1701376927159",
+      "updatedAt": "1701376927159"
     }
   ],
   "shelves": [
@@ -21147,6 +21240,24 @@
       "authorId": "f747e829-8148-4c7a-8ff9-c22110f0e2f0",
       "createdAt": "2023-11-22T22:13:28.339Z",
       "updatedAt": "2023-11-22T22:13:28.339Z"
+    },
+    {
+      "bookId": "fcf50f88-ba54-4172-9038-51d96ed09b00",
+      "authorId": "3ed61f24-5ab4-42cb-bbdc-7681c43e1601",
+      "createdAt": "1701376706283",
+      "updatedAt": "1701376706283"
+    },
+    {
+      "bookId": "a3a9c45f-cc20-4d39-85a7-b1f221f954b1",
+      "authorId": "674233a9-7eb7-4f2e-940f-64fd90ec36c1",
+      "createdAt": "1701376822759",
+      "updatedAt": "1701376822759"
+    },
+    {
+      "bookId": "3092245a-d995-47c9-97f4-f18b1f1a7aeb",
+      "authorId": "e4a87000-b5c6-415e-b3d6-cc5b7acafc64",
+      "createdAt": "1701376927159",
+      "updatedAt": "1701376927159"
     }
   ]
 }

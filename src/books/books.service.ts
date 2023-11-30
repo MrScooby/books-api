@@ -9,6 +9,8 @@ import { defaultPaginationOptions } from 'common/constants'
 import { CreateBookDto } from './dto/create-book.dto'
 import scrapBookData, { URLdata } from 'common/scripts/scrap_book_data'
 import { BookDto } from './dto/book.dto'
+import * as fs from 'fs'
+import * as backup from '../../database/backup.json'
 
 @Injectable()
 export class BooksService {
@@ -16,6 +18,7 @@ export class BooksService {
 
   async create(body: CreateBookDto): Promise<string> {
     const bookData: URLdata = await scrapBookData(body.url)
+    const now = Date.now().toString()
 
     const newBookId = await this.db.$transaction(
       async (tx): Promise<string> => {
@@ -42,6 +45,13 @@ export class BooksService {
               select: {
                 id: true
               }
+            })
+
+            backup.authors.push({
+              name: authorName,
+              id: newAuthor.id,
+              createdAt: now,
+              updatedAt: now
             })
 
             return newAuthor.id
@@ -129,6 +139,52 @@ export class BooksService {
             id: true
           }
         })
+
+        // Update local backup just in case (until proper db will be deployed on not free hosting)
+        backup.books.push({
+          id: newBook.id,
+          ISBN: bookData.ISBN,
+          lcId: bookData.lcId,
+          pages: bookData.pages,
+          rating: body.rating,
+          title: bookData.title,
+          url: body.url,
+          genreId: genre.id,
+          imgUrl: bookData.imgUrl,
+          createdAt: now,
+          updatedAt: now
+        })
+
+        shelvesIds.map((sh) => {
+          backup.booksOnShelves.push({
+            bookId: newBook.id,
+            shelfId: sh,
+            createdAt: now,
+            updatedAt: now
+          })
+        })
+
+        authorsIds.map((a) => {
+          backup.authorsBooks.push({
+            bookId: newBook.id,
+            authorId: a,
+            createdAt: now,
+            updatedAt: now
+          })
+        })
+
+        fs.writeFile(
+          'backup.json',
+          JSON.stringify(backup),
+          { flag: 'w' },
+          (e) => {
+            if (e) {
+              console.log('Something went wrong. e: ', e)
+            } else {
+              console.log('Local backup created')
+            }
+          }
+        )
 
         return newBook.id
       }
