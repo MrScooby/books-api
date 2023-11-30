@@ -6,6 +6,11 @@ import { DBService } from 'src/db/db.service'
 export class GenresService {
   constructor(private db: DBService) {}
 
+  async findAll(): Promise<GenreDto[]> {
+    const genres = await this.db.genres.findMany()
+    return genres
+  }
+
   async findOne(id: string): Promise<GenreDto> {
     const genre = await this.db.genres.findUnique({
       where: {
