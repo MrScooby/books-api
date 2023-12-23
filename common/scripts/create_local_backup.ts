@@ -1,3 +1,7 @@
+/* ####################
+    OLD _ DO NOT USE
+   #################### */
+   
 /* One time script to add img url to books (with no regards for rate limits - I would argue that it's their fault for not implementing them : P) */
 
 import { PrismaClient } from '@prisma/client'

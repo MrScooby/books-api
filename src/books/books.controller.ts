@@ -14,15 +14,12 @@ export class BooksController {
 
   @Post()
   async create(@Body() createBookDto: CreateBookDto): Promise<string> {
-    let bookId
-
     try {
-      bookId = await this.bookService.create(createBookDto)
+      return await this.bookService.create(createBookDto)
     } catch (e) {
       // TODO: generic api errors?
       throw new Error(e)
     }
-    return bookId
   }
 
   @Get()

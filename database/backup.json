@@ -8072,6 +8072,32 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/114000/114733/352x500.jpg",
       "createdAt": "1701376927159",
       "updatedAt": "1701376927159"
+    },
+    {
+      "id": "55a0d6c0-47bf-4c7a-817a-718d6c7d02cb",
+      "ISBN": "9788379982554",
+      "lcId": 4930525,
+      "pages": 472,
+      "rating": 3,
+      "title": "Sto dwadzieścia dni Sodomy, czyli szkoła libertynizmu",
+      "url": "https://lubimyczytac.pl/ksiazka/4930525/sto-dwadziescia-dni-sodomy-czyli-szkola-libertynizmu",
+      "genreId": "50868df5-ca40-47b3-abe5-69c213d7bd2f",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4930000/4930525/823006-352x500.jpg",
+      "createdAt": "1702637868477",
+      "updatedAt": "1702637868477"
+    },
+    {
+      "id": "38014821-3539-4aa2-adbc-c8d4855759cb",
+      "ISBN": "9788367889049",
+      "lcId": 5089112,
+      "pages": 266,
+      "rating": 5,
+      "title": "Ciemność",
+      "url": "https://lubimyczytac.pl/ksiazka/5089112/ciemnosc",
+      "genreId": "53bab2a1-6dc2-4ce8-8721-e3361babe92a",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5089000/5089112/1104288-352x500.jpg",
+      "createdAt": "1703370193628",
+      "updatedAt": "1703370193628"
     }
   ],
   "genres": [
@@ -10548,6 +10574,12 @@
       "id": "e4a87000-b5c6-415e-b3d6-cc5b7acafc64",
       "createdAt": "1701376927159",
       "updatedAt": "1701376927159"
+    },
+    {
+      "name": "Jozef Karika",
+      "id": "c0e73910-699f-412c-a3a0-4d7d58509354",
+      "createdAt": "1703370193628",
+      "updatedAt": "1703370193628"
     }
   ],
   "booksOnShelves": [
@@ -16820,92 +16852,116 @@
       "shelfId": "bcc34c22-4896-4559-8084-e8ada46ecaf9",
       "createdAt": "1701376927159",
       "updatedAt": "1701376927159"
+    },
+    {
+      "bookId": "55a0d6c0-47bf-4c7a-817a-718d6c7d02cb",
+      "shelfId": "ba3e8396-14c2-4671-a496-c46fac6aa9b8",
+      "createdAt": "1702637868477",
+      "updatedAt": "1702637868477"
+    },
+    {
+      "bookId": "55a0d6c0-47bf-4c7a-817a-718d6c7d02cb",
+      "shelfId": "bcc34c22-4896-4559-8084-e8ada46ecaf9",
+      "createdAt": "1702637868477",
+      "updatedAt": "1702637868477"
+    },
+    {
+      "bookId": "38014821-3539-4aa2-adbc-c8d4855759cb",
+      "shelfId": "ba3e8396-14c2-4671-a496-c46fac6aa9b8",
+      "createdAt": "1703370193628",
+      "updatedAt": "1703370193628"
+    },
+    {
+      "bookId": "38014821-3539-4aa2-adbc-c8d4855759cb",
+      "shelfId": "bcc34c22-4896-4559-8084-e8ada46ecaf9",
+      "createdAt": "1703370193628",
+      "updatedAt": "1703370193628"
     }
   ],
   "shelves": [
     {
       "id": "1545bc44-4a58-407f-a68c-b07d9f7bafe6",
       "name": "2014",
-      "pages": 0,
+      "pages": 14878,
       "createdAt": "2023-11-22T22:13:27.781Z",
-      "updatedAt": "2023-11-22T22:13:27.781Z"
-    },
-    {
-      "id": "9c2f0884-ef3a-49f7-8df6-bea9a5d8ebcb",
-      "name": "2015",
-      "pages": 0,
-      "createdAt": "2023-11-22T22:13:27.781Z",
-      "updatedAt": "2023-11-22T22:13:27.781Z"
-    },
-    {
-      "id": "07ffc3c5-f8cd-430d-b169-7596b953b751",
-      "name": "2016",
-      "pages": 0,
-      "createdAt": "2023-11-22T22:13:27.781Z",
-      "updatedAt": "2023-11-22T22:13:27.781Z"
-    },
-    {
-      "id": "a84d314d-dc5e-4b2f-aa91-f770d2bca762",
-      "name": "2017",
-      "pages": 0,
-      "createdAt": "2023-11-22T22:13:27.781Z",
-      "updatedAt": "2023-11-22T22:13:27.781Z"
-    },
-    {
-      "id": "7d43be6e-f8d8-4adf-86bd-31944c065085",
-      "name": "2018",
-      "pages": 0,
-      "createdAt": "2023-11-22T22:13:27.781Z",
-      "updatedAt": "2023-11-22T22:13:27.781Z"
+      "updatedAt": "2023-12-23T23:43:00.824Z"
     },
     {
       "id": "30419f13-c27d-48f8-8d34-fac0bd14f7d1",
       "name": "2019",
-      "pages": 0,
+      "pages": 14551,
       "createdAt": "2023-11-22T22:13:27.781Z",
-      "updatedAt": "2023-11-22T22:13:27.781Z"
-    },
-    {
-      "id": "f9758505-8d21-438f-a32b-6b499815cebe",
-      "name": "2020",
-      "pages": 0,
-      "createdAt": "2023-11-22T22:13:27.781Z",
-      "updatedAt": "2023-11-22T22:13:27.781Z"
-    },
-    {
-      "id": "adbba65e-a413-4113-ab7b-cf79cbfab084",
-      "name": "2021",
-      "pages": 0,
-      "createdAt": "2023-11-22T22:13:27.781Z",
-      "updatedAt": "2023-11-22T22:13:27.781Z"
-    },
-    {
-      "id": "264cf604-94fa-4fe0-8535-4f8ee234e868",
-      "name": "2022",
-      "pages": 0,
-      "createdAt": "2023-11-22T22:13:27.781Z",
-      "updatedAt": "2023-11-22T22:13:27.781Z"
+      "updatedAt": "2023-12-23T23:43:00.824Z"
     },
     {
       "id": "bcc34c22-4896-4559-8084-e8ada46ecaf9",
       "name": "2023",
-      "pages": 0,
+      "pages": 15308,
       "createdAt": "2023-11-22T22:13:27.781Z",
-      "updatedAt": "2023-11-22T22:13:27.781Z"
+      "updatedAt": "2023-12-23T23:43:00.825Z"
     },
     {
-      "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
-      "name": "Przeczytane",
-      "pages": 0,
+      "id": "a84d314d-dc5e-4b2f-aa91-f770d2bca762",
+      "name": "2017",
+      "pages": 11013,
       "createdAt": "2023-11-22T22:13:27.781Z",
-      "updatedAt": "2023-11-22T22:13:27.781Z"
+      "updatedAt": "2023-12-23T23:43:00.824Z"
+    },
+    {
+      "id": "264cf604-94fa-4fe0-8535-4f8ee234e868",
+      "name": "2022",
+      "pages": 19092,
+      "createdAt": "2023-11-22T22:13:27.781Z",
+      "updatedAt": "2023-12-23T23:43:00.825Z"
+    },
+    {
+      "id": "07ffc3c5-f8cd-430d-b169-7596b953b751",
+      "name": "2016",
+      "pages": 256,
+      "createdAt": "2023-11-22T22:13:27.781Z",
+      "updatedAt": "2023-12-23T23:43:00.824Z"
     },
     {
       "id": "d293a830-9cbe-467d-9ea1-cc2745d50c44",
       "name": "Uczta wyobraźni",
-      "pages": 0,
+      "pages": 21118,
       "createdAt": "2023-11-22T22:13:27.781Z",
-      "updatedAt": "2023-11-22T22:13:27.781Z"
+      "updatedAt": "2023-12-23T23:43:00.825Z"
+    },
+    {
+      "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "name": "Przeczytane",
+      "pages": 233176,
+      "createdAt": "2023-11-22T22:13:27.781Z",
+      "updatedAt": "2023-12-23T23:43:00.825Z"
+    },
+    {
+      "id": "7d43be6e-f8d8-4adf-86bd-31944c065085",
+      "name": "2018",
+      "pages": 11510,
+      "createdAt": "2023-11-22T22:13:27.781Z",
+      "updatedAt": "2023-12-23T23:43:00.824Z"
+    },
+    {
+      "id": "9c2f0884-ef3a-49f7-8df6-bea9a5d8ebcb",
+      "name": "2015",
+      "pages": 3815,
+      "createdAt": "2023-11-22T22:13:27.781Z",
+      "updatedAt": "2023-12-23T23:43:00.825Z"
+    },
+    {
+      "id": "adbba65e-a413-4113-ab7b-cf79cbfab084",
+      "name": "2021",
+      "pages": 21632,
+      "createdAt": "2023-11-22T22:13:27.781Z",
+      "updatedAt": "2023-12-23T23:43:00.824Z"
+    },
+    {
+      "id": "f9758505-8d21-438f-a32b-6b499815cebe",
+      "name": "2020",
+      "pages": 20535,
+      "createdAt": "2023-11-22T22:13:27.781Z",
+      "updatedAt": "2023-12-23T23:43:00.825Z"
     }
   ],
   "authorsBooks": [
@@ -21258,6 +21314,18 @@
       "authorId": "e4a87000-b5c6-415e-b3d6-cc5b7acafc64",
       "createdAt": "1701376927159",
       "updatedAt": "1701376927159"
+    },
+    {
+      "bookId": "55a0d6c0-47bf-4c7a-817a-718d6c7d02cb",
+      "authorId": "668207d0-d3dd-487e-b855-572ed1cae803",
+      "createdAt": "1702637868477",
+      "updatedAt": "1702637868477"
+    },
+    {
+      "bookId": "38014821-3539-4aa2-adbc-c8d4855759cb",
+      "authorId": "c0e73910-699f-412c-a3a0-4d7d58509354",
+      "createdAt": "1703370193628",
+      "updatedAt": "1703370193628"
     }
   ]
 }

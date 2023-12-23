@@ -74,19 +74,20 @@ export class BooksService {
         }
 
         // TODO: move to dedicated services
-        const shelvesIds = await Promise.all(
+        const shelves = await Promise.all(
           body.shelves.map(async (shelfName) => {
             const shelf = await tx.shelves.findUnique({
               where: {
                 name: shelfName
               },
               select: {
-                id: true
+                id: true,
+                pages: true
               }
             })
 
             if (shelf) {
-              return shelf.id
+              return shelf
             }
 
             const newShelf = await tx.shelves.create({
@@ -95,11 +96,26 @@ export class BooksService {
                 pages: 0
               },
               select: {
-                id: true
+                id: true,
+                pages: true
               }
             })
 
-            return newShelf.id
+            return newShelf
+          })
+        )
+
+        // update pages count on shelves
+        await Promise.all(
+          shelves.map(async (shelf) => {
+            await tx.shelves.update({
+              where: {
+                name: shelf.id
+              },
+              data: {
+                pages: shelf.pages + bookData.pages
+              }
+            })
           })
         )
 
@@ -117,10 +133,10 @@ export class BooksService {
               }
             },
             shelves: {
-              create: shelvesIds.map((shelfId) => ({
+              create: shelves.map((shelf) => ({
                 shelf: {
                   connect: {
-                    id: shelfId
+                    id: shelf.id
                   }
                 }
               }))
@@ -155,13 +171,24 @@ export class BooksService {
           updatedAt: now
         })
 
-        shelvesIds.map((sh) => {
+        shelves.map((sh) => {
           backup.booksOnShelves.push({
             bookId: newBook.id,
-            shelfId: sh,
+            shelfId: sh.id,
             createdAt: now,
             updatedAt: now
           })
+        })
+
+        shelves.map((sh) => {
+          const shToUpdateIndex = backup.shelves.findIndex(
+            (s) => s.id === sh.id
+          )
+
+          backup.shelves[shToUpdateIndex] = {
+            ...backup.shelves[shToUpdateIndex],
+            pages: backup.shelves[shToUpdateIndex].pages + bookData.pages
+          }
         })
 
         authorsIds.map((a) => {
@@ -174,7 +201,7 @@ export class BooksService {
         })
 
         fs.writeFile(
-          'backup.json',
+          './database/backup.json',
           JSON.stringify(backup),
           { flag: 'w' },
           (e) => {
