@@ -8098,6 +8098,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/5089000/5089112/1104288-352x500.jpg",
       "createdAt": "1703370193628",
       "updatedAt": "1703370193628"
+    },
+    {
+      "id": "7e18582e-abca-4410-a10e-3fbf55152e42",
+      "ISBN": "9788383380131",
+      "lcId": 5064645,
+      "pages": 280,
+      "rating": 9,
+      "title": "Spotkanie z Ramą",
+      "url": "https://lubimyczytac.pl/ksiazka/5064645/spotkanie-z-rama",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5064000/5064645/1065239-352x500.jpg",
+      "createdAt": "1703881859065",
+      "updatedAt": "1703881859065"
     }
   ],
   "genres": [
@@ -16876,6 +16889,18 @@
       "shelfId": "bcc34c22-4896-4559-8084-e8ada46ecaf9",
       "createdAt": "1703370193628",
       "updatedAt": "1703370193628"
+    },
+    {
+      "bookId": "7e18582e-abca-4410-a10e-3fbf55152e42",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1703881859065",
+      "updatedAt": "1703881859065"
+    },
+    {
+      "bookId": "7e18582e-abca-4410-a10e-3fbf55152e42",
+      "shelfId": "bcc34c22-4896-4559-8084-e8ada46ecaf9",
+      "createdAt": "1703881859065",
+      "updatedAt": "1703881859065"
     }
   ],
   "shelves": [
@@ -16896,7 +16921,7 @@
     {
       "id": "bcc34c22-4896-4559-8084-e8ada46ecaf9",
       "name": "2023",
-      "pages": 15308,
+      "pages": 15588,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -16931,7 +16956,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 233176,
+      "pages": 233456,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -21326,6 +21351,12 @@
       "authorId": "c0e73910-699f-412c-a3a0-4d7d58509354",
       "createdAt": "1703370193628",
       "updatedAt": "1703370193628"
+    },
+    {
+      "bookId": "7e18582e-abca-4410-a10e-3fbf55152e42",
+      "authorId": "d24b1cba-5ce6-4c75-a3d1-4c4d8b2db618",
+      "createdAt": "1703881859065",
+      "updatedAt": "1703881859065"
     }
   ]
 }

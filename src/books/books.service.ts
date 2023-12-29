@@ -110,7 +110,7 @@ export class BooksService {
           shelves.map(async (shelf) => {
             await tx.shelves.update({
               where: {
-                name: shelf.id
+                id: shelf.id
               },
               data: {
                 pages: shelf.pages + bookData.pages
