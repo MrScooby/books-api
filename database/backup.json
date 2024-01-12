@@ -8111,6 +8111,32 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/5064000/5064645/1065239-352x500.jpg",
       "createdAt": "1703881859065",
       "updatedAt": "1703881859065"
+    },
+    {
+      "id": "01d52897-25c9-4320-a673-77e805e1c64f",
+      "ISBN": "9788324084708",
+      "lcId": 5048365,
+      "pages": 384,
+      "rating": 5,
+      "title": "Diabeł, którego znasz. Psychiatria sądowa bez tajemnic",
+      "url": "https://lubimyczytac.pl/ksiazka/5048365/diabel-ktorego-znasz-psychiatria-sadowa-bez-tajemnic",
+      "genreId": "fd8acb8c-49aa-4110-aa58-83363a52835d",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5048000/5048365/1034298-352x500.jpg",
+      "createdAt": "1704458291028",
+      "updatedAt": "1704458291028"
+    },
+    {
+      "id": "6f036412-0de3-4a20-9726-5c15dcf14636",
+      "ISBN": "9788381517263",
+      "lcId": 5088002,
+      "pages": 264,
+      "rating": 8,
+      "title": "Krótka historia ekonomii",
+      "url": "https://lubimyczytac.pl/ksiazka/5088002/krotka-historia-ekonomii",
+      "genreId": "e3475ffd-d202-46ce-b1e0-9b07943e6f1c",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5088000/5088002/1102406-352x500.jpg",
+      "createdAt": "1705057961895",
+      "updatedAt": "1705057961895"
     }
   ],
   "genres": [
@@ -10593,6 +10619,24 @@
       "id": "c0e73910-699f-412c-a3a0-4d7d58509354",
       "createdAt": "1703370193628",
       "updatedAt": "1703370193628"
+    },
+    {
+      "name": "Gwen Adshead",
+      "id": "961fa589-c98e-4fd9-97ed-f0069b0df78e",
+      "createdAt": "1704458291028",
+      "updatedAt": "1704458291028"
+    },
+    {
+      "name": "Eileen Horne",
+      "id": "3311c4a0-08aa-481e-9db7-aebcc14a1ab1",
+      "createdAt": "1704458291028",
+      "updatedAt": "1704458291028"
+    },
+    {
+      "name": "Niall Kishtainy",
+      "id": "2ccad07d-e7c3-4a06-afa7-492abbd8c59c",
+      "createdAt": "1705057961895",
+      "updatedAt": "1705057961895"
     }
   ],
   "booksOnShelves": [
@@ -16901,6 +16945,36 @@
       "shelfId": "bcc34c22-4896-4559-8084-e8ada46ecaf9",
       "createdAt": "1703881859065",
       "updatedAt": "1703881859065"
+    },
+    {
+      "bookId": "01d52897-25c9-4320-a673-77e805e1c64f",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1704458291028",
+      "updatedAt": "1704458291028"
+    },
+    {
+      "bookId": "01d52897-25c9-4320-a673-77e805e1c64f",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1704458291028",
+      "updatedAt": "1704458291028"
+    },
+    {
+      "bookId": "01d52897-25c9-4320-a673-77e805e1c64f",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1704458291028",
+      "updatedAt": "1704458291028"
+    },
+    {
+      "bookId": "6f036412-0de3-4a20-9726-5c15dcf14636",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1705057961895",
+      "updatedAt": "1705057961895"
+    },
+    {
+      "bookId": "6f036412-0de3-4a20-9726-5c15dcf14636",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1705057961895",
+      "updatedAt": "1705057961895"
     }
   ],
   "shelves": [
@@ -16956,7 +17030,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 233456,
+      "pages": 234104,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -16987,6 +17061,13 @@
       "pages": 20535,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
+    },
+    {
+      "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "name": "2024",
+      "pages": 648,
+      "createdAt": "2024-01-05T12:38:11.034Z",
+      "updatedAt": "2024-01-05T12:38:11.034Z"
     }
   ],
   "authorsBooks": [
@@ -21357,6 +21438,24 @@
       "authorId": "d24b1cba-5ce6-4c75-a3d1-4c4d8b2db618",
       "createdAt": "1703881859065",
       "updatedAt": "1703881859065"
+    },
+    {
+      "bookId": "01d52897-25c9-4320-a673-77e805e1c64f",
+      "authorId": "961fa589-c98e-4fd9-97ed-f0069b0df78e",
+      "createdAt": "1704458291028",
+      "updatedAt": "1704458291028"
+    },
+    {
+      "bookId": "01d52897-25c9-4320-a673-77e805e1c64f",
+      "authorId": "3311c4a0-08aa-481e-9db7-aebcc14a1ab1",
+      "createdAt": "1704458291028",
+      "updatedAt": "1704458291028"
+    },
+    {
+      "bookId": "6f036412-0de3-4a20-9726-5c15dcf14636",
+      "authorId": "2ccad07d-e7c3-4a06-afa7-492abbd8c59c",
+      "createdAt": "1705057961895",
+      "updatedAt": "1705057961895"
     }
   ]
 }
