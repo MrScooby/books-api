@@ -8137,6 +8137,32 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/5088000/5088002/1102406-352x500.jpg",
       "createdAt": "1705057961895",
       "updatedAt": "1705057961895"
+    },
+    {
+      "id": "57033161-d023-487e-8c44-434d18ceafd5",
+      "ISBN": "9788367793155",
+      "lcId": 5068091,
+      "pages": 218,
+      "rating": 6,
+      "title": "Wszystkie wskaźniki czerwone. Sztuczny stan",
+      "url": "https://lubimyczytac.pl/ksiazka/5068091/wszystkie-wskazniki-czerwone-sztuczny-stan",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5068000/5068091/1078649-352x500.jpg",
+      "createdAt": "1705346580976",
+      "updatedAt": "1705346580976"
+    },
+    {
+      "id": "e442b314-c5ec-4786-af3e-28b2215e9446",
+      "ISBN": "9788308048894",
+      "lcId": 134067,
+      "pages": 224,
+      "rating": 5,
+      "title": "Bajki robotów",
+      "url": "https://lubimyczytac.pl/ksiazka/134067/bajki-robotow",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/134000/134067/352x500.jpg",
+      "createdAt": "1706703010307",
+      "updatedAt": "1706703010307"
     }
   ],
   "genres": [
@@ -10637,6 +10663,12 @@
       "id": "2ccad07d-e7c3-4a06-afa7-492abbd8c59c",
       "createdAt": "1705057961895",
       "updatedAt": "1705057961895"
+    },
+    {
+      "name": "Martha Wells",
+      "id": "e8c09d4d-c08c-406a-8d75-fb21fb31c68b",
+      "createdAt": "1705346580976",
+      "updatedAt": "1705346580976"
     }
   ],
   "booksOnShelves": [
@@ -16975,6 +17007,30 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1705057961895",
       "updatedAt": "1705057961895"
+    },
+    {
+      "bookId": "57033161-d023-487e-8c44-434d18ceafd5",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1705346580976",
+      "updatedAt": "1705346580976"
+    },
+    {
+      "bookId": "57033161-d023-487e-8c44-434d18ceafd5",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1705346580976",
+      "updatedAt": "1705346580976"
+    },
+    {
+      "bookId": "e442b314-c5ec-4786-af3e-28b2215e9446",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1706703010307",
+      "updatedAt": "1706703010307"
+    },
+    {
+      "bookId": "e442b314-c5ec-4786-af3e-28b2215e9446",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1706703010307",
+      "updatedAt": "1706703010307"
     }
   ],
   "shelves": [
@@ -17030,7 +17086,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 234104,
+      "pages": 234546,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -17065,7 +17121,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 648,
+      "pages": 1090,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -21456,6 +21512,18 @@
       "authorId": "2ccad07d-e7c3-4a06-afa7-492abbd8c59c",
       "createdAt": "1705057961895",
       "updatedAt": "1705057961895"
+    },
+    {
+      "bookId": "57033161-d023-487e-8c44-434d18ceafd5",
+      "authorId": "e8c09d4d-c08c-406a-8d75-fb21fb31c68b",
+      "createdAt": "1705346580976",
+      "updatedAt": "1705346580976"
+    },
+    {
+      "bookId": "e442b314-c5ec-4786-af3e-28b2215e9446",
+      "authorId": "35460ac0-56b4-481b-b8f4-b48094c4cdc4",
+      "createdAt": "1706703010307",
+      "updatedAt": "1706703010307"
     }
   ]
 }
