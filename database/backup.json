@@ -17031,6 +17031,12 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1706703010307",
       "updatedAt": "1706703010307"
+    },
+    {
+      "bookId": "785464a7-4b72-4bc9-bb02-501506003101",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1706703010307",
+      "updatedAt": "1706703010307"
     }
   ],
   "shelves": [
@@ -17121,7 +17127,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 1090,
+      "pages": 1760,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
