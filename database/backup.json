@@ -8163,6 +8163,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/134000/134067/352x500.jpg",
       "createdAt": "1706703010307",
       "updatedAt": "1706703010307"
+    },
+    {
+      "id": "e4eaeee7-f0f6-44e5-a13a-ab6209024acb",
+      "ISBN": "9788375102673",
+      "lcId": 47771,
+      "pages": 496,
+      "rating": 8,
+      "title": "Łuk triumfalny",
+      "url": "https://lubimyczytac.pl/ksiazka/47771/luk-triumfalny",
+      "genreId": "f5fb4fb4-d838-40bd-9037-c251d1223bd6",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/47000/47771/298933-352x500.jpg",
+      "createdAt": "1710711905931",
+      "updatedAt": "1710711905931"
     }
   ],
   "genres": [
@@ -10669,6 +10682,12 @@
       "id": "e8c09d4d-c08c-406a-8d75-fb21fb31c68b",
       "createdAt": "1705346580976",
       "updatedAt": "1705346580976"
+    },
+    {
+      "name": "Erich Maria Remarque",
+      "id": "f8b9cb2a-a653-49a6-8c5b-080a6f0f2694",
+      "createdAt": "1710711905931",
+      "updatedAt": "1710711905931"
     }
   ],
   "booksOnShelves": [
@@ -17037,6 +17056,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1706703010307",
       "updatedAt": "1706703010307"
+    },
+    {
+      "bookId": "e4eaeee7-f0f6-44e5-a13a-ab6209024acb",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1710711905931",
+      "updatedAt": "1710711905931"
+    },
+    {
+      "bookId": "e4eaeee7-f0f6-44e5-a13a-ab6209024acb",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1710711905931",
+      "updatedAt": "1710711905931"
     }
   ],
   "shelves": [
@@ -17092,7 +17123,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 234546,
+      "pages": 235042,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -17127,7 +17158,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 1760,
+      "pages": 2256,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -21530,6 +21561,12 @@
       "authorId": "35460ac0-56b4-481b-b8f4-b48094c4cdc4",
       "createdAt": "1706703010307",
       "updatedAt": "1706703010307"
+    },
+    {
+      "bookId": "e4eaeee7-f0f6-44e5-a13a-ab6209024acb",
+      "authorId": "f8b9cb2a-a653-49a6-8c5b-080a6f0f2694",
+      "createdAt": "1710711905931",
+      "updatedAt": "1710711905931"
     }
   ]
 }
