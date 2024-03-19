@@ -8176,6 +8176,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/47000/47771/298933-352x500.jpg",
       "createdAt": "1710711905931",
       "updatedAt": "1710711905931"
+    },
+    {
+      "id": "07cd13a1-799b-4086-8526-c49d7d9bcc7d",
+      "ISBN": "9788367023313",
+      "lcId": 259560,
+      "pages": 300,
+      "rating": 4,
+      "title": "Skrzydlate opowieści",
+      "url": "https://lubimyczytac.pl/ksiazka/259560/skrzydlate-opowiesci",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/259000/259560/960957-352x500.jpg",
+      "createdAt": "1710885276047",
+      "updatedAt": "1710885276047"
     }
   ],
   "genres": [
@@ -17068,6 +17081,24 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1710711905931",
       "updatedAt": "1710711905931"
+    },
+    {
+      "bookId": "07cd13a1-799b-4086-8526-c49d7d9bcc7d",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1710885276047",
+      "updatedAt": "1710885276047"
+    },
+    {
+      "bookId": "07cd13a1-799b-4086-8526-c49d7d9bcc7d",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1710885276047",
+      "updatedAt": "1710885276047"
+    },
+    {
+      "bookId": "07cd13a1-799b-4086-8526-c49d7d9bcc7d",
+      "shelfId": "d293a830-9cbe-467d-9ea1-cc2745d50c44",
+      "createdAt": "1710885276047",
+      "updatedAt": "1710885276047"
     }
   ],
   "shelves": [
@@ -17116,14 +17147,14 @@
     {
       "id": "d293a830-9cbe-467d-9ea1-cc2745d50c44",
       "name": "Uczta wyobraźni",
-      "pages": 21118,
+      "pages": 21418,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 235042,
+      "pages": 235342,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -17158,7 +17189,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 2256,
+      "pages": 2556,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -21567,6 +21598,12 @@
       "authorId": "f8b9cb2a-a653-49a6-8c5b-080a6f0f2694",
       "createdAt": "1710711905931",
       "updatedAt": "1710711905931"
+    },
+    {
+      "bookId": "07cd13a1-799b-4086-8526-c49d7d9bcc7d",
+      "authorId": "5838a1bd-4daa-458d-8d3c-45e1671408be",
+      "createdAt": "1710885276047",
+      "updatedAt": "1710885276047"
     }
   ]
 }
