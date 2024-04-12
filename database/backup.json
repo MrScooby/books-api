@@ -8215,6 +8215,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/5002000/5002819/1129953-352x500.jpg",
       "createdAt": "1711800077452",
       "updatedAt": "1711800077452"
+    },
+    {
+      "id": "f031403b-997f-4831-b1ba-491d2b94bdb4",
+      "ISBN": "9788306035001",
+      "lcId": 4911234,
+      "pages": 452,
+      "rating": 3,
+      "title": "Moby Dick. Tom 2",
+      "url": "https://lubimyczytac.pl/ksiazka/4911234/moby-dick-tom-2",
+      "genreId": "50868df5-ca40-47b3-abe5-69c213d7bd2f",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4911000/4911234/782250-352x500.jpg",
+      "createdAt": "1712907758383",
+      "updatedAt": "1712907758383"
     }
   ],
   "genres": [
@@ -17167,6 +17180,18 @@
       "shelfId": "d293a830-9cbe-467d-9ea1-cc2745d50c44",
       "createdAt": "1711800077452",
       "updatedAt": "1711800077452"
+    },
+    {
+      "bookId": "f031403b-997f-4831-b1ba-491d2b94bdb4",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1712907758383",
+      "updatedAt": "1712907758383"
+    },
+    {
+      "bookId": "f031403b-997f-4831-b1ba-491d2b94bdb4",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1712907758383",
+      "updatedAt": "1712907758383"
     }
   ],
   "shelves": [
@@ -17222,7 +17247,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 236058,
+      "pages": 236510,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -17257,7 +17282,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 3272,
+      "pages": 3724,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -21684,6 +21709,12 @@
       "authorId": "f0fc2a11-25cd-42bb-a027-15846514933f",
       "createdAt": "1711800077452",
       "updatedAt": "1711800077452"
+    },
+    {
+      "bookId": "f031403b-997f-4831-b1ba-491d2b94bdb4",
+      "authorId": "b53667e0-e7e0-44fd-8ac8-1baeeecbbfcb",
+      "createdAt": "1712907758383",
+      "updatedAt": "1712907758383"
     }
   ]
 }
