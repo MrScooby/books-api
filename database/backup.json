@@ -8228,6 +8228,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4911000/4911234/782250-352x500.jpg",
       "createdAt": "1712907758383",
       "updatedAt": "1712907758383"
+    },
+    {
+      "id": "7285f393-3220-4a5d-8d29-7bbaed8a2f3c",
+      "ISBN": "9788328705326",
+      "lcId": 235716,
+      "pages": 448,
+      "rating": 8,
+      "title": "Marsjanin",
+      "url": "https://lubimyczytac.pl/ksiazka/235716/marsjanin",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/235000/235716/324070-352x500.jpg",
+      "createdAt": "1713855619912",
+      "updatedAt": "1713855619912"
     }
   ],
   "genres": [
@@ -17192,6 +17205,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1712907758383",
       "updatedAt": "1712907758383"
+    },
+    {
+      "bookId": "7285f393-3220-4a5d-8d29-7bbaed8a2f3c",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1713855619912",
+      "updatedAt": "1713855619912"
+    },
+    {
+      "bookId": "7285f393-3220-4a5d-8d29-7bbaed8a2f3c",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1713855619912",
+      "updatedAt": "1713855619912"
     }
   ],
   "shelves": [
@@ -17247,7 +17272,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 236510,
+      "pages": 236958,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -17282,7 +17307,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 3724,
+      "pages": 4172,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -21715,6 +21740,12 @@
       "authorId": "b53667e0-e7e0-44fd-8ac8-1baeeecbbfcb",
       "createdAt": "1712907758383",
       "updatedAt": "1712907758383"
+    },
+    {
+      "bookId": "7285f393-3220-4a5d-8d29-7bbaed8a2f3c",
+      "authorId": "13f0db2e-b8ed-4462-99d3-a7dc35c0e262",
+      "createdAt": "1713855619912",
+      "updatedAt": "1713855619912"
     }
   ]
 }
