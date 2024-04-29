@@ -8241,6 +8241,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/235000/235716/324070-352x500.jpg",
       "createdAt": "1713855619912",
       "updatedAt": "1713855619912"
+    },
+    {
+      "id": "76857425-5409-4caf-8ee9-9aa142c0bbab",
+      "ISBN": "9788366505391",
+      "lcId": 5025585,
+      "pages": 376,
+      "rating": 3,
+      "title": "Skąd",
+      "url": "https://lubimyczytac.pl/ksiazka/5025585/skad",
+      "genreId": "f5fb4fb4-d838-40bd-9037-c251d1223bd6",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5025000/5025585/997539-352x500.jpg",
+      "createdAt": "1714219193801",
+      "updatedAt": "1714219193801"
     }
   ],
   "genres": [
@@ -10765,6 +10778,12 @@
       "id": "f0fc2a11-25cd-42bb-a027-15846514933f",
       "createdAt": "1711800077452",
       "updatedAt": "1711800077452"
+    },
+    {
+      "name": "Saša Stanišić",
+      "id": "1274a820-e052-40c4-bd27-57243e07d39c",
+      "createdAt": "1714219193801",
+      "updatedAt": "1714219193801"
     }
   ],
   "booksOnShelves": [
@@ -17217,6 +17236,24 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1713855619912",
       "updatedAt": "1713855619912"
+    },
+    {
+      "bookId": "76857425-5409-4caf-8ee9-9aa142c0bbab",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1714219193801",
+      "updatedAt": "1714219193801"
+    },
+    {
+      "bookId": "76857425-5409-4caf-8ee9-9aa142c0bbab",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1714219193801",
+      "updatedAt": "1714219193801"
+    },
+    {
+      "bookId": "5abc1d56-b5d8-4370-ad6d-1d71365d1f84",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1714219193801",
+      "updatedAt": "1714219193801"
     }
   ],
   "shelves": [
@@ -17272,7 +17309,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 236958,
+      "pages": 237334,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -17307,7 +17344,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 4172,
+      "pages": 4832,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -21746,6 +21783,12 @@
       "authorId": "13f0db2e-b8ed-4462-99d3-a7dc35c0e262",
       "createdAt": "1713855619912",
       "updatedAt": "1713855619912"
+    },
+    {
+      "bookId": "76857425-5409-4caf-8ee9-9aa142c0bbab",
+      "authorId": "1274a820-e052-40c4-bd27-57243e07d39c",
+      "createdAt": "1714219193801",
+      "updatedAt": "1714219193801"
     }
   ]
 }
