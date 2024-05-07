@@ -8254,6 +8254,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/5025000/5025585/997539-352x500.jpg",
       "createdAt": "1714219193801",
       "updatedAt": "1714219193801"
+    },
+    {
+      "id": "fc8f9eb8-07f7-40b9-bb5b-0de8ae93b67b",
+      "ISBN": "9788307031002",
+      "lcId": 37719,
+      "pages": 343,
+      "rating": 7,
+      "title": "Heban",
+      "url": "https://lubimyczytac.pl/ksiazka/37719/heban",
+      "genreId": "e9ac4deb-2a32-49a2-a1bf-cbc091c4564f",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/37000/37719/352x500.jpg",
+      "createdAt": "1715061500034",
+      "updatedAt": "1715061500034"
     }
   ],
   "genres": [
@@ -10784,6 +10797,12 @@
       "id": "1274a820-e052-40c4-bd27-57243e07d39c",
       "createdAt": "1714219193801",
       "updatedAt": "1714219193801"
+    },
+    {
+      "name": "Ryszard Kapuściński",
+      "id": "2b8183bc-8e1d-483b-98be-667d2cfbb2c6",
+      "createdAt": "1715061500034",
+      "updatedAt": "1715061500034"
     }
   ],
   "booksOnShelves": [
@@ -17254,6 +17273,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1714219193801",
       "updatedAt": "1714219193801"
+    },
+    {
+      "bookId": "fc8f9eb8-07f7-40b9-bb5b-0de8ae93b67b",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1715061500034",
+      "updatedAt": "1715061500034"
+    },
+    {
+      "bookId": "fc8f9eb8-07f7-40b9-bb5b-0de8ae93b67b",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1715061500034",
+      "updatedAt": "1715061500034"
     }
   ],
   "shelves": [
@@ -17309,7 +17340,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 237334,
+      "pages": 237677,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -17344,7 +17375,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 4832,
+      "pages": 5175,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -21789,6 +21820,12 @@
       "authorId": "1274a820-e052-40c4-bd27-57243e07d39c",
       "createdAt": "1714219193801",
       "updatedAt": "1714219193801"
+    },
+    {
+      "bookId": "fc8f9eb8-07f7-40b9-bb5b-0de8ae93b67b",
+      "authorId": "2b8183bc-8e1d-483b-98be-667d2cfbb2c6",
+      "createdAt": "1715061500034",
+      "updatedAt": "1715061500034"
     }
   ]
 }
