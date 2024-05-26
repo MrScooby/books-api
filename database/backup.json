@@ -8280,6 +8280,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/231000/231620/309088-352x500.jpg",
       "createdAt": "1715716195565",
       "updatedAt": "1715716195565"
+    },
+    {
+      "id": "ae3e1ef7-f8a7-48e4-bef3-c63c1f3402a7",
+      "ISBN": "9788368069181",
+      "lcId": 5108706,
+      "pages": 352,
+      "rating": 8,
+      "title": "Góra pod morzem",
+      "url": "https://lubimyczytac.pl/ksiazka/5108706/gora-pod-morzem",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5108000/5108706/1137376-352x500.jpg",
+      "createdAt": "1716731981177",
+      "updatedAt": "1716731981177"
     }
   ],
   "genres": [
@@ -10822,6 +10835,12 @@
       "id": "9c3b1de1-6dce-446f-bf70-98eebf853a91",
       "createdAt": "1715716195565",
       "updatedAt": "1715716195565"
+    },
+    {
+      "name": "Ray Nayler",
+      "id": "7b38e9df-d4e3-4586-be0f-2e3af80483b1",
+      "createdAt": "1716731981177",
+      "updatedAt": "1716731981177"
     }
   ],
   "booksOnShelves": [
@@ -17316,6 +17335,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1715716195565",
       "updatedAt": "1715716195565"
+    },
+    {
+      "bookId": "ae3e1ef7-f8a7-48e4-bef3-c63c1f3402a7",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1716731981177",
+      "updatedAt": "1716731981177"
+    },
+    {
+      "bookId": "ae3e1ef7-f8a7-48e4-bef3-c63c1f3402a7",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1716731981177",
+      "updatedAt": "1716731981177"
     }
   ],
   "shelves": [
@@ -17371,7 +17402,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 238043,
+      "pages": 238395,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -17406,7 +17437,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 5541,
+      "pages": 5893,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -21863,6 +21894,12 @@
       "authorId": "9c3b1de1-6dce-446f-bf70-98eebf853a91",
       "createdAt": "1715716195565",
       "updatedAt": "1715716195565"
+    },
+    {
+      "bookId": "ae3e1ef7-f8a7-48e4-bef3-c63c1f3402a7",
+      "authorId": "7b38e9df-d4e3-4586-be0f-2e3af80483b1",
+      "createdAt": "1716731981177",
+      "updatedAt": "1716731981177"
     }
   ]
 }
