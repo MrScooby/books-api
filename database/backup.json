@@ -8293,6 +8293,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/5108000/5108706/1137376-352x500.jpg",
       "createdAt": "1716731981177",
       "updatedAt": "1716731981177"
+    },
+    {
+      "id": "01c60df5-864d-48d4-a48e-0c1a457d4055",
+      "ISBN": "9788382892444",
+      "lcId": 5091460,
+      "pages": 528,
+      "rating": 7,
+      "title": "Informacja zwrotna",
+      "url": "https://lubimyczytac.pl/ksiazka/5091460/informacja-zwrotna",
+      "genreId": "f5fb4fb4-d838-40bd-9037-c251d1223bd6",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5091000/5091460/1108236-352x500.jpg",
+      "createdAt": "1717086176471",
+      "updatedAt": "1717086176471"
     }
   ],
   "genres": [
@@ -17347,6 +17360,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1716731981177",
       "updatedAt": "1716731981177"
+    },
+    {
+      "bookId": "01c60df5-864d-48d4-a48e-0c1a457d4055",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1717086176471",
+      "updatedAt": "1717086176471"
+    },
+    {
+      "bookId": "01c60df5-864d-48d4-a48e-0c1a457d4055",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1717086176471",
+      "updatedAt": "1717086176471"
     }
   ],
   "shelves": [
@@ -17402,7 +17427,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 238395,
+      "pages": 238923,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -17437,7 +17462,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 5893,
+      "pages": 6421,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -21900,6 +21925,12 @@
       "authorId": "7b38e9df-d4e3-4586-be0f-2e3af80483b1",
       "createdAt": "1716731981177",
       "updatedAt": "1716731981177"
+    },
+    {
+      "bookId": "01c60df5-864d-48d4-a48e-0c1a457d4055",
+      "authorId": "5a624d98-917f-4b9d-bff0-c5246301de94",
+      "createdAt": "1717086176471",
+      "updatedAt": "1717086176471"
     }
   ]
 }
