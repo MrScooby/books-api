@@ -8332,6 +8332,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/110000/110461/352x500.jpg",
       "createdAt": "1718225230071",
       "updatedAt": "1718225230071"
+    },
+    {
+      "id": "c4763c01-14ca-41e3-8392-1f24d6b4d27c",
+      "ISBN": "9788381913256",
+      "lcId": 4986312,
+      "pages": 224,
+      "rating": 3,
+      "title": "Czarne lato. Australia płonie",
+      "url": "https://lubimyczytac.pl/ksiazka/4986312/czarne-lato-australia-plonie",
+      "genreId": "e9ac4deb-2a32-49a2-a1bf-cbc091c4564f",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4986000/4986312/943121-352x500.jpg",
+      "createdAt": "1718559033219",
+      "updatedAt": "1718559033219"
     }
   ],
   "genres": [
@@ -10880,6 +10893,12 @@
       "id": "7b38e9df-d4e3-4586-be0f-2e3af80483b1",
       "createdAt": "1716731981177",
       "updatedAt": "1716731981177"
+    },
+    {
+      "name": "Szymon Drobniak",
+      "id": "fc9aeda5-d780-4eda-82b5-9c6d18d10650",
+      "createdAt": "1718559033219",
+      "updatedAt": "1718559033219"
     }
   ],
   "booksOnShelves": [
@@ -17428,6 +17447,18 @@
       "shelfId": "d293a830-9cbe-467d-9ea1-cc2745d50c44",
       "createdAt": "1718225230071",
       "updatedAt": "1718225230071"
+    },
+    {
+      "bookId": "c4763c01-14ca-41e3-8392-1f24d6b4d27c",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1718559033219",
+      "updatedAt": "1718559033219"
+    },
+    {
+      "bookId": "c4763c01-14ca-41e3-8392-1f24d6b4d27c",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1718559033219",
+      "updatedAt": "1718559033219"
     }
   ],
   "shelves": [
@@ -17483,7 +17514,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 239827,
+      "pages": 240051,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -17518,7 +17549,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 7325,
+      "pages": 7549,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -21999,6 +22030,12 @@
       "authorId": "39fa318b-d78f-481d-a7f5-80984587917b",
       "createdAt": "1718225230071",
       "updatedAt": "1718225230071"
+    },
+    {
+      "bookId": "c4763c01-14ca-41e3-8392-1f24d6b4d27c",
+      "authorId": "fc9aeda5-d780-4eda-82b5-9c6d18d10650",
+      "createdAt": "1718559033219",
+      "updatedAt": "1718559033219"
     }
   ]
 }
