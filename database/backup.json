@@ -8345,6 +8345,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4986000/4986312/943121-352x500.jpg",
       "createdAt": "1718559033219",
       "updatedAt": "1718559033219"
+    },
+    {
+      "id": "306b4af3-529e-45e4-b5c9-ae8d28bf0de6",
+      "ISBN": "9788374800969",
+      "lcId": 31942,
+      "pages": 552,
+      "rating": 4,
+      "title": "Mroczny wzór",
+      "url": "https://lubimyczytac.pl/ksiazka/31942/mroczny-wzor",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/31000/31942/352x500.jpg",
+      "createdAt": "1719746066974",
+      "updatedAt": "1719746066974"
     }
   ],
   "genres": [
@@ -17459,6 +17472,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1718559033219",
       "updatedAt": "1718559033219"
+    },
+    {
+      "bookId": "306b4af3-529e-45e4-b5c9-ae8d28bf0de6",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1719746066974",
+      "updatedAt": "1719746066974"
+    },
+    {
+      "bookId": "306b4af3-529e-45e4-b5c9-ae8d28bf0de6",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1719746066974",
+      "updatedAt": "1719746066974"
     }
   ],
   "shelves": [
@@ -17514,7 +17539,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 240051,
+      "pages": 240603,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -17549,7 +17574,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 7549,
+      "pages": 8101,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -22036,6 +22061,12 @@
       "authorId": "fc9aeda5-d780-4eda-82b5-9c6d18d10650",
       "createdAt": "1718559033219",
       "updatedAt": "1718559033219"
+    },
+    {
+      "bookId": "306b4af3-529e-45e4-b5c9-ae8d28bf0de6",
+      "authorId": "5592a541-b47a-4bca-9836-f25e406a80d6",
+      "createdAt": "1719746066974",
+      "updatedAt": "1719746066974"
     }
   ]
 }
