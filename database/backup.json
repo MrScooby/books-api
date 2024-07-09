@@ -8358,6 +8358,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/31000/31942/352x500.jpg",
       "createdAt": "1719746066974",
       "updatedAt": "1719746066974"
+    },
+    {
+      "id": "577913ef-8300-416c-a7a2-8b78bd6f778a",
+      "ISBN": "9788365315038",
+      "lcId": 272473,
+      "pages": 410,
+      "rating": 3,
+      "title": "Metro 2034",
+      "url": "https://lubimyczytac.pl/ksiazka/272473/metro-2034",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/272000/272473/1115380-352x500.jpg",
+      "createdAt": "1720536938483",
+      "updatedAt": "1720536938483"
     }
   ],
   "genres": [
@@ -17484,6 +17497,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1719746066974",
       "updatedAt": "1719746066974"
+    },
+    {
+      "bookId": "577913ef-8300-416c-a7a2-8b78bd6f778a",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1720536938483",
+      "updatedAt": "1720536938483"
+    },
+    {
+      "bookId": "577913ef-8300-416c-a7a2-8b78bd6f778a",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1720536938483",
+      "updatedAt": "1720536938483"
     }
   ],
   "shelves": [
@@ -17539,7 +17564,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 240603,
+      "pages": 241013,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -17574,7 +17599,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 8101,
+      "pages": 8511,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -22067,6 +22092,12 @@
       "authorId": "5592a541-b47a-4bca-9836-f25e406a80d6",
       "createdAt": "1719746066974",
       "updatedAt": "1719746066974"
+    },
+    {
+      "bookId": "577913ef-8300-416c-a7a2-8b78bd6f778a",
+      "authorId": "f367a8dc-d4e5-47b0-a214-f9590cba267e",
+      "createdAt": "1720536938483",
+      "updatedAt": "1720536938483"
     }
   ]
 }
