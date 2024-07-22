@@ -8371,6 +8371,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/272000/272473/1115380-352x500.jpg",
       "createdAt": "1720536938483",
       "updatedAt": "1720536938483"
+    },
+    {
+      "id": "63a35a8f-6730-410d-a159-19494bcd4574",
+      "ISBN": "9788365970091",
+      "lcId": 5037259,
+      "pages": 248,
+      "rating": 9,
+      "title": "Głusza",
+      "url": "https://lubimyczytac.pl/ksiazka/5037259/glusza",
+      "genreId": "e9ac4deb-2a32-49a2-a1bf-cbc091c4564f",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5037000/5037259/1041452-352x500.jpg",
+      "createdAt": "1721640107200",
+      "updatedAt": "1721640107200"
     }
   ],
   "genres": [
@@ -10925,6 +10938,12 @@
       "id": "fc9aeda5-d780-4eda-82b5-9c6d18d10650",
       "createdAt": "1718559033219",
       "updatedAt": "1718559033219"
+    },
+    {
+      "name": "Anna Goc",
+      "id": "b9e4248c-cdf1-463b-a33b-368a0eb932a1",
+      "createdAt": "1721640107200",
+      "updatedAt": "1721640107200"
     }
   ],
   "booksOnShelves": [
@@ -17509,6 +17528,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1720536938483",
       "updatedAt": "1720536938483"
+    },
+    {
+      "bookId": "63a35a8f-6730-410d-a159-19494bcd4574",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1721640107200",
+      "updatedAt": "1721640107200"
+    },
+    {
+      "bookId": "63a35a8f-6730-410d-a159-19494bcd4574",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1721640107200",
+      "updatedAt": "1721640107200"
     }
   ],
   "shelves": [
@@ -17564,7 +17595,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 241013,
+      "pages": 241261,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -17599,7 +17630,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 8511,
+      "pages": 8759,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -22098,6 +22129,12 @@
       "authorId": "f367a8dc-d4e5-47b0-a214-f9590cba267e",
       "createdAt": "1720536938483",
       "updatedAt": "1720536938483"
+    },
+    {
+      "bookId": "63a35a8f-6730-410d-a159-19494bcd4574",
+      "authorId": "b9e4248c-cdf1-463b-a33b-368a0eb932a1",
+      "createdAt": "1721640107200",
+      "updatedAt": "1721640107200"
     }
   ]
 }
