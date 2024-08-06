@@ -8384,6 +8384,32 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/5037000/5037259/1041452-352x500.jpg",
       "createdAt": "1721640107200",
       "updatedAt": "1721640107200"
+    },
+    {
+      "id": "e991a8af-9c3b-4c0a-ac9f-f51675a40187",
+      "ISBN": "9788382025965",
+      "lcId": 5034333,
+      "pages": 612,
+      "rating": 8,
+      "title": "Ogień i krew. Część 1",
+      "url": "https://lubimyczytac.pl/ksiazka/5034333/ogien-i-krew-czesc-1",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5034000/5034333/1012240-352x500.jpg",
+      "createdAt": "1722846190836",
+      "updatedAt": "1722846190836"
+    },
+    {
+      "id": "01eb75e6-dec3-486f-9582-deb8be39ec78",
+      "ISBN": "9788381165518",
+      "lcId": 4871838,
+      "pages": 518,
+      "rating": 8,
+      "title": "Ogień i krew. Część 2",
+      "url": "https://lubimyczytac.pl/ksiazka/4871838/ogien-i-krew-czesc-2",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4871000/4871838/706609-352x500.jpg",
+      "createdAt": "1722951236628",
+      "updatedAt": "1722951236628"
     }
   ],
   "genres": [
@@ -17540,6 +17566,30 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1721640107200",
       "updatedAt": "1721640107200"
+    },
+    {
+      "bookId": "e991a8af-9c3b-4c0a-ac9f-f51675a40187",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1722846190836",
+      "updatedAt": "1722846190836"
+    },
+    {
+      "bookId": "e991a8af-9c3b-4c0a-ac9f-f51675a40187",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1722846190836",
+      "updatedAt": "1722846190836"
+    },
+    {
+      "bookId": "01eb75e6-dec3-486f-9582-deb8be39ec78",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1722951236628",
+      "updatedAt": "1722951236628"
+    },
+    {
+      "bookId": "01eb75e6-dec3-486f-9582-deb8be39ec78",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1722951236628",
+      "updatedAt": "1722951236628"
     }
   ],
   "shelves": [
@@ -17595,7 +17645,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 241261,
+      "pages": 242391,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -17630,7 +17680,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 8759,
+      "pages": 9889,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -22135,6 +22185,18 @@
       "authorId": "b9e4248c-cdf1-463b-a33b-368a0eb932a1",
       "createdAt": "1721640107200",
       "updatedAt": "1721640107200"
+    },
+    {
+      "bookId": "e991a8af-9c3b-4c0a-ac9f-f51675a40187",
+      "authorId": "0e61dfc3-b93e-4099-85f9-85f636458c7f",
+      "createdAt": "1722846190836",
+      "updatedAt": "1722846190836"
+    },
+    {
+      "bookId": "01eb75e6-dec3-486f-9582-deb8be39ec78",
+      "authorId": "0e61dfc3-b93e-4099-85f9-85f636458c7f",
+      "createdAt": "1722951236628",
+      "updatedAt": "1722951236628"
     }
   ]
 }
