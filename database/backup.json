@@ -8410,6 +8410,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4871000/4871838/706609-352x500.jpg",
       "createdAt": "1722951236628",
       "updatedAt": "1722951236628"
+    },
+    {
+      "id": "93a9482c-7d9a-40a4-8a9e-52a0ce89d2b3",
+      "ISBN": "9788375365757",
+      "lcId": 225403,
+      "pages": 248,
+      "rating": 5,
+      "title": "Rozmowy pod drzewem zapomnienia",
+      "url": "https://lubimyczytac.pl/ksiazka/225403/rozmowy-pod-drzewem-zapomnienia",
+      "genreId": "f5fb4fb4-d838-40bd-9037-c251d1223bd6",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/225000/225403/497882-352x500.jpg",
+      "createdAt": "1723320194941",
+      "updatedAt": "1723320194941"
     }
   ],
   "genres": [
@@ -17590,6 +17603,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1722951236628",
       "updatedAt": "1722951236628"
+    },
+    {
+      "bookId": "93a9482c-7d9a-40a4-8a9e-52a0ce89d2b3",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1723320194941",
+      "updatedAt": "1723320194941"
+    },
+    {
+      "bookId": "93a9482c-7d9a-40a4-8a9e-52a0ce89d2b3",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1723320194941",
+      "updatedAt": "1723320194941"
     }
   ],
   "shelves": [
@@ -17645,7 +17670,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 242391,
+      "pages": 242639,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -17680,7 +17705,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 9889,
+      "pages": 10137,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -22197,6 +22222,12 @@
       "authorId": "0e61dfc3-b93e-4099-85f9-85f636458c7f",
       "createdAt": "1722951236628",
       "updatedAt": "1722951236628"
+    },
+    {
+      "bookId": "93a9482c-7d9a-40a4-8a9e-52a0ce89d2b3",
+      "authorId": "94532fc2-d4a8-4545-a576-15a2d0d5e11e",
+      "createdAt": "1723320194941",
+      "updatedAt": "1723320194941"
     }
   ]
 }
