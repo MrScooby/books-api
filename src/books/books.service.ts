@@ -1,16 +1,16 @@
-import { Injectable } from '@nestjs/common'
-import { BookEntity } from './entities/book.entity'
-import { DBService } from 'src/db/db.service'
+import { HttpStatus, Injectable, NotFoundException } from '@nestjs/common'
+import { defaultPaginationOptions } from 'common/constants'
 import {
   PaginatedResults,
   SearchPaginatedData
 } from 'common/interfaces/pagination'
-import { defaultPaginationOptions } from 'common/constants'
-import { CreateBookDto } from './dto/create-book.dto'
 import scrapBookData, { URLdata } from 'common/scripts/scrap_book_data'
-import { BookDto } from './dto/book.dto'
 import * as fs from 'fs'
+import { DBService } from 'src/db/db.service'
 import * as backup from '../../database/backup.json'
+import { BookDto } from './dto/book.dto'
+import { CreateBookDto } from './dto/create-book.dto'
+import { BookEntity } from './entities/book.entity'
 
 @Injectable()
 export class BooksService {
@@ -261,6 +261,13 @@ export class BooksService {
       }
     })
 
+    if (!book) {
+      throw new NotFoundException({
+        error: `Book with id: ${id} doesn't exists`,
+        status: HttpStatus.NOT_FOUND
+      })
+    }
+
     // TODO: create generic function to omit some values
     // const asd = this.exclude(book, ['title'])
 
@@ -291,5 +298,81 @@ export class BooksService {
     const book = await this.findOne(id)
 
     return book.title
+  }
+
+  async remove(id: string): Promise<string> {
+    const book = await this.db.books.findUnique({
+      where: {
+        id
+      }
+    })
+
+    if (!book) {
+      throw new NotFoundException({
+        error: `Book with id: ${id} doesn't exists`,
+        status: HttpStatus.NOT_FOUND
+      })
+    }
+
+    await this.db.$transaction(async (tx) => {
+      const booksOnShelves = await tx.booksOnShelves.findMany({
+        where: { bookId: id }
+      })
+
+      const shelvesPromises = booksOnShelves.map(async (t) => {
+        const shelf = await tx.shelves.findUnique({
+          where: { id: t.shelfId }
+        })
+
+        const promises = []
+
+        promises.push(
+          tx.shelves.update({
+            where: { id: t.shelfId },
+            data: { pages: shelf.pages - book.pages }
+          })
+        )
+
+        promises.push(
+          tx.booksOnShelves.delete({
+            where: {
+              bookId_shelfId: {
+                bookId: id,
+                shelfId: t.shelfId
+              }
+            }
+          })
+        )
+
+        return Promise.all(promises)
+      })
+
+      const authors = await tx.authorsBooks.findMany({
+        where: {
+          bookId: id
+        }
+      })
+
+      const authorsPromises: Promise<any>[] = authors.map(async (a) =>
+        tx.authorsBooks.delete({
+          where: {
+            bookId_authorId: {
+              bookId: id,
+              authorId: a.authorId
+            }
+          }
+        })
+      )
+
+      await Promise.all(shelvesPromises.concat(authorsPromises))
+
+      await tx.books.delete({
+        where: {
+          id
+        }
+      })
+    })
+
+    return `Book was deleted.`
   }
 }

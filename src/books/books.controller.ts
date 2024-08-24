@@ -1,12 +1,20 @@
-import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common'
-import { BooksService } from './books.service'
-import { BookEntity } from './entities/book.entity'
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Query
+} from '@nestjs/common'
 import {
   PaginatedResults,
   SearchPaginatedData
 } from 'common/interfaces/pagination'
-import { CreateBookDto } from './dto/create-book.dto'
+import { BooksService } from './books.service'
 import { BookDto } from './dto/book.dto'
+import { CreateBookDto } from './dto/create-book.dto'
+import { BookEntity } from './entities/book.entity'
 
 @Controller('books')
 export class BooksController {
@@ -44,8 +52,8 @@ export class BooksController {
   //   return this.bookService.update(+id, updateBookDto);
   // }
 
-  // @Delete(':id')
-  // remove(@Param('id') id: string) {
-  //   return this.bookService.remove(+id);
-  // }
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return this.bookService.remove(id)
+  }
 }
