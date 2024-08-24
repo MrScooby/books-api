@@ -8423,6 +8423,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4817000/4817313/617690-352x500.jpg",
       "createdAt": "1723448180517",
       "updatedAt": "1723448180517"
+    },
+    {
+      "id": "8154ae13-4bbd-407c-a3fb-4afb068f6667",
+      "ISBN": "9788383351902",
+      "lcId": 5114422,
+      "pages": 844,
+      "rating": 10,
+      "title": "Gra o tron",
+      "url": "https://lubimyczytac.pl/ksiazka/5114422/gra-o-tron",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5114000/5114422/1159927-352x500.jpg",
+      "createdAt": "1724530484816",
+      "updatedAt": "1724530484816"
     }
   ],
   "genres": [
@@ -17621,6 +17634,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1723448180517",
       "updatedAt": "1723448180517"
+    },
+    {
+      "bookId": "8154ae13-4bbd-407c-a3fb-4afb068f6667",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1724530484816",
+      "updatedAt": "1724530484816"
+    },
+    {
+      "bookId": "8154ae13-4bbd-407c-a3fb-4afb068f6667",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1724530484816",
+      "updatedAt": "1724530484816"
     }
   ],
   "shelves": [
@@ -17676,7 +17701,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 242210,
+      "pages": 243054,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -17711,7 +17736,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 10549,
+      "pages": 11393,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -22234,6 +22259,12 @@
       "authorId": "0e61dfc3-b93e-4099-85f9-85f636458c7f",
       "createdAt": "1723448180517",
       "updatedAt": "1723448180517"
+    },
+    {
+      "bookId": "8154ae13-4bbd-407c-a3fb-4afb068f6667",
+      "authorId": "0e61dfc3-b93e-4099-85f9-85f636458c7f",
+      "createdAt": "1724530484816",
+      "updatedAt": "1724530484816"
     }
   ]
 }
