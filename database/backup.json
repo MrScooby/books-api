@@ -859,19 +859,6 @@
       "updatedAt": "2023-11-22T22:13:27.940Z"
     },
     {
-      "id": "1779b1cc-6f73-455d-85ad-dfa1eab09e2c",
-      "ISBN": "9788375068306",
-      "lcId": 134254,
-      "pages": 841,
-      "rating": 10,
-      "title": "Gra o tron",
-      "url": "https://lubimyczytac.pl/ksiazka/134254/gra-o-tron",
-      "genreId": "ae5dc6e2-2ae8-4dec-b0c7-77f73d772f37",
-      "imgUrl": "https://s.lubimyczytac.pl/upload/books/134000/134254/352x500.jpg",
-      "createdAt": "2023-11-22T22:13:27.940Z",
-      "updatedAt": "2023-11-22T22:13:27.940Z"
-    },
-    {
       "id": "3b6a9efd-65b2-451d-a6b1-205ef94532d4",
       "ISBN": null,
       "lcId": 20902,
@@ -13424,12 +13411,6 @@
       "updatedAt": "2023-11-22T22:13:28.178Z"
     },
     {
-      "bookId": "1779b1cc-6f73-455d-85ad-dfa1eab09e2c",
-      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
-      "createdAt": "2023-11-22T22:13:28.178Z",
-      "updatedAt": "2023-11-22T22:13:28.178Z"
-    },
-    {
       "bookId": "f278f7b9-40ea-40f5-bb0f-67fea1e8ac8f",
       "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "createdAt": "2023-11-22T22:13:28.178Z",
@@ -17695,7 +17676,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 243051,
+      "pages": 242210,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18045,12 +18026,6 @@
     {
       "bookId": "c1e35a95-1e45-439e-abd1-b14e0fe4b377",
       "authorId": "4534a764-2889-4510-8dbd-1da749930d34",
-      "createdAt": "2023-11-22T22:13:28.339Z",
-      "updatedAt": "2023-11-22T22:13:28.339Z"
-    },
-    {
-      "bookId": "1779b1cc-6f73-455d-85ad-dfa1eab09e2c",
-      "authorId": "0e61dfc3-b93e-4099-85f9-85f636458c7f",
       "createdAt": "2023-11-22T22:13:28.339Z",
       "updatedAt": "2023-11-22T22:13:28.339Z"
     },
