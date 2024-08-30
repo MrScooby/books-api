@@ -8436,6 +8436,32 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/5114000/5114422/1159927-352x500.jpg",
       "createdAt": "1724530484816",
       "updatedAt": "1724530484816"
+    },
+    {
+      "id": "a74dd596-6775-4566-ac89-26cc47e1672d",
+      "ISBN": "9788371779268",
+      "lcId": 234647,
+      "pages": 326,
+      "rating": 9,
+      "title": "Świat lodu i ognia",
+      "url": "https://lubimyczytac.pl/ksiazka/234647/swiat-lodu-i-ognia",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/234000/234647/319178-352x500.jpg",
+      "createdAt": "1724696671869",
+      "updatedAt": "1724696671869"
+    },
+    {
+      "id": "1d854087-f015-4ded-9a67-9ab181423341",
+      "ISBN": "9788381966696",
+      "lcId": 5085671,
+      "pages": 450,
+      "rating": 5,
+      "title": "Historia czytania",
+      "url": "https://lubimyczytac.pl/ksiazka/5085671/historia-czytania",
+      "genreId": "e8694b2f-2e2d-457c-a7d5-6cf66e677f85",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5085000/5085671/1098495-352x500.jpg",
+      "createdAt": "1725025567339",
+      "updatedAt": "1725025567339"
     }
   ],
   "genres": [
@@ -10996,6 +11022,24 @@
       "id": "b9e4248c-cdf1-463b-a33b-368a0eb932a1",
       "createdAt": "1721640107200",
       "updatedAt": "1721640107200"
+    },
+    {
+      "name": "Linda Antonsson",
+      "id": "5eeb1f39-c895-4bbd-9c57-4f4b48454b01",
+      "createdAt": "1724696671869",
+      "updatedAt": "1724696671869"
+    },
+    {
+      "name": "Elio M. García jr.",
+      "id": "5cb834f2-a626-453e-999e-d8b152b0f95b",
+      "createdAt": "1724696671869",
+      "updatedAt": "1724696671869"
+    },
+    {
+      "name": "Alberto Manguel",
+      "id": "e980b04d-8add-4641-82d0-af0cd6a397b6",
+      "createdAt": "1725025567339",
+      "updatedAt": "1725025567339"
     }
   ],
   "booksOnShelves": [
@@ -17646,6 +17690,30 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1724530484816",
       "updatedAt": "1724530484816"
+    },
+    {
+      "bookId": "a74dd596-6775-4566-ac89-26cc47e1672d",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1724696671869",
+      "updatedAt": "1724696671869"
+    },
+    {
+      "bookId": "a74dd596-6775-4566-ac89-26cc47e1672d",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1724696671869",
+      "updatedAt": "1724696671869"
+    },
+    {
+      "bookId": "1d854087-f015-4ded-9a67-9ab181423341",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1725025567339",
+      "updatedAt": "1725025567339"
+    },
+    {
+      "bookId": "1d854087-f015-4ded-9a67-9ab181423341",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1725025567339",
+      "updatedAt": "1725025567339"
     }
   ],
   "shelves": [
@@ -17701,7 +17769,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 243054,
+      "pages": 243830,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -17736,7 +17804,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 11393,
+      "pages": 12169,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -22265,6 +22333,30 @@
       "authorId": "0e61dfc3-b93e-4099-85f9-85f636458c7f",
       "createdAt": "1724530484816",
       "updatedAt": "1724530484816"
+    },
+    {
+      "bookId": "a74dd596-6775-4566-ac89-26cc47e1672d",
+      "authorId": "5eeb1f39-c895-4bbd-9c57-4f4b48454b01",
+      "createdAt": "1724696671869",
+      "updatedAt": "1724696671869"
+    },
+    {
+      "bookId": "a74dd596-6775-4566-ac89-26cc47e1672d",
+      "authorId": "5cb834f2-a626-453e-999e-d8b152b0f95b",
+      "createdAt": "1724696671869",
+      "updatedAt": "1724696671869"
+    },
+    {
+      "bookId": "a74dd596-6775-4566-ac89-26cc47e1672d",
+      "authorId": "0e61dfc3-b93e-4099-85f9-85f636458c7f",
+      "createdAt": "1724696671869",
+      "updatedAt": "1724696671869"
+    },
+    {
+      "bookId": "1d854087-f015-4ded-9a67-9ab181423341",
+      "authorId": "e980b04d-8add-4641-82d0-af0cd6a397b6",
+      "createdAt": "1725025567339",
+      "updatedAt": "1725025567339"
     }
   ]
 }
