@@ -8501,6 +8501,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/5127000/5127619/1187068-352x500.jpg",
       "createdAt": "1727486145179",
       "updatedAt": "1727486145179"
+    },
+    {
+      "id": "32373523-1688-4ff6-9db4-7409a678d3ff",
+      "ISBN": "8388087908",
+      "lcId": 275078,
+      "pages": 0,
+      "rating": 4,
+      "title": "Tabakiera z Bagombo",
+      "url": "https://lubimyczytac.pl/ksiazka/275078/tabakiera-z-bagombo",
+      "genreId": "f5fb4fb4-d838-40bd-9037-c251d1223bd6",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/275000/275078/436048-352x500.jpg",
+      "createdAt": "1727808596450",
+      "updatedAt": "1727808596450"
     }
   ],
   "genres": [
@@ -17819,6 +17832,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1727486145179",
       "updatedAt": "1727486145179"
+    },
+    {
+      "bookId": "32373523-1688-4ff6-9db4-7409a678d3ff",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1727808596450",
+      "updatedAt": "1727808596450"
+    },
+    {
+      "bookId": "32373523-1688-4ff6-9db4-7409a678d3ff",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1727808596450",
+      "updatedAt": "1727808596450"
     }
   ],
   "shelves": [
@@ -22486,6 +22511,12 @@
       "authorId": "0e61dfc3-b93e-4099-85f9-85f636458c7f",
       "createdAt": "1727486145179",
       "updatedAt": "1727486145179"
+    },
+    {
+      "bookId": "32373523-1688-4ff6-9db4-7409a678d3ff",
+      "authorId": "abb7a7b2-e21b-49dc-8fa6-1c7cf364457e",
+      "createdAt": "1727808596450",
+      "updatedAt": "1727808596450"
     }
   ]
 }
