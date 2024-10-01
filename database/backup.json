@@ -7554,19 +7554,6 @@
       "updatedAt": "2023-11-22T22:13:27.940Z"
     },
     {
-      "id": "39fea565-2ce8-463d-8584-5c83032508a8",
-      "ISBN": "9788375061130",
-      "lcId": 28062,
-      "pages": 608,
-      "rating": 9,
-      "title": "Nawałnica mieczy. Część 1: Stal i śnieg",
-      "url": "https://lubimyczytac.pl/ksiazka/28062/nawalnica-mieczy-czesc-1-stal-i-snieg",
-      "genreId": "ae5dc6e2-2ae8-4dec-b0c7-77f73d772f37",
-      "imgUrl": "https://s.lubimyczytac.pl/upload/books/28000/28062/352x500.jpg",
-      "createdAt": "2023-11-22T22:13:27.940Z",
-      "updatedAt": "2023-11-22T22:13:27.940Z"
-    },
-    {
       "id": "2354d8e0-518b-466f-8f1a-d4b8712f1ebf",
       "ISBN": "9788382020144",
       "lcId": 4921407,
@@ -8501,6 +8488,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/5118000/5118310/1177591-352x500.jpg",
       "createdAt": "1727092627382",
       "updatedAt": "1727092627382"
+    },
+    {
+      "id": "bbf3de8f-eba1-49c2-b8ba-d47481a46c90",
+      "ISBN": "9788383353241",
+      "lcId": 5127619,
+      "pages": 736,
+      "rating": 9,
+      "title": "Nawałnica mieczy. Stal i śnieg",
+      "url": "https://lubimyczytac.pl/ksiazka/5127619/nawalnica-mieczy-stal-i-snieg",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5127000/5127619/1187068-352x500.jpg",
+      "createdAt": "1727486145179",
+      "updatedAt": "1727486145179"
     }
   ],
   "genres": [
@@ -14017,12 +14017,6 @@
       "updatedAt": "2023-11-22T22:13:28.178Z"
     },
     {
-      "bookId": "39fea565-2ce8-463d-8584-5c83032508a8",
-      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
-      "createdAt": "2023-11-22T22:13:28.178Z",
-      "updatedAt": "2023-11-22T22:13:28.178Z"
-    },
-    {
       "bookId": "e14d0e53-69c5-4f52-b092-99c49dccf203",
       "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "createdAt": "2023-11-22T22:13:28.178Z",
@@ -17813,6 +17807,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1727092627382",
       "updatedAt": "1727092627382"
+    },
+    {
+      "bookId": "bbf3de8f-eba1-49c2-b8ba-d47481a46c90",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1727486145179",
+      "updatedAt": "1727486145179"
+    },
+    {
+      "bookId": "bbf3de8f-eba1-49c2-b8ba-d47481a46c90",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1727486145179",
+      "updatedAt": "1727486145179"
     }
   ],
   "shelves": [
@@ -17868,7 +17874,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 246180,
+      "pages": 246916,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -17903,7 +17909,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 14519,
+      "pages": 15255,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -19058,12 +19064,6 @@
     {
       "bookId": "d5fd0617-e50f-4edb-88f6-84c50ff937b1",
       "authorId": "cb45ecc3-bb47-470b-a54d-5a6433a4ae02",
-      "createdAt": "2023-11-22T22:13:28.339Z",
-      "updatedAt": "2023-11-22T22:13:28.339Z"
-    },
-    {
-      "bookId": "39fea565-2ce8-463d-8584-5c83032508a8",
-      "authorId": "0e61dfc3-b93e-4099-85f9-85f636458c7f",
       "createdAt": "2023-11-22T22:13:28.339Z",
       "updatedAt": "2023-11-22T22:13:28.339Z"
     },
@@ -22480,6 +22480,12 @@
       "authorId": "0e61dfc3-b93e-4099-85f9-85f636458c7f",
       "createdAt": "1727092627382",
       "updatedAt": "1727092627382"
+    },
+    {
+      "bookId": "bbf3de8f-eba1-49c2-b8ba-d47481a46c90",
+      "authorId": "0e61dfc3-b93e-4099-85f9-85f636458c7f",
+      "createdAt": "1727486145179",
+      "updatedAt": "1727486145179"
     }
   ]
 }
