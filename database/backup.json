@@ -8514,6 +8514,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/275000/275078/436048-352x500.jpg",
       "createdAt": "1727808596450",
       "updatedAt": "1727808596450"
+    },
+    {
+      "id": "b86f88c3-0f03-48a2-b85e-f08d8bc1c3d6",
+      "ISBN": "9788367034128",
+      "lcId": 5076430,
+      "pages": 248,
+      "rating": 8,
+      "title": "Kameliowy Sklep Papierniczy",
+      "url": "https://lubimyczytac.pl/ksiazka/5076430/kameliowy-sklep-papierniczy",
+      "genreId": "f5fb4fb4-d838-40bd-9037-c251d1223bd6",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5076000/5076430/1082928-352x500.jpg",
+      "createdAt": "1728162633919",
+      "updatedAt": "1728162633919"
     }
   ],
   "genres": [
@@ -11110,6 +11123,12 @@
       "id": "efb06d79-3f0f-4445-bbcd-ec0fc143398a",
       "createdAt": "1726589772652",
       "updatedAt": "1726589772652"
+    },
+    {
+      "name": "Ito Ogawa",
+      "id": "c7ddf2f4-5f1e-4c2c-a3f6-1d9c6060aaa0",
+      "createdAt": "1728162633919",
+      "updatedAt": "1728162633919"
     }
   ],
   "booksOnShelves": [
@@ -17844,6 +17863,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1727808596450",
       "updatedAt": "1727808596450"
+    },
+    {
+      "bookId": "b86f88c3-0f03-48a2-b85e-f08d8bc1c3d6",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1728162633919",
+      "updatedAt": "1728162633919"
+    },
+    {
+      "bookId": "b86f88c3-0f03-48a2-b85e-f08d8bc1c3d6",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1728162633919",
+      "updatedAt": "1728162633919"
     }
   ],
   "shelves": [
@@ -17899,7 +17930,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 246916,
+      "pages": 247164,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -17934,7 +17965,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 15255,
+      "pages": 15503,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -22517,6 +22548,12 @@
       "authorId": "abb7a7b2-e21b-49dc-8fa6-1c7cf364457e",
       "createdAt": "1727808596450",
       "updatedAt": "1727808596450"
+    },
+    {
+      "bookId": "b86f88c3-0f03-48a2-b85e-f08d8bc1c3d6",
+      "authorId": "c7ddf2f4-5f1e-4c2c-a3f6-1d9c6060aaa0",
+      "createdAt": "1728162633919",
+      "updatedAt": "1728162633919"
     }
   ]
 }
