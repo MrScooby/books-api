@@ -8553,6 +8553,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/252000/252979/567433-352x500.jpg",
       "createdAt": "1730472643830",
       "updatedAt": "1730472643830"
+    },
+    {
+      "id": "0c134eb2-f2d2-4713-98f4-10619bcf184e",
+      "ISBN": "9788381517270",
+      "lcId": 5088003,
+      "pages": 280,
+      "rating": 7,
+      "title": "Krótka historia religii",
+      "url": "https://lubimyczytac.pl/ksiazka/5088003/krotka-historia-religii",
+      "genreId": "f2be4933-8585-4a6f-b14b-17b3ca40e0fa",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5088000/5088003/1102407-352x500.jpg",
+      "createdAt": "1730930044852",
+      "updatedAt": "1730930044852"
     }
   ],
   "genres": [
@@ -11155,6 +11168,12 @@
       "id": "c7ddf2f4-5f1e-4c2c-a3f6-1d9c6060aaa0",
       "createdAt": "1728162633919",
       "updatedAt": "1728162633919"
+    },
+    {
+      "name": "Richard Holloway",
+      "id": "436ee561-27f6-469c-8239-d8c05c4ec560",
+      "createdAt": "1730930044852",
+      "updatedAt": "1730930044852"
     }
   ],
   "booksOnShelves": [
@@ -17937,6 +17956,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1730472643830",
       "updatedAt": "1730472643830"
+    },
+    {
+      "bookId": "0c134eb2-f2d2-4713-98f4-10619bcf184e",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1730930044852",
+      "updatedAt": "1730930044852"
+    },
+    {
+      "bookId": "0c134eb2-f2d2-4713-98f4-10619bcf184e",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1730930044852",
+      "updatedAt": "1730930044852"
     }
   ],
   "shelves": [
@@ -17992,7 +18023,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 248710,
+      "pages": 248990,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18027,7 +18058,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 17049,
+      "pages": 17329,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -22628,6 +22659,12 @@
       "authorId": "0e61dfc3-b93e-4099-85f9-85f636458c7f",
       "createdAt": "1730472643830",
       "updatedAt": "1730472643830"
+    },
+    {
+      "bookId": "0c134eb2-f2d2-4713-98f4-10619bcf184e",
+      "authorId": "436ee561-27f6-469c-8239-d8c05c4ec560",
+      "createdAt": "1730930044852",
+      "updatedAt": "1730930044852"
     }
   ]
 }
