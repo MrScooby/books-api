@@ -4,6 +4,7 @@ import {
   Delete,
   Get,
   Param,
+  Patch,
   Post,
   Query
 } from '@nestjs/common'
@@ -47,10 +48,14 @@ export class BooksController {
     return this.bookService.getTitle(id)
   }
 
-  // @Patch(':id')
-  // update(@Param('id') id: string, @Body() updateBookDto: UpdateBookDto) {
-  //   return this.bookService.update(+id, updateBookDto);
-  // }
+  // TODO: add proper body type
+  @Patch('add-on-shelf/:id')
+  update(
+    @Param('id') id: string,
+    @Body() body: { shelfName: string }
+  ): Promise<BookDto> {
+    return this.bookService.addOnShelf(id, body)
+  }
 
   @Delete(':id')
   remove(@Param('id') id: string) {

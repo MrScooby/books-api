@@ -1,4 +1,10 @@
-import { HttpStatus, Injectable, NotFoundException } from '@nestjs/common'
+import {
+  BadRequestException,
+  ConflictException,
+  HttpStatus,
+  Injectable,
+  NotFoundException
+} from '@nestjs/common'
 import { defaultPaginationOptions } from 'common/constants'
 import {
   PaginatedResults,
@@ -374,5 +380,68 @@ export class BooksService {
     })
 
     return `Book was deleted.`
+  }
+
+  async addOnShelf(id: string, body: { shelfName: string }): Promise<BookDto> {
+    const { shelfName } = body
+
+    const book = await this.db.books.findUnique({
+      where: {
+        id
+      }
+    })
+
+    if (!book) {
+      throw new NotFoundException({
+        error: `Book with id: ${id} doesn't exists`,
+        status: HttpStatus.NOT_FOUND
+      })
+    }
+
+    // TODO: add shelf types and move to separate module
+    let shelf
+
+    try {
+      shelf = await this.db.shelves.findUniqueOrThrow({
+        where: {
+          name: shelfName
+        }
+      })
+    } catch (e) {
+      throw new BadRequestException({
+        error: `Shelf with name: ${shelfName} doesn't exists`,
+        status: HttpStatus.BAD_REQUEST
+      })
+    }
+
+    try {
+      await this.db.$transaction(async (tx) => {
+        await tx.booksOnShelves.create({
+          data: {
+            bookId: book.id,
+            shelfId: shelf.id
+          }
+        })
+
+        await tx.shelves.update({
+          where: {
+            id: shelf.id
+          },
+          data: {
+            pages: shelf.pages + book.pages
+          }
+        })
+      })
+
+      // TODO: add to backup
+    } catch (e) {
+      // TODO: check if in fact it's duplicate exception
+      throw new ConflictException({
+        error: `Book is already on this shelf`,
+        status: HttpStatus.BAD_REQUEST
+      })
+    }
+
+    return this.findOne(id)
   }
 }
