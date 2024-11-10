@@ -8566,6 +8566,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/5088000/5088003/1102407-352x500.jpg",
       "createdAt": "1730930044852",
       "updatedAt": "1730930044852"
+    },
+    {
+      "id": "215c796e-88d3-4ef0-85df-4cd7db79decc",
+      "ISBN": "9788328067790",
+      "lcId": 4942325,
+      "pages": 639,
+      "rating": 3,
+      "title": "Zbrodnia i Kara",
+      "url": "https://lubimyczytac.pl/ksiazka/4942325/zbrodnia-i-kara",
+      "genreId": "50868df5-ca40-47b3-abe5-69c213d7bd2f",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4942000/4942325/848143-352x500.jpg",
+      "createdAt": "1731262962799",
+      "updatedAt": "1731262962799"
     }
   ],
   "genres": [
@@ -11174,6 +11187,12 @@
       "id": "436ee561-27f6-469c-8239-d8c05c4ec560",
       "createdAt": "1730930044852",
       "updatedAt": "1730930044852"
+    },
+    {
+      "name": "Fiodor Dostojewski",
+      "id": "f3d8a88e-71ef-4bbf-8bb9-4bcbfcb1a092",
+      "createdAt": "1731262962799",
+      "updatedAt": "1731262962799"
     }
   ],
   "booksOnShelves": [
@@ -17974,6 +17993,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1730930044852",
       "updatedAt": "1730930044852"
+    },
+    {
+      "bookId": "215c796e-88d3-4ef0-85df-4cd7db79decc",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1731262962799",
+      "updatedAt": "1731262962799"
+    },
+    {
+      "bookId": "215c796e-88d3-4ef0-85df-4cd7db79decc",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1731262962799",
+      "updatedAt": "1731262962799"
     }
   ],
   "shelves": [
@@ -18029,7 +18060,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 248990,
+      "pages": 249629,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18064,7 +18095,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 17857,
+      "pages": 18496,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -22671,6 +22702,12 @@
       "authorId": "436ee561-27f6-469c-8239-d8c05c4ec560",
       "createdAt": "1730930044852",
       "updatedAt": "1730930044852"
+    },
+    {
+      "bookId": "215c796e-88d3-4ef0-85df-4cd7db79decc",
+      "authorId": "f3d8a88e-71ef-4bbf-8bb9-4bcbfcb1a092",
+      "createdAt": "1731262962799",
+      "updatedAt": "1731262962799"
     }
   ]
 }
