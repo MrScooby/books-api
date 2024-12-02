@@ -8579,6 +8579,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4942000/4942325/848143-352x500.jpg",
       "createdAt": "1731262962799",
       "updatedAt": "1731262962799"
+    },
+    {
+      "id": "27585809-0fb6-4ef1-b97e-c2b4938207ec",
+      "ISBN": "9788375153316",
+      "lcId": 237678,
+      "pages": 400,
+      "rating": 4,
+      "title": "Ukojenie",
+      "url": "https://lubimyczytac.pl/ksiazka/237678/ukojenie",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/237000/237678/328535-352x500.jpg",
+      "createdAt": "1733180866898",
+      "updatedAt": "1733180866898"
     }
   ],
   "genres": [
@@ -18017,6 +18030,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1731262962799",
       "updatedAt": "1731262962799"
+    },
+    {
+      "bookId": "27585809-0fb6-4ef1-b97e-c2b4938207ec",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1733180866898",
+      "updatedAt": "1733180866898"
+    },
+    {
+      "bookId": "27585809-0fb6-4ef1-b97e-c2b4938207ec",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1733180866898",
+      "updatedAt": "1733180866898"
     }
   ],
   "shelves": [
@@ -18072,7 +18097,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 249629,
+      "pages": 250029,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18107,7 +18132,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 18496,
+      "pages": 18896,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -22720,6 +22745,12 @@
       "authorId": "f3d8a88e-71ef-4bbf-8bb9-4bcbfcb1a092",
       "createdAt": "1731262962799",
       "updatedAt": "1731262962799"
+    },
+    {
+      "bookId": "27585809-0fb6-4ef1-b97e-c2b4938207ec",
+      "authorId": "ffbf7dfc-284b-40ac-886f-e713efeaec26",
+      "createdAt": "1733180866898",
+      "updatedAt": "1733180866898"
     }
   ]
 }
