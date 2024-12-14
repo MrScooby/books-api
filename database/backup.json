@@ -8592,6 +8592,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/237000/237678/328535-352x500.jpg",
       "createdAt": "1733180866898",
       "updatedAt": "1733180866898"
+    },
+    {
+      "id": "9584197e-4739-4a16-bde7-f865cc1589a1",
+      "ISBN": "8370541534",
+      "lcId": 4001,
+      "pages": 593,
+      "rating": 4,
+      "title": "Narrenturm",
+      "url": "https://lubimyczytac.pl/ksiazka/4001/narrenturm",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4000/4001/134618-352x500.jpg",
+      "createdAt": "1734209703462",
+      "updatedAt": "1734209703462"
     }
   ],
   "genres": [
@@ -18042,6 +18055,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1733180866898",
       "updatedAt": "1733180866898"
+    },
+    {
+      "bookId": "9584197e-4739-4a16-bde7-f865cc1589a1",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1734209703462",
+      "updatedAt": "1734209703462"
+    },
+    {
+      "bookId": "9584197e-4739-4a16-bde7-f865cc1589a1",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1734209703462",
+      "updatedAt": "1734209703462"
     }
   ],
   "shelves": [
@@ -18097,7 +18122,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 250029,
+      "pages": 250622,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18132,7 +18157,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 18896,
+      "pages": 19489,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -22751,6 +22776,12 @@
       "authorId": "ffbf7dfc-284b-40ac-886f-e713efeaec26",
       "createdAt": "1733180866898",
       "updatedAt": "1733180866898"
+    },
+    {
+      "bookId": "9584197e-4739-4a16-bde7-f865cc1589a1",
+      "authorId": "9a089d54-4134-43c4-bea3-a31386e24855",
+      "createdAt": "1734209703462",
+      "updatedAt": "1734209703462"
     }
   ]
 }
