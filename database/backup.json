@@ -8605,6 +8605,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4000/4001/134618-352x500.jpg",
       "createdAt": "1734209703462",
       "updatedAt": "1734209703462"
+    },
+    {
+      "id": "db87f1d3-0be0-4507-9acb-0d691584c64f",
+      "ISBN": "9788374800617",
+      "lcId": 38112,
+      "pages": 436,
+      "rating": 8,
+      "title": "Nocny patrol",
+      "url": "https://lubimyczytac.pl/ksiazka/38112/nocny-patrol",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/38000/38112/352x500.jpg",
+      "createdAt": "1734460289680",
+      "updatedAt": "1734460289680"
     }
   ],
   "genres": [
@@ -18067,6 +18080,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1734209703462",
       "updatedAt": "1734209703462"
+    },
+    {
+      "bookId": "db87f1d3-0be0-4507-9acb-0d691584c64f",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1734460289680",
+      "updatedAt": "1734460289680"
+    },
+    {
+      "bookId": "db87f1d3-0be0-4507-9acb-0d691584c64f",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1734460289680",
+      "updatedAt": "1734460289680"
     }
   ],
   "shelves": [
@@ -18122,7 +18147,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 250622,
+      "pages": 251058,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18157,7 +18182,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 19489,
+      "pages": 19925,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -22782,6 +22807,12 @@
       "authorId": "9a089d54-4134-43c4-bea3-a31386e24855",
       "createdAt": "1734209703462",
       "updatedAt": "1734209703462"
+    },
+    {
+      "bookId": "db87f1d3-0be0-4507-9acb-0d691584c64f",
+      "authorId": "08a9dfe1-fcf9-4bf0-84ff-d730c7076fbe",
+      "createdAt": "1734460289680",
+      "updatedAt": "1734460289680"
     }
   ]
 }
