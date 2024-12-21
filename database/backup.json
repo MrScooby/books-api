@@ -8618,6 +8618,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/38000/38112/352x500.jpg",
       "createdAt": "1734460289680",
       "updatedAt": "1734460289680"
+    },
+    {
+      "id": "33df9c53-d72c-4e5f-aeef-f5c23708255e",
+      "ISBN": "9788382104240",
+      "lcId": 5000341,
+      "pages": 352,
+      "rating": 5,
+      "title": "Wciśnij reset. Triumfy i fakapy w przemyśle gier wideo",
+      "url": "https://lubimyczytac.pl/ksiazka/5000341/wcisnij-reset-triumfy-i-fakapy-w-przemysle-gier-wideo",
+      "genreId": "e9ac4deb-2a32-49a2-a1bf-cbc091c4564f",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5000000/5000341/973593-352x500.jpg",
+      "createdAt": "1734744339618",
+      "updatedAt": "1734744339618"
     }
   ],
   "genres": [
@@ -11232,6 +11245,12 @@
       "id": "f3d8a88e-71ef-4bbf-8bb9-4bcbfcb1a092",
       "createdAt": "1731262962799",
       "updatedAt": "1731262962799"
+    },
+    {
+      "name": "Jason Schreier",
+      "id": "ee2ffce0-6f6a-40a9-918b-0481ddb1b2e1",
+      "createdAt": "1734744339618",
+      "updatedAt": "1734744339618"
     }
   ],
   "booksOnShelves": [
@@ -18092,6 +18111,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1734460289680",
       "updatedAt": "1734460289680"
+    },
+    {
+      "bookId": "33df9c53-d72c-4e5f-aeef-f5c23708255e",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1734744339618",
+      "updatedAt": "1734744339618"
+    },
+    {
+      "bookId": "33df9c53-d72c-4e5f-aeef-f5c23708255e",
+      "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
+      "createdAt": "1734744339618",
+      "updatedAt": "1734744339618"
     }
   ],
   "shelves": [
@@ -18147,7 +18178,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 251058,
+      "pages": 251410,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18182,7 +18213,7 @@
     {
       "id": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "name": "2024",
-      "pages": 19925,
+      "pages": 20277,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
     }
@@ -22813,6 +22844,12 @@
       "authorId": "08a9dfe1-fcf9-4bf0-84ff-d730c7076fbe",
       "createdAt": "1734460289680",
       "updatedAt": "1734460289680"
+    },
+    {
+      "bookId": "33df9c53-d72c-4e5f-aeef-f5c23708255e",
+      "authorId": "ee2ffce0-6f6a-40a9-918b-0481ddb1b2e1",
+      "createdAt": "1734744339618",
+      "updatedAt": "1734744339618"
     }
   ]
 }
