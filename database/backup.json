@@ -8657,6 +8657,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/5080000/5080957/1150186-352x500.jpg",
       "createdAt": "1735561086187",
       "updatedAt": "1735561086187"
+    },
+    {
+      "id": "2914441a-fcb5-4a0f-a895-af83b043147e",
+      "ISBN": "9788374800471",
+      "lcId": 38056,
+      "pages": 392,
+      "rating": 7,
+      "title": "Patrol zmroku",
+      "url": "https://lubimyczytac.pl/ksiazka/38056/patrol-zmroku",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/38000/38056/352x500.jpg",
+      "createdAt": "1736978525568",
+      "updatedAt": "1736978525568"
     }
   ],
   "genres": [
@@ -18173,6 +18186,18 @@
       "shelfId": "4f697bf8-b4cf-4032-b2a3-ee47c2a840ad",
       "createdAt": "1735561086187",
       "updatedAt": "1735561086187"
+    },
+    {
+      "bookId": "2914441a-fcb5-4a0f-a895-af83b043147e",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1736978525568",
+      "updatedAt": "1736978525568"
+    },
+    {
+      "bookId": "2914441a-fcb5-4a0f-a895-af83b043147e",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1736978525568",
+      "updatedAt": "1736978525568"
     }
   ],
   "shelves": [
@@ -18228,7 +18253,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 252068,
+      "pages": 252460,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18266,6 +18291,13 @@
       "pages": 20935,
       "createdAt": "2024-01-05T12:38:11.034Z",
       "updatedAt": "2024-01-05T12:38:11.034Z"
+    },
+    {
+      "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "name": "2025",
+      "pages": 392,
+      "createdAt": "2025-01-15T22:02:05.569Z",
+      "updatedAt": "2025-01-15T22:02:05.569Z"
     }
   ],
   "authorsBooks": [
@@ -22912,6 +22944,12 @@
       "authorId": "e8c09d4d-c08c-406a-8d75-fb21fb31c68b",
       "createdAt": "1735561086187",
       "updatedAt": "1735561086187"
+    },
+    {
+      "bookId": "2914441a-fcb5-4a0f-a895-af83b043147e",
+      "authorId": "08a9dfe1-fcf9-4bf0-84ff-d730c7076fbe",
+      "createdAt": "1736978525568",
+      "updatedAt": "1736978525568"
     }
   ]
 }
