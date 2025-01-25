@@ -8670,6 +8670,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/38000/38056/352x500.jpg",
       "createdAt": "1736978525568",
       "updatedAt": "1736978525568"
+    },
+    {
+      "id": "91479a0f-da33-416a-8fc5-a22ec1616a8e",
+      "ISBN": "9788367515917",
+      "lcId": 5115422,
+      "pages": 416,
+      "rating": 2,
+      "title": "Szachownica flamandzka",
+      "url": "https://lubimyczytac.pl/ksiazka/5115422/szachownica-flamandzka",
+      "genreId": "c0021590-38b0-433d-a630-aa63801f4690",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5115000/5115422/1152048-352x500.jpg",
+      "createdAt": "1737797686552",
+      "updatedAt": "1737797686552"
     }
   ],
   "genres": [
@@ -11290,6 +11303,12 @@
       "id": "ee2ffce0-6f6a-40a9-918b-0481ddb1b2e1",
       "createdAt": "1734744339618",
       "updatedAt": "1734744339618"
+    },
+    {
+      "name": "Arturo Pérez-Reverte",
+      "id": "0bfb3d41-2ce0-40fe-aedc-bdf04b3818ee",
+      "createdAt": "1737797686552",
+      "updatedAt": "1737797686552"
     }
   ],
   "booksOnShelves": [
@@ -18198,6 +18217,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1736978525568",
       "updatedAt": "1736978525568"
+    },
+    {
+      "bookId": "91479a0f-da33-416a-8fc5-a22ec1616a8e",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1737797686552",
+      "updatedAt": "1737797686552"
+    },
+    {
+      "bookId": "91479a0f-da33-416a-8fc5-a22ec1616a8e",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1737797686552",
+      "updatedAt": "1737797686552"
     }
   ],
   "shelves": [
@@ -18253,7 +18284,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 252460,
+      "pages": 252876,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18295,7 +18326,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 392,
+      "pages": 808,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -22950,6 +22981,12 @@
       "authorId": "08a9dfe1-fcf9-4bf0-84ff-d730c7076fbe",
       "createdAt": "1736978525568",
       "updatedAt": "1736978525568"
+    },
+    {
+      "bookId": "91479a0f-da33-416a-8fc5-a22ec1616a8e",
+      "authorId": "0bfb3d41-2ce0-40fe-aedc-bdf04b3818ee",
+      "createdAt": "1737797686552",
+      "updatedAt": "1737797686552"
     }
   ]
 }
