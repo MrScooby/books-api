@@ -8683,6 +8683,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/5115000/5115422/1152048-352x500.jpg",
       "createdAt": "1737797686552",
       "updatedAt": "1737797686552"
+    },
+    {
+      "id": "3c4d7fe8-ac0a-4806-8b30-d4803ba16ba1",
+      "ISBN": "9788381919050",
+      "lcId": 5111877,
+      "pages": 248,
+      "rating": 6,
+      "title": "Wszystko mam bardziej. Życie w spektrum autyzmu",
+      "url": "https://lubimyczytac.pl/ksiazka/5111877/wszystko-mam-bardziej-zycie-w-spektrum-autyzmu",
+      "genreId": "e9ac4deb-2a32-49a2-a1bf-cbc091c4564f",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5111000/5111877/1248266-352x500.jpg",
+      "createdAt": "1738539791466",
+      "updatedAt": "1738539791466"
     }
   ],
   "genres": [
@@ -11309,6 +11322,12 @@
       "id": "0bfb3d41-2ce0-40fe-aedc-bdf04b3818ee",
       "createdAt": "1737797686552",
       "updatedAt": "1737797686552"
+    },
+    {
+      "name": "Jacek Hołub",
+      "id": "90b4179c-e340-4f48-90f6-e26f3d6babd7",
+      "createdAt": "1738539791466",
+      "updatedAt": "1738539791466"
     }
   ],
   "booksOnShelves": [
@@ -18229,6 +18248,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1737797686552",
       "updatedAt": "1737797686552"
+    },
+    {
+      "bookId": "3c4d7fe8-ac0a-4806-8b30-d4803ba16ba1",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1738539791466",
+      "updatedAt": "1738539791466"
+    },
+    {
+      "bookId": "3c4d7fe8-ac0a-4806-8b30-d4803ba16ba1",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1738539791466",
+      "updatedAt": "1738539791466"
     }
   ],
   "shelves": [
@@ -18284,7 +18315,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 252876,
+      "pages": 253124,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18326,7 +18357,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 808,
+      "pages": 1056,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -22987,6 +23018,12 @@
       "authorId": "0bfb3d41-2ce0-40fe-aedc-bdf04b3818ee",
       "createdAt": "1737797686552",
       "updatedAt": "1737797686552"
+    },
+    {
+      "bookId": "3c4d7fe8-ac0a-4806-8b30-d4803ba16ba1",
+      "authorId": "90b4179c-e340-4f48-90f6-e26f3d6babd7",
+      "createdAt": "1738539791466",
+      "updatedAt": "1738539791466"
     }
   ]
 }
