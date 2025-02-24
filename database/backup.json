@@ -8735,6 +8735,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/233000/233200/314687-352x500.jpg",
       "createdAt": "1739232802003",
       "updatedAt": "1739232802003"
+    },
+    {
+      "id": "9cd1900f-a3bc-4131-ab37-e4a41987e90f",
+      "ISBN": "9788374805476",
+      "lcId": 237663,
+      "pages": 436,
+      "rating": 8,
+      "title": "Szósty patrol",
+      "url": "https://lubimyczytac.pl/ksiazka/237663/szosty-patrol",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/237000/237663/395244-352x500.jpg",
+      "createdAt": "1740360324815",
+      "updatedAt": "1740360324815"
     }
   ],
   "genres": [
@@ -18335,6 +18348,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1739232802003",
       "updatedAt": "1739232802003"
+    },
+    {
+      "bookId": "9cd1900f-a3bc-4131-ab37-e4a41987e90f",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1740360324815",
+      "updatedAt": "1740360324815"
+    },
+    {
+      "bookId": "9cd1900f-a3bc-4131-ab37-e4a41987e90f",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1740360324815",
+      "updatedAt": "1740360324815"
     }
   ],
   "shelves": [
@@ -18390,7 +18415,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 254136,
+      "pages": 254572,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18432,7 +18457,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 2068,
+      "pages": 2504,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -23117,6 +23142,12 @@
       "authorId": "08a9dfe1-fcf9-4bf0-84ff-d730c7076fbe",
       "createdAt": "1739232802003",
       "updatedAt": "1739232802003"
+    },
+    {
+      "bookId": "9cd1900f-a3bc-4131-ab37-e4a41987e90f",
+      "authorId": "08a9dfe1-fcf9-4bf0-84ff-d730c7076fbe",
+      "createdAt": "1740360324815",
+      "updatedAt": "1740360324815"
     }
   ]
 }
