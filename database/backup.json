@@ -8748,6 +8748,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/237000/237663/395244-352x500.jpg",
       "createdAt": "1740360324815",
       "updatedAt": "1740360324815"
+    },
+    {
+      "id": "5d04d87d-dd6b-466e-a7e5-84734972c230",
+      "ISBN": "9788366409187",
+      "lcId": 4929173,
+      "pages": 384,
+      "rating": 6,
+      "title": "Gdyż jest nas wielu",
+      "url": "https://lubimyczytac.pl/ksiazka/4929173/gdyz-jest-nas-wielu",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4929000/4929173/832562-352x500.jpg",
+      "createdAt": "1740730037821",
+      "updatedAt": "1740730037821"
     }
   ],
   "genres": [
@@ -18360,6 +18373,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1740360324815",
       "updatedAt": "1740360324815"
+    },
+    {
+      "bookId": "5d04d87d-dd6b-466e-a7e5-84734972c230",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1740730037821",
+      "updatedAt": "1740730037821"
+    },
+    {
+      "bookId": "5d04d87d-dd6b-466e-a7e5-84734972c230",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1740730037821",
+      "updatedAt": "1740730037821"
     }
   ],
   "shelves": [
@@ -18415,7 +18440,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 254572,
+      "pages": 254956,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18457,7 +18482,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 2504,
+      "pages": 2888,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -23148,6 +23173,12 @@
       "authorId": "08a9dfe1-fcf9-4bf0-84ff-d730c7076fbe",
       "createdAt": "1740360324815",
       "updatedAt": "1740360324815"
+    },
+    {
+      "bookId": "5d04d87d-dd6b-466e-a7e5-84734972c230",
+      "authorId": "bacc5972-7c1b-4c39-9e11-70e32513589c",
+      "createdAt": "1740730037821",
+      "updatedAt": "1740730037821"
     }
   ]
 }
