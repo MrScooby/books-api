@@ -8787,6 +8787,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4846000/4846911/659542-352x500.jpg",
       "createdAt": "1741380018330",
       "updatedAt": "1741380018330"
+    },
+    {
+      "id": "fc767bda-bea0-448a-95f2-42233720808d",
+      "ISBN": "9788374809245",
+      "lcId": 4850144,
+      "pages": 596,
+      "rating": 7,
+      "title": "Wojna Kalibana",
+      "url": "https://lubimyczytac.pl/ksiazka/4850144/wojna-kalibana",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4850000/4850144/666275-352x500.jpg",
+      "createdAt": "1741710775896",
+      "updatedAt": "1741710775896"
     }
   ],
   "genres": [
@@ -18441,6 +18454,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1741380018330",
       "updatedAt": "1741380018330"
+    },
+    {
+      "bookId": "fc767bda-bea0-448a-95f2-42233720808d",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1741710775896",
+      "updatedAt": "1741710775896"
+    },
+    {
+      "bookId": "fc767bda-bea0-448a-95f2-42233720808d",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1741710775896",
+      "updatedAt": "1741710775896"
     }
   ],
   "shelves": [
@@ -18496,7 +18521,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 255815,
+      "pages": 256411,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18538,7 +18563,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 3747,
+      "pages": 4343,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -23247,6 +23272,12 @@
       "authorId": "e6babe0b-7e80-4d6d-b789-e552256a7656",
       "createdAt": "1741380018330",
       "updatedAt": "1741380018330"
+    },
+    {
+      "bookId": "fc767bda-bea0-448a-95f2-42233720808d",
+      "authorId": "e6babe0b-7e80-4d6d-b789-e552256a7656",
+      "createdAt": "1741710775896",
+      "updatedAt": "1741710775896"
     }
   ]
 }
