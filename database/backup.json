@@ -8800,6 +8800,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4850000/4850144/666275-352x500.jpg",
       "createdAt": "1741710775896",
       "updatedAt": "1741710775896"
+    },
+    {
+      "id": "b6ebec52-a159-4b65-a506-45228d04db1a",
+      "ISBN": "9788366065031",
+      "lcId": 4851040,
+      "pages": 540,
+      "rating": 6,
+      "title": "Wrota Abaddona",
+      "url": "https://lubimyczytac.pl/ksiazka/4851040/wrota-abaddona",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4851000/4851040/782959-352x500.jpg",
+      "createdAt": "1742166224285",
+      "updatedAt": "1742166224285"
     }
   ],
   "genres": [
@@ -18466,6 +18479,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1741710775896",
       "updatedAt": "1741710775896"
+    },
+    {
+      "bookId": "b6ebec52-a159-4b65-a506-45228d04db1a",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1742166224285",
+      "updatedAt": "1742166224285"
+    },
+    {
+      "bookId": "b6ebec52-a159-4b65-a506-45228d04db1a",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1742166224285",
+      "updatedAt": "1742166224285"
     }
   ],
   "shelves": [
@@ -18521,7 +18546,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 256411,
+      "pages": 256951,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18563,7 +18588,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 4343,
+      "pages": 4883,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -23278,6 +23303,12 @@
       "authorId": "e6babe0b-7e80-4d6d-b789-e552256a7656",
       "createdAt": "1741710775896",
       "updatedAt": "1741710775896"
+    },
+    {
+      "bookId": "b6ebec52-a159-4b65-a506-45228d04db1a",
+      "authorId": "e6babe0b-7e80-4d6d-b789-e552256a7656",
+      "createdAt": "1742166224285",
+      "updatedAt": "1742166224285"
     }
   ]
 }
