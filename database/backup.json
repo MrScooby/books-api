@@ -8826,6 +8826,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4864000/4864850/700709-352x500.jpg",
       "createdAt": "1742503583168",
       "updatedAt": "1742503583168"
+    },
+    {
+      "id": "34c9d407-f938-4461-8c04-3f56106c0ea9",
+      "ISBN": "9788366065383",
+      "lcId": 4875309,
+      "pages": 596,
+      "rating": 6,
+      "title": "Gry Nemezis",
+      "url": "https://lubimyczytac.pl/ksiazka/4875309/gry-nemezis",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4875000/4875309/728754-352x500.jpg",
+      "createdAt": "1744580167564",
+      "updatedAt": "1744580167564"
     }
   ],
   "genres": [
@@ -18516,6 +18529,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1742503583168",
       "updatedAt": "1742503583168"
+    },
+    {
+      "bookId": "34c9d407-f938-4461-8c04-3f56106c0ea9",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1744580167564",
+      "updatedAt": "1744580167564"
+    },
+    {
+      "bookId": "34c9d407-f938-4461-8c04-3f56106c0ea9",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1744580167564",
+      "updatedAt": "1744580167564"
     }
   ],
   "shelves": [
@@ -18571,7 +18596,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 257547,
+      "pages": 258143,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18613,7 +18638,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 5479,
+      "pages": 6075,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -23340,6 +23365,12 @@
       "authorId": "e6babe0b-7e80-4d6d-b789-e552256a7656",
       "createdAt": "1742503583168",
       "updatedAt": "1742503583168"
+    },
+    {
+      "bookId": "34c9d407-f938-4461-8c04-3f56106c0ea9",
+      "authorId": "e6babe0b-7e80-4d6d-b789-e552256a7656",
+      "createdAt": "1744580167564",
+      "updatedAt": "1744580167564"
     }
   ]
 }
