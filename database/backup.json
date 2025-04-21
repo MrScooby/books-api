@@ -8839,6 +8839,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4875000/4875309/728754-352x500.jpg",
       "createdAt": "1744580167564",
       "updatedAt": "1744580167564"
+    },
+    {
+      "id": "d48ebedf-cb29-4e90-b8db-65237d6147c3",
+      "ISBN": "9788366178113",
+      "lcId": 4810822,
+      "pages": 460,
+      "rating": 4,
+      "title": "Baśń o wężowym sercu albo Wtóre słowo o Jakóbie Szeli",
+      "url": "https://lubimyczytac.pl/ksiazka/4810822/basn-o-wezowym-sercu-albo-wtore-slowo-o-jakobie-szeli",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4810000/4810822/820306-352x500.jpg",
+      "createdAt": "1745269248618",
+      "updatedAt": "1745269248618"
     }
   ],
   "genres": [
@@ -18541,6 +18554,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1744580167564",
       "updatedAt": "1744580167564"
+    },
+    {
+      "bookId": "d48ebedf-cb29-4e90-b8db-65237d6147c3",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1745269248618",
+      "updatedAt": "1745269248618"
+    },
+    {
+      "bookId": "d48ebedf-cb29-4e90-b8db-65237d6147c3",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1745269248618",
+      "updatedAt": "1745269248618"
     }
   ],
   "shelves": [
@@ -18596,7 +18621,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 258143,
+      "pages": 258603,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18638,7 +18663,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 6075,
+      "pages": 6535,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -23371,6 +23396,12 @@
       "authorId": "e6babe0b-7e80-4d6d-b789-e552256a7656",
       "createdAt": "1744580167564",
       "updatedAt": "1744580167564"
+    },
+    {
+      "bookId": "d48ebedf-cb29-4e90-b8db-65237d6147c3",
+      "authorId": "13561028-ad55-474d-bcbb-dad1f9073997",
+      "createdAt": "1745269248618",
+      "updatedAt": "1745269248618"
     }
   ]
 }
