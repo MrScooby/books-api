@@ -8852,6 +8852,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4810000/4810822/820306-352x500.jpg",
       "createdAt": "1745269248618",
       "updatedAt": "1745269248618"
+    },
+    {
+      "id": "81de6b19-0967-4c0f-9566-d0cb149efabd",
+      "ISBN": "9788381917124",
+      "lcId": 5067610,
+      "pages": 392,
+      "rating": 8,
+      "title": "Wszyscy tak jeżdżą",
+      "url": "https://lubimyczytac.pl/ksiazka/5067610/wszyscy-tak-jezdza",
+      "genreId": "e9ac4deb-2a32-49a2-a1bf-cbc091c4564f",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5067000/5067610/1068718-352x500.jpg",
+      "createdAt": "1745349982545",
+      "updatedAt": "1745349982545"
     }
   ],
   "genres": [
@@ -11490,6 +11503,12 @@
       "id": "e6babe0b-7e80-4d6d-b789-e552256a7656",
       "createdAt": "1741380018330",
       "updatedAt": "1741380018330"
+    },
+    {
+      "name": "Bartosz Józefiak",
+      "id": "f592d99e-360a-4b31-ab79-9bd1300189c8",
+      "createdAt": "1745349982545",
+      "updatedAt": "1745349982545"
     }
   ],
   "booksOnShelves": [
@@ -18566,6 +18585,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1745269248618",
       "updatedAt": "1745269248618"
+    },
+    {
+      "bookId": "81de6b19-0967-4c0f-9566-d0cb149efabd",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1745349982545",
+      "updatedAt": "1745349982545"
+    },
+    {
+      "bookId": "81de6b19-0967-4c0f-9566-d0cb149efabd",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1745349982545",
+      "updatedAt": "1745349982545"
     }
   ],
   "shelves": [
@@ -18621,7 +18652,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 258603,
+      "pages": 258995,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18663,7 +18694,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 6535,
+      "pages": 6927,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -23402,6 +23433,12 @@
       "authorId": "13561028-ad55-474d-bcbb-dad1f9073997",
       "createdAt": "1745269248618",
       "updatedAt": "1745269248618"
+    },
+    {
+      "bookId": "81de6b19-0967-4c0f-9566-d0cb149efabd",
+      "authorId": "f592d99e-360a-4b31-ab79-9bd1300189c8",
+      "createdAt": "1745349982545",
+      "updatedAt": "1745349982545"
     }
   ]
 }
