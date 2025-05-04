@@ -8878,6 +8878,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4890000/4890464/782288-352x500.jpg",
       "createdAt": "1745767452253",
       "updatedAt": "1745767452253"
+    },
+    {
+      "id": "4abf311e-2218-4931-b8b9-d0e59b206a62",
+      "ISBN": "9788377468777",
+      "lcId": 273096,
+      "pages": 392,
+      "rating": 4,
+      "title": "Kreatywność S.A. Droga do prawdziwej inspiracji",
+      "url": "https://lubimyczytac.pl/ksiazka/273096/kreatywnosc-s-a-droga-do-prawdziwej-inspiracji",
+      "genreId": "e9ac4deb-2a32-49a2-a1bf-cbc091c4564f",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/273000/273096/430949-352x500.jpg",
+      "createdAt": "1746356082283",
+      "updatedAt": "1746356082283"
     }
   ],
   "genres": [
@@ -11522,6 +11535,18 @@
       "id": "f592d99e-360a-4b31-ab79-9bd1300189c8",
       "createdAt": "1745349982545",
       "updatedAt": "1745349982545"
+    },
+    {
+      "name": "Ed Catmull",
+      "id": "339096a6-8145-4f8f-8dc3-29d1bdc33e1f",
+      "createdAt": "1746356082283",
+      "updatedAt": "1746356082283"
+    },
+    {
+      "name": "Amy Wallace",
+      "id": "4e088fdf-fcd2-4312-a135-08f677770bd4",
+      "createdAt": "1746356082283",
+      "updatedAt": "1746356082283"
     }
   ],
   "booksOnShelves": [
@@ -18622,6 +18647,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1745767452253",
       "updatedAt": "1745767452253"
+    },
+    {
+      "bookId": "4abf311e-2218-4931-b8b9-d0e59b206a62",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1746356082283",
+      "updatedAt": "1746356082283"
+    },
+    {
+      "bookId": "4abf311e-2218-4931-b8b9-d0e59b206a62",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1746356082283",
+      "updatedAt": "1746356082283"
     }
   ],
   "shelves": [
@@ -18677,7 +18714,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 259535,
+      "pages": 259927,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18719,7 +18756,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 7467,
+      "pages": 7859,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -23470,6 +23507,18 @@
       "authorId": "e6babe0b-7e80-4d6d-b789-e552256a7656",
       "createdAt": "1745767452253",
       "updatedAt": "1745767452253"
+    },
+    {
+      "bookId": "4abf311e-2218-4931-b8b9-d0e59b206a62",
+      "authorId": "339096a6-8145-4f8f-8dc3-29d1bdc33e1f",
+      "createdAt": "1746356082283",
+      "updatedAt": "1746356082283"
+    },
+    {
+      "bookId": "4abf311e-2218-4931-b8b9-d0e59b206a62",
+      "authorId": "4e088fdf-fcd2-4312-a135-08f677770bd4",
+      "createdAt": "1746356082283",
+      "updatedAt": "1746356082283"
     }
   ]
 }
