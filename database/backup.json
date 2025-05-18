@@ -8891,6 +8891,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/273000/273096/430949-352x500.jpg",
       "createdAt": "1746356082283",
       "updatedAt": "1746356082283"
+    },
+    {
+      "id": "e4fb9062-37b1-4b7b-8c2b-b3a7d7b2e320",
+      "ISBN": "9788366409439",
+      "lcId": 4899212,
+      "pages": 562,
+      "rating": 5,
+      "title": "Wzlot Persepolis",
+      "url": "https://lubimyczytac.pl/ksiazka/4899212/wzlot-persepolis",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4899000/4899212/782283-352x500.jpg",
+      "createdAt": "1747602073727",
+      "updatedAt": "1747602073727"
     }
   ],
   "genres": [
@@ -18659,6 +18672,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1746356082283",
       "updatedAt": "1746356082283"
+    },
+    {
+      "bookId": "e4fb9062-37b1-4b7b-8c2b-b3a7d7b2e320",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1747602073727",
+      "updatedAt": "1747602073727"
+    },
+    {
+      "bookId": "e4fb9062-37b1-4b7b-8c2b-b3a7d7b2e320",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1747602073727",
+      "updatedAt": "1747602073727"
     }
   ],
   "shelves": [
@@ -18714,7 +18739,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 259927,
+      "pages": 260489,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18756,7 +18781,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 7859,
+      "pages": 8421,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -23519,6 +23544,12 @@
       "authorId": "4e088fdf-fcd2-4312-a135-08f677770bd4",
       "createdAt": "1746356082283",
       "updatedAt": "1746356082283"
+    },
+    {
+      "bookId": "e4fb9062-37b1-4b7b-8c2b-b3a7d7b2e320",
+      "authorId": "e6babe0b-7e80-4d6d-b789-e552256a7656",
+      "createdAt": "1747602073727",
+      "updatedAt": "1747602073727"
     }
   ]
 }
