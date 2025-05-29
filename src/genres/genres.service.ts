@@ -7,18 +7,15 @@ export class GenresService {
   constructor(private db: DBService) {}
 
   async findAll(): Promise<GenreDto[]> {
-    const genres = await this.db.genres.findMany()
-    return genres
+    return await this.db.genres.findMany()
   }
 
   async findOne(id: string): Promise<GenreDto> {
-    const genre = await this.db.genres.findUnique({
+    return await this.db.genres.findUnique({
       where: {
         id
       }
     })
-
-    return genre
   }
 
   async getName(id: string): Promise<string> {

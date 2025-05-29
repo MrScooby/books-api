@@ -1,12 +1,13 @@
 import { HttpStatus, Injectable, NotFoundException } from '@nestjs/common'
 import { DBService } from 'src/db/db.service'
 import { ShelfEntity } from './entities/shelf.entity'
-import { defaultPaginationOptions } from 'common/constants'
+import { defaultPaginationOptions } from 'src/common/constants'
 import {
   SearchPaginatedData,
   PaginatedResults
-} from 'common/interfaces/pagination'
+} from 'src/common/interfaces/pagination'
 import { ShelfDto } from './dto/shelf.dto'
+import { omit } from '../common/utils/omit.util'
 
 @Injectable()
 export class ShelvesService {
@@ -55,7 +56,7 @@ export class ShelvesService {
       })
     }
 
-    const { createdAt, updatedAt, ...rest } = shelf
+    const rest = omit(shelf, ['createdAt', 'updatedAt'])
 
     const booksOnShelves = await this.db.booksOnShelves.findMany({
       where: {
@@ -120,5 +121,7 @@ export class ShelvesService {
     return `Shelf "${name}" page count changed from ${shelf.pages} to ${count}`
   }
 
-  async updatePageCountAll(): Promise<any> {}
+  async updatePageCountAll(): Promise<any> {
+    // TODO: update all shelves page count
+  }
 }

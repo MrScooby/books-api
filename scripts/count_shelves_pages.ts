@@ -5,7 +5,7 @@
 /* One time script to update shelves table and backup with counted pages */
 
 import { PrismaClient } from '@prisma/client'
-import * as backup from '../../database/backup.json'
+import * as backup from '../database/backup.json'
 import * as fs from 'fs'
 
 const prisma = new PrismaClient()

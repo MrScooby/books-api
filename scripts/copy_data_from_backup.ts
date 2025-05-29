@@ -1,7 +1,7 @@
 /* Copy data from local backup to postgres - for data security till I will create proper, remote db */
 
 import { PrismaClient } from '@prisma/client'
-import * as firebase_data from '../../database/backup.json'
+import * as firebase_data from '../database/backup.json'
 
 const prisma = new PrismaClient()
 

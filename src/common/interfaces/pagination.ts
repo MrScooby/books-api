@@ -1,6 +1,5 @@
-import { Order } from "common/constants"
+import { Order } from 'src/common/constants'
 
-// TODO: share types between projects
 export interface PaginatedResults<T> {
   data: T[]
   meta: {

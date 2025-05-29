@@ -5,7 +5,7 @@
 /* One time use script to migrate data previously kept in firebase */
 
 import { PrismaClient } from '@prisma/client'
-import firebase_data from '../../database/firebase_data'
+import firebase_data from 'database/firebase_data'
 
 const prisma = new PrismaClient()
 

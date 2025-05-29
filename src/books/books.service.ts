@@ -3,20 +3,23 @@ import {
   ConflictException,
   HttpStatus,
   Injectable,
-  NotFoundException
+  NotFoundException,
+  InternalServerErrorException
 } from '@nestjs/common'
-import { defaultPaginationOptions } from 'common/constants'
+import { defaultPaginationOptions } from 'src/common/constants'
 import {
   PaginatedResults,
   SearchPaginatedData
-} from 'common/interfaces/pagination'
-import scrapBookData, { URLdata } from 'common/scripts/scrap_book_data'
+} from 'src/common/interfaces/pagination'
+import scrapBookData, { URLdata } from '../../scripts/scrap_book_data'
 import * as fs from 'fs'
 import { DBService } from 'src/db/db.service'
 import * as backup from '../../database/backup.json'
 import { BookDto } from './dto/book.dto'
 import { CreateBookDto } from './dto/create-book.dto'
 import { BookEntity } from './entities/book.entity'
+import { omit } from '../common/utils/omit.util'
+import { AddToShelfDto } from './dto/add-to-shelf.dto'
 
 @Injectable()
 export class BooksService {
@@ -26,11 +29,12 @@ export class BooksService {
     const bookData: URLdata = await scrapBookData(body.url)
     const now = Date.now().toString()
 
-    const newBookId = await this.db.$transaction(
-      async (tx): Promise<string> => {
+    let newBookId: string
+    try {
+      newBookId = await this.db.$transaction(async (tx): Promise<string> => {
         const authorsIds = await Promise.all(
           bookData.authors.map(async (authorName) => {
-            // TODO: move to dedicated services
+            // TODO: move to dedicated module
             const author = await tx.authors.findUnique({
               where: {
                 name: authorName
@@ -64,7 +68,7 @@ export class BooksService {
           })
         )
 
-        // TODO: move to dedicated services
+        // TODO: move to dedicated module
         let genre = await tx.genres.findUnique({
           where: {
             name: bookData.genre
@@ -79,7 +83,7 @@ export class BooksService {
           })
         }
 
-        // TODO: move to dedicated services
+        // TODO: move to dedicated module
         const shelves = await Promise.all(
           body.shelves.map(async (shelfName) => {
             const shelf = await tx.shelves.findUnique({
@@ -163,6 +167,7 @@ export class BooksService {
         })
 
         // Update local backup just in case (until proper db will be deployed on not free hosting)
+        // should be moved to some util service but more probable that I will just delete this all together later
         backup.books.push({
           id: newBook.id,
           ISBN: bookData.ISBN,
@@ -220,9 +225,15 @@ export class BooksService {
         )
 
         return newBook.id
-      }
-    )
-    // TODO: add error handling for transaction (client transaction with custom errors?)
+      })
+    } catch (error) {
+      throw new InternalServerErrorException({
+        error: 'Failed to create book. Transaction failed.',
+        status: HttpStatus.INTERNAL_SERVER_ERROR,
+        details: error.message
+      })
+    }
+
     return newBookId
   }
 
@@ -255,11 +266,6 @@ export class BooksService {
     }
   }
 
-  // exclude<T, Key extends keyof T>(
-  //   entity: T,
-  //   keysToOmit: Key
-  // ) {}
-
   async findOne(id: string): Promise<BookDto> {
     const book = await this.db.books.findUnique({
       where: {
@@ -274,10 +280,7 @@ export class BooksService {
       })
     }
 
-    // TODO: create generic function to omit some values
-    // const asd = this.exclude(book, ['title'])
-
-    const { createdAt, updatedAt, lcId, ...rest } = book
+    const rest = omit(book, ['createdAt', 'updatedAt', 'lcId'])
 
     const booksOnShelves = await this.db.booksOnShelves.findMany({
       where: {
@@ -382,7 +385,7 @@ export class BooksService {
     return `Book was deleted.`
   }
 
-  async addOnShelf(id: string, body: { shelfName: string }): Promise<BookDto> {
+  async addOnShelf(id: string, body: AddToShelfDto): Promise<BookDto> {
     const { shelfName } = body
 
     const book = await this.db.books.findUnique({
@@ -398,8 +401,8 @@ export class BooksService {
       })
     }
 
-    // TODO: add shelf types and move to separate module
-    let shelf
+    // TODO: move to dedicated module
+    let shelf: any
 
     try {
       shelf = await this.db.shelves.findUniqueOrThrow({
@@ -432,13 +435,17 @@ export class BooksService {
           }
         })
       })
-
-      // TODO: add to backup
-    } catch (e) {
-      // TODO: check if in fact it's duplicate exception
-      throw new ConflictException({
-        error: `Book is already on this shelf`,
-        status: HttpStatus.BAD_REQUEST
+    } catch (e: any) {
+      if (e.code === 'P2002' || e.message?.includes('Unique constraint')) {
+        throw new ConflictException({
+          error: `Book is already on this shelf`,
+          status: HttpStatus.CONFLICT
+        })
+      }
+      throw new InternalServerErrorException({
+        error: 'Failed to add book to shelf',
+        status: HttpStatus.INTERNAL_SERVER_ERROR,
+        details: e.message
       })
     }
 

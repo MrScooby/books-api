@@ -1,8 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsNumber, IsString, Min } from 'class-validator'
+import { IsNumber, IsString, Min, IsOptional, IsArray } from 'class-validator'
 import { CreateBookDto } from './create-book.dto'
 
-// TODO: add genre and author
 export class UpdateBookDto extends CreateBookDto {
   @ApiProperty()
   @IsNumber()
@@ -11,6 +10,7 @@ export class UpdateBookDto extends CreateBookDto {
 
   @ApiProperty()
   @IsString()
+  @IsOptional()
   ISBN: string | undefined
 
   @ApiProperty()
@@ -24,4 +24,22 @@ export class UpdateBookDto extends CreateBookDto {
   @ApiProperty()
   @IsString()
   imgUrl: string
+
+  @ApiProperty({
+    description: 'Genre ID for the book',
+    required: false
+  })
+  @IsString()
+  @IsOptional()
+  genreId?: string
+
+  @ApiProperty({
+    description: 'Array of author IDs for the book',
+    type: [String],
+    required: false
+  })
+  @IsArray()
+  @IsString({ each: true })
+  @IsOptional()
+  authorIds?: string[]
 }

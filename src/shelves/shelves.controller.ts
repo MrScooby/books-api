@@ -1,9 +1,9 @@
-import { Controller, Get, Param, Patch, Query } from '@nestjs/common'
+import { Controller, Get, Param, Query } from '@nestjs/common'
 import { ShelvesService } from './shelves.service'
 import {
   SearchPaginatedData,
   PaginatedResults
-} from 'common/interfaces/pagination'
+} from 'src/common/interfaces/pagination'
 import { ShelfEntity } from './entities/shelf.entity'
 import { ShelfDto } from './dto/shelf.dto'
 

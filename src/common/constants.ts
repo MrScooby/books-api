@@ -1,4 +1,4 @@
-import { SearchPaginatedData } from "./interfaces/pagination";
+import { SearchPaginatedData } from './interfaces/pagination'
 
 export enum Order {
   ASC = 'ASC',
