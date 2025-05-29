@@ -2,7 +2,7 @@ Simple API for private use.
 
 ## Description
 
-API for simple app displaying data about books that I reed.
+API for simple app displaying data about books that I read.
 
 ## Installation
 
