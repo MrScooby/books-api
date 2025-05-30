@@ -8917,6 +8917,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4866000/4866066/696268-352x500.jpg",
       "createdAt": "1747918511262",
       "updatedAt": "1747918511262"
+    },
+    {
+      "id": "7c749de3-adb7-4cc6-8652-73ae5890f0f3",
+      "ISBN": "9788381252782",
+      "lcId": 4845547,
+      "pages": 432,
+      "rating": 7,
+      "title": "Tysiąc wspaniałych słońc",
+      "url": "https://lubimyczytac.pl/ksiazka/4845547/tysiac-wspanialych-slonc",
+      "genreId": "f5fb4fb4-d838-40bd-9037-c251d1223bd6",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4845000/4845547/656712-352x500.jpg",
+      "createdAt": "1748637091308",
+      "updatedAt": "1748637091308"
     }
   ],
   "genres": [
@@ -18709,6 +18722,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1747918511262",
       "updatedAt": "1747918511262"
+    },
+    {
+      "bookId": "7c749de3-adb7-4cc6-8652-73ae5890f0f3",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1748637091308",
+      "updatedAt": "1748637091308"
+    },
+    {
+      "bookId": "7c749de3-adb7-4cc6-8652-73ae5890f0f3",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1748637091308",
+      "updatedAt": "1748637091308"
     }
   ],
   "shelves": [
@@ -18764,7 +18789,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 260713,
+      "pages": 261145,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18806,7 +18831,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 8645,
+      "pages": 9077,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -23581,6 +23606,12 @@
       "authorId": "d34dd4e8-60ff-4271-8dbb-368943fe6af2",
       "createdAt": "1747918511262",
       "updatedAt": "1747918511262"
+    },
+    {
+      "bookId": "7c749de3-adb7-4cc6-8652-73ae5890f0f3",
+      "authorId": "68391d35-9a8c-42ce-aeb8-e5ce19f55d8d",
+      "createdAt": "1748637091308",
+      "updatedAt": "1748637091308"
     }
   ]
 }
