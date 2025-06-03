@@ -8930,6 +8930,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4845000/4845547/656712-352x500.jpg",
       "createdAt": "1748637091308",
       "updatedAt": "1748637091308"
+    },
+    {
+      "id": "c9839fd5-e75f-43f0-bce9-f036efaee264",
+      "ISBN": "9788368101171",
+      "lcId": 5124518,
+      "pages": 288,
+      "rating": 6,
+      "title": "24 godziny w starożytnym Rzymie. Życie codzienne oczami mieszkańców: od niewolnika do cesarza, od prostytutki do kapłanki",
+      "url": "https://lubimyczytac.pl/ksiazka/5124518/24-godziny-w-starozytnym-rzymie-zycie-codzienne-oczami-mieszkancow-od-niewolnika-do-cesarza-od",
+      "genreId": "8ae19925-9cfe-4681-95d3-48bd471bc134",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5124000/5124518/1170114-352x500.jpg",
+      "createdAt": "1748990040977",
+      "updatedAt": "1748990040977"
     }
   ],
   "genres": [
@@ -11586,6 +11599,12 @@
       "id": "4e088fdf-fcd2-4312-a135-08f677770bd4",
       "createdAt": "1746356082283",
       "updatedAt": "1746356082283"
+    },
+    {
+      "name": "Philip Matyszak",
+      "id": "61e256e6-64d9-4e69-b272-7d537c659b43",
+      "createdAt": "1748990040977",
+      "updatedAt": "1748990040977"
     }
   ],
   "booksOnShelves": [
@@ -18734,6 +18753,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1748637091308",
       "updatedAt": "1748637091308"
+    },
+    {
+      "bookId": "c9839fd5-e75f-43f0-bce9-f036efaee264",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1748990040977",
+      "updatedAt": "1748990040977"
+    },
+    {
+      "bookId": "c9839fd5-e75f-43f0-bce9-f036efaee264",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1748990040977",
+      "updatedAt": "1748990040977"
     }
   ],
   "shelves": [
@@ -18789,7 +18820,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 261145,
+      "pages": 261433,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18831,7 +18862,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 9077,
+      "pages": 9365,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -23612,6 +23643,12 @@
       "authorId": "68391d35-9a8c-42ce-aeb8-e5ce19f55d8d",
       "createdAt": "1748637091308",
       "updatedAt": "1748637091308"
+    },
+    {
+      "bookId": "c9839fd5-e75f-43f0-bce9-f036efaee264",
+      "authorId": "61e256e6-64d9-4e69-b272-7d537c659b43",
+      "createdAt": "1748990040977",
+      "updatedAt": "1748990040977"
     }
   ]
 }
