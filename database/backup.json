@@ -8943,6 +8943,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/5124000/5124518/1170114-352x500.jpg",
       "createdAt": "1748990040977",
       "updatedAt": "1748990040977"
+    },
+    {
+      "id": "34ca6d7a-fa5e-40ff-9389-5083533c5d09",
+      "ISBN": "9788368069365",
+      "lcId": 5118865,
+      "pages": 384,
+      "rating": 8,
+      "title": "Efekt Sieci",
+      "url": "https://lubimyczytac.pl/ksiazka/5118865/efekt-sieci",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5118000/5118865/1170404-352x500.jpg",
+      "createdAt": "1749683295761",
+      "updatedAt": "1749683295761"
     }
   ],
   "genres": [
@@ -18765,6 +18778,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1748990040977",
       "updatedAt": "1748990040977"
+    },
+    {
+      "bookId": "34ca6d7a-fa5e-40ff-9389-5083533c5d09",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1749683295761",
+      "updatedAt": "1749683295761"
+    },
+    {
+      "bookId": "34ca6d7a-fa5e-40ff-9389-5083533c5d09",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1749683295761",
+      "updatedAt": "1749683295761"
     }
   ],
   "shelves": [
@@ -18820,7 +18845,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 261433,
+      "pages": 261817,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18862,7 +18887,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 9365,
+      "pages": 9749,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -23649,6 +23674,12 @@
       "authorId": "61e256e6-64d9-4e69-b272-7d537c659b43",
       "createdAt": "1748990040977",
       "updatedAt": "1748990040977"
+    },
+    {
+      "bookId": "34ca6d7a-fa5e-40ff-9389-5083533c5d09",
+      "authorId": "e8c09d4d-c08c-406a-8d75-fb21fb31c68b",
+      "createdAt": "1749683295761",
+      "updatedAt": "1749683295761"
     }
   ]
 }
