@@ -8969,6 +8969,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/179000/179793/1115382-352x500.jpg",
       "createdAt": "1750537810847",
       "updatedAt": "1750537810847"
+    },
+    {
+      "id": "36e361b0-acf4-47b5-bb55-9c9f07b1ff48",
+      "ISBN": "9788367949705",
+      "lcId": 5111850,
+      "pages": 376,
+      "rating": 6,
+      "title": "Początkujący złoczyńca",
+      "url": "https://lubimyczytac.pl/ksiazka/5111850/poczatkujacy-zloczynca",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5111000/5111850/1248211-352x500.jpg",
+      "createdAt": "1750641921240",
+      "updatedAt": "1750641921240"
     }
   ],
   "genres": [
@@ -18815,6 +18828,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1750537810847",
       "updatedAt": "1750537810847"
+    },
+    {
+      "bookId": "36e361b0-acf4-47b5-bb55-9c9f07b1ff48",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1750641921240",
+      "updatedAt": "1750641921240"
+    },
+    {
+      "bookId": "36e361b0-acf4-47b5-bb55-9c9f07b1ff48",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1750641921240",
+      "updatedAt": "1750641921240"
     }
   ],
   "shelves": [
@@ -18870,7 +18895,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 262357,
+      "pages": 262733,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18912,7 +18937,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 10289,
+      "pages": 10665,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -23711,6 +23736,12 @@
       "authorId": "f367a8dc-d4e5-47b0-a214-f9590cba267e",
       "createdAt": "1750537810847",
       "updatedAt": "1750537810847"
+    },
+    {
+      "bookId": "36e361b0-acf4-47b5-bb55-9c9f07b1ff48",
+      "authorId": "83933d27-b02f-4344-8be7-e8cf99575232",
+      "createdAt": "1750641921240",
+      "updatedAt": "1750641921240"
     }
   ]
 }
