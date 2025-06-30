@@ -8982,6 +8982,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/5111000/5111850/1248211-352x500.jpg",
       "createdAt": "1750641921240",
       "updatedAt": "1750641921240"
+    },
+    {
+      "id": "83d1f5ff-8267-45d2-a957-ec717bb03f42",
+      "ISBN": "9788366409095",
+      "lcId": 4905284,
+      "pages": 530,
+      "rating": 7,
+      "title": "Gniew Tiamat",
+      "url": "https://lubimyczytac.pl/ksiazka/4905284/gniew-tiamat",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4905000/4905284/820052-352x500.jpg",
+      "createdAt": "1751318660652",
+      "updatedAt": "1751318660652"
     }
   ],
   "genres": [
@@ -18840,6 +18853,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1750641921240",
       "updatedAt": "1750641921240"
+    },
+    {
+      "bookId": "83d1f5ff-8267-45d2-a957-ec717bb03f42",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1751318660652",
+      "updatedAt": "1751318660652"
+    },
+    {
+      "bookId": "83d1f5ff-8267-45d2-a957-ec717bb03f42",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1751318660652",
+      "updatedAt": "1751318660652"
     }
   ],
   "shelves": [
@@ -18895,7 +18920,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 262733,
+      "pages": 263263,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18937,7 +18962,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 10665,
+      "pages": 11195,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -23742,6 +23767,12 @@
       "authorId": "83933d27-b02f-4344-8be7-e8cf99575232",
       "createdAt": "1750641921240",
       "updatedAt": "1750641921240"
+    },
+    {
+      "bookId": "83d1f5ff-8267-45d2-a957-ec717bb03f42",
+      "authorId": "e6babe0b-7e80-4d6d-b789-e552256a7656",
+      "createdAt": "1751318660652",
+      "updatedAt": "1751318660652"
     }
   ]
 }
