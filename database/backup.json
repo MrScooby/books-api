@@ -8995,6 +8995,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4905000/4905284/820052-352x500.jpg",
       "createdAt": "1751318660652",
       "updatedAt": "1751318660652"
+    },
+    {
+      "id": "513bfdf3-5dda-4459-9b71-1a0bb17642da",
+      "ISBN": "9788381919609",
+      "lcId": 5124940,
+      "pages": 248,
+      "rating": 7,
+      "title": "Masz się łasić. Mobbing w Polsce",
+      "url": "https://lubimyczytac.pl/ksiazka/5124940/masz-sie-lasic-mobbing-w-polsce",
+      "genreId": "e9ac4deb-2a32-49a2-a1bf-cbc091c4564f",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5124000/5124940/1170805-352x500.jpg",
+      "createdAt": "1751924187097",
+      "updatedAt": "1751924187097"
     }
   ],
   "genres": [
@@ -11657,6 +11670,12 @@
       "id": "61e256e6-64d9-4e69-b272-7d537c659b43",
       "createdAt": "1748990040977",
       "updatedAt": "1748990040977"
+    },
+    {
+      "name": "Katarzyna Bednarczykówna",
+      "id": "b671a4eb-54fe-4de7-9221-145c7b83a126",
+      "createdAt": "1751924187097",
+      "updatedAt": "1751924187097"
     }
   ],
   "booksOnShelves": [
@@ -18865,6 +18884,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1751318660652",
       "updatedAt": "1751318660652"
+    },
+    {
+      "bookId": "513bfdf3-5dda-4459-9b71-1a0bb17642da",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1751924187097",
+      "updatedAt": "1751924187097"
+    },
+    {
+      "bookId": "513bfdf3-5dda-4459-9b71-1a0bb17642da",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1751924187097",
+      "updatedAt": "1751924187097"
     }
   ],
   "shelves": [
@@ -18920,7 +18951,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 263263,
+      "pages": 263511,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -18962,7 +18993,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 11195,
+      "pages": 11443,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -23773,6 +23804,12 @@
       "authorId": "e6babe0b-7e80-4d6d-b789-e552256a7656",
       "createdAt": "1751318660652",
       "updatedAt": "1751318660652"
+    },
+    {
+      "bookId": "513bfdf3-5dda-4459-9b71-1a0bb17642da",
+      "authorId": "b671a4eb-54fe-4de7-9221-145c7b83a126",
+      "createdAt": "1751924187097",
+      "updatedAt": "1751924187097"
     }
   ]
 }
