@@ -9021,6 +9021,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4982000/4982657/954202-352x500.jpg",
       "createdAt": "1752619305501",
       "updatedAt": "1752619305501"
+    },
+    {
+      "id": "d8bad232-91bf-4ed2-bd87-5222c7591dc2",
+      "ISBN": "9788379611348",
+      "lcId": 239509,
+      "pages": 256,
+      "rating": 5,
+      "title": "Teoretyczne minimum. Co musisz wiedzieć, żeby zacząć zajmować się fizyką",
+      "url": "https://lubimyczytac.pl/ksiazka/239509/teoretyczne-minimum-co-musisz-wiedziec-zeby-zaczac-zajmowac-sie-fizyka",
+      "genreId": "b1e73219-b051-45d7-91d2-9a7a54a65229",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/239000/239509/674890-352x500.jpg",
+      "createdAt": "1752858365864",
+      "updatedAt": "1752858365864"
     }
   ],
   "genres": [
@@ -11689,6 +11702,18 @@
       "id": "b671a4eb-54fe-4de7-9221-145c7b83a126",
       "createdAt": "1751924187097",
       "updatedAt": "1751924187097"
+    },
+    {
+      "name": "Leonard Susskind",
+      "id": "3b1496d3-3b19-4384-a546-10d2c9223e95",
+      "createdAt": "1752858365864",
+      "updatedAt": "1752858365864"
+    },
+    {
+      "name": "George Hrabovsky",
+      "id": "18c47448-4c70-4dcc-8759-11ef09795f0b",
+      "createdAt": "1752858365864",
+      "updatedAt": "1752858365864"
     }
   ],
   "booksOnShelves": [
@@ -18921,6 +18946,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1752619305501",
       "updatedAt": "1752619305501"
+    },
+    {
+      "bookId": "d8bad232-91bf-4ed2-bd87-5222c7591dc2",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1752858365864",
+      "updatedAt": "1752858365864"
+    },
+    {
+      "bookId": "d8bad232-91bf-4ed2-bd87-5222c7591dc2",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1752858365864",
+      "updatedAt": "1752858365864"
     }
   ],
   "shelves": [
@@ -18976,7 +19013,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 264029,
+      "pages": 264285,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -19018,7 +19055,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 11961,
+      "pages": 12217,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -23841,6 +23878,18 @@
       "authorId": "e6babe0b-7e80-4d6d-b789-e552256a7656",
       "createdAt": "1752619305501",
       "updatedAt": "1752619305501"
+    },
+    {
+      "bookId": "d8bad232-91bf-4ed2-bd87-5222c7591dc2",
+      "authorId": "3b1496d3-3b19-4384-a546-10d2c9223e95",
+      "createdAt": "1752858365864",
+      "updatedAt": "1752858365864"
+    },
+    {
+      "bookId": "d8bad232-91bf-4ed2-bd87-5222c7591dc2",
+      "authorId": "18c47448-4c70-4dcc-8759-11ef09795f0b",
+      "createdAt": "1752858365864",
+      "updatedAt": "1752858365864"
     }
   ]
 }
