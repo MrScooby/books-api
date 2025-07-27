@@ -9034,6 +9034,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/239000/239509/674890-352x500.jpg",
       "createdAt": "1752858365864",
       "updatedAt": "1752858365864"
+    },
+    {
+      "id": "fccd2429-6dba-4de0-9e6c-c98f62c95be6",
+      "ISBN": "9788374801614",
+      "lcId": 51231,
+      "pages": 480,
+      "rating": 6,
+      "title": "Shriek: Posłowie",
+      "url": "https://lubimyczytac.pl/ksiazka/51231/shriek-poslowie",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/51000/51231/352x500.jpg",
+      "createdAt": "1753646313461",
+      "updatedAt": "1753646313461"
     }
   ],
   "genres": [
@@ -18958,6 +18971,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1752858365864",
       "updatedAt": "1752858365864"
+    },
+    {
+      "bookId": "fccd2429-6dba-4de0-9e6c-c98f62c95be6",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1753646313461",
+      "updatedAt": "1753646313461"
+    },
+    {
+      "bookId": "fccd2429-6dba-4de0-9e6c-c98f62c95be6",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1753646313461",
+      "updatedAt": "1753646313461"
     }
   ],
   "shelves": [
@@ -19013,7 +19038,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 264285,
+      "pages": 264765,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -19055,7 +19080,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 12217,
+      "pages": 12697,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -23890,6 +23915,12 @@
       "authorId": "18c47448-4c70-4dcc-8759-11ef09795f0b",
       "createdAt": "1752858365864",
       "updatedAt": "1752858365864"
+    },
+    {
+      "bookId": "fccd2429-6dba-4de0-9e6c-c98f62c95be6",
+      "authorId": "ffbf7dfc-284b-40ac-886f-e713efeaec26",
+      "createdAt": "1753646313461",
+      "updatedAt": "1753646313461"
     }
   ]
 }
