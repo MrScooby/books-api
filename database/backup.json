@@ -9060,6 +9060,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4810000/4810853/604964-352x500.jpg",
       "createdAt": "1754144980114",
       "updatedAt": "1754144980114"
+    },
+    {
+      "id": "d29fe72b-ac43-471c-9309-c68b7cbb3df5",
+      "ISBN": "9788308044766",
+      "lcId": 49585,
+      "pages": 444,
+      "rating": 5,
+      "title": "Krwawy południk",
+      "url": "https://lubimyczytac.pl/ksiazka/49585/krwawy-poludnik",
+      "genreId": "f5fb4fb4-d838-40bd-9037-c251d1223bd6",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/49000/49585/352x500.jpg",
+      "createdAt": "1755379148018",
+      "updatedAt": "1755379148018"
     }
   ],
   "genres": [
@@ -19026,6 +19039,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1754144980114",
       "updatedAt": "1754144980114"
+    },
+    {
+      "bookId": "d29fe72b-ac43-471c-9309-c68b7cbb3df5",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1755379148018",
+      "updatedAt": "1755379148018"
+    },
+    {
+      "bookId": "d29fe72b-ac43-471c-9309-c68b7cbb3df5",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1755379148018",
+      "updatedAt": "1755379148018"
     }
   ],
   "shelves": [
@@ -19081,7 +19106,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 265205,
+      "pages": 265649,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -19123,7 +19148,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 13137,
+      "pages": 13581,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -23976,6 +24001,12 @@
       "authorId": "a9278352-a4d6-4233-bbce-967f1c017b8c",
       "createdAt": "1754144980114",
       "updatedAt": "1754144980114"
+    },
+    {
+      "bookId": "d29fe72b-ac43-471c-9309-c68b7cbb3df5",
+      "authorId": "91f02b1f-dca5-452d-afee-e9c9de6145f6",
+      "createdAt": "1755379148018",
+      "updatedAt": "1755379148018"
     }
   ]
 }
