@@ -9073,6 +9073,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/49000/49585/352x500.jpg",
       "createdAt": "1755379148018",
       "updatedAt": "1755379148018"
+    },
+    {
+      "id": "b8614c9d-3160-4656-be2b-163cd03534df",
+      "ISBN": "9788388922534",
+      "lcId": 4072739,
+      "pages": 152,
+      "rating": 8,
+      "title": "Radosna kosmologia",
+      "url": "https://lubimyczytac.pl/ksiazka/4072739/radosna-kosmologia",
+      "genreId": "2a9eba4d-9d28-4a97-a139-3bdd13330d7e",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4072000/4072739/1036307-352x500.jpg",
+      "createdAt": "1755963720603",
+      "updatedAt": "1755963720603"
     }
   ],
   "genres": [
@@ -19051,6 +19064,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1755379148018",
       "updatedAt": "1755379148018"
+    },
+    {
+      "bookId": "b8614c9d-3160-4656-be2b-163cd03534df",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1755963720603",
+      "updatedAt": "1755963720603"
+    },
+    {
+      "bookId": "b8614c9d-3160-4656-be2b-163cd03534df",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1755963720603",
+      "updatedAt": "1755963720603"
     }
   ],
   "shelves": [
@@ -19106,7 +19131,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 265649,
+      "pages": 265801,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -19148,7 +19173,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 13581,
+      "pages": 13733,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -24007,6 +24032,12 @@
       "authorId": "91f02b1f-dca5-452d-afee-e9c9de6145f6",
       "createdAt": "1755379148018",
       "updatedAt": "1755379148018"
+    },
+    {
+      "bookId": "b8614c9d-3160-4656-be2b-163cd03534df",
+      "authorId": "edaf7331-6fc1-420f-96e1-73d4cdede9d2",
+      "createdAt": "1755963720603",
+      "updatedAt": "1755963720603"
     }
   ]
 }
