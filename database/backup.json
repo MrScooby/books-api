@@ -9086,6 +9086,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4072000/4072739/1036307-352x500.jpg",
       "createdAt": "1755963720603",
       "updatedAt": "1755963720603"
+    },
+    {
+      "id": "376cde16-b7b2-4f12-b6ae-f563206d20e0",
+      "ISBN": "9788324055753",
+      "lcId": 4874646,
+      "pages": 256,
+      "rating": 7,
+      "title": "Terra insecta. Planeta owadów",
+      "url": "https://lubimyczytac.pl/ksiazka/4874646/terra-insecta-planeta-owadow",
+      "genreId": "e3475ffd-d202-46ce-b1e0-9b07943e6f1c",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4874000/4874646/883594-352x500.jpg",
+      "createdAt": "1756817668754",
+      "updatedAt": "1756817668754"
     }
   ],
   "genres": [
@@ -11778,6 +11791,12 @@
       "id": "a9278352-a4d6-4233-bbce-967f1c017b8c",
       "createdAt": "1754144980114",
       "updatedAt": "1754144980114"
+    },
+    {
+      "name": "Anne Sverdrup-Thygeson",
+      "id": "805464dc-c85c-4203-bb81-6be21044477e",
+      "createdAt": "1756817668754",
+      "updatedAt": "1756817668754"
     }
   ],
   "booksOnShelves": [
@@ -19076,6 +19095,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1755963720603",
       "updatedAt": "1755963720603"
+    },
+    {
+      "bookId": "376cde16-b7b2-4f12-b6ae-f563206d20e0",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1756817668754",
+      "updatedAt": "1756817668754"
+    },
+    {
+      "bookId": "376cde16-b7b2-4f12-b6ae-f563206d20e0",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1756817668754",
+      "updatedAt": "1756817668754"
     }
   ],
   "shelves": [
@@ -19131,7 +19162,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 265801,
+      "pages": 266057,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -19173,7 +19204,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 13733,
+      "pages": 13989,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -24038,6 +24069,12 @@
       "authorId": "edaf7331-6fc1-420f-96e1-73d4cdede9d2",
       "createdAt": "1755963720603",
       "updatedAt": "1755963720603"
+    },
+    {
+      "bookId": "376cde16-b7b2-4f12-b6ae-f563206d20e0",
+      "authorId": "805464dc-c85c-4203-bb81-6be21044477e",
+      "createdAt": "1756817668754",
+      "updatedAt": "1756817668754"
     }
   ]
 }
