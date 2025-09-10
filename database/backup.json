@@ -9099,6 +9099,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4874000/4874646/883594-352x500.jpg",
       "createdAt": "1756817668754",
       "updatedAt": "1756817668754"
+    },
+    {
+      "id": "b270fcb5-1625-4390-b05d-d44abec5e96b",
+      "ISBN": "9788381353694",
+      "lcId": 5103316,
+      "pages": 464,
+      "rating": 9,
+      "title": "Skarby Ziemi. Sześć surowców, które zadecydują o przetrwaniu naszej cywilizacji",
+      "url": "https://lubimyczytac.pl/ksiazka/5103316/skarby-ziemi-szesc-surowcow-ktore-zadecyduja-o-przetrwaniu-naszej-cywilizacji",
+      "genreId": "e9ac4deb-2a32-49a2-a1bf-cbc091c4564f",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5103000/5103316/1248262-352x500.jpg",
+      "createdAt": "1757544688971",
+      "updatedAt": "1757544688971"
     }
   ],
   "genres": [
@@ -11797,6 +11810,12 @@
       "id": "805464dc-c85c-4203-bb81-6be21044477e",
       "createdAt": "1756817668754",
       "updatedAt": "1756817668754"
+    },
+    {
+      "name": "Ed Conway",
+      "id": "904fd054-fe05-4d3d-9683-dc235e718c53",
+      "createdAt": "1757544688971",
+      "updatedAt": "1757544688971"
     }
   ],
   "booksOnShelves": [
@@ -19107,6 +19126,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1756817668754",
       "updatedAt": "1756817668754"
+    },
+    {
+      "bookId": "b270fcb5-1625-4390-b05d-d44abec5e96b",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1757544688971",
+      "updatedAt": "1757544688971"
+    },
+    {
+      "bookId": "b270fcb5-1625-4390-b05d-d44abec5e96b",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1757544688971",
+      "updatedAt": "1757544688971"
     }
   ],
   "shelves": [
@@ -19162,7 +19193,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 266057,
+      "pages": 266521,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -19204,7 +19235,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 13989,
+      "pages": 14453,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -24075,6 +24106,12 @@
       "authorId": "805464dc-c85c-4203-bb81-6be21044477e",
       "createdAt": "1756817668754",
       "updatedAt": "1756817668754"
+    },
+    {
+      "bookId": "b270fcb5-1625-4390-b05d-d44abec5e96b",
+      "authorId": "904fd054-fe05-4d3d-9683-dc235e718c53",
+      "createdAt": "1757544688971",
+      "updatedAt": "1757544688971"
     }
   ]
 }
