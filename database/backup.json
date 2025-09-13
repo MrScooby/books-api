@@ -9112,6 +9112,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/5103000/5103316/1248262-352x500.jpg",
       "createdAt": "1757544688971",
       "updatedAt": "1757544688971"
+    },
+    {
+      "id": "138bf568-2682-4de5-882f-be6d8b5b166f",
+      "ISBN": "9788381230735",
+      "lcId": 4807714,
+      "pages": 366,
+      "rating": 2,
+      "title": "Beren i Lúthien",
+      "url": "https://lubimyczytac.pl/ksiazka/4807714/beren-i-luthien",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4807000/4807714/599207-352x500.jpg",
+      "createdAt": "1757761920598",
+      "updatedAt": "1757761920598"
     }
   ],
   "genres": [
@@ -11816,6 +11829,12 @@
       "id": "904fd054-fe05-4d3d-9683-dc235e718c53",
       "createdAt": "1757544688971",
       "updatedAt": "1757544688971"
+    },
+    {
+      "name": "Christopher John Reuel Tolkien",
+      "id": "50bf09d5-1215-4c37-a45d-bcab25bf88f9",
+      "createdAt": "1757761920598",
+      "updatedAt": "1757761920598"
     }
   ],
   "booksOnShelves": [
@@ -19138,6 +19157,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1757544688971",
       "updatedAt": "1757544688971"
+    },
+    {
+      "bookId": "138bf568-2682-4de5-882f-be6d8b5b166f",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1757761920598",
+      "updatedAt": "1757761920598"
+    },
+    {
+      "bookId": "138bf568-2682-4de5-882f-be6d8b5b166f",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1757761920598",
+      "updatedAt": "1757761920598"
     }
   ],
   "shelves": [
@@ -19193,7 +19224,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 266521,
+      "pages": 266887,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -19235,7 +19266,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 14453,
+      "pages": 14819,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -24112,6 +24143,18 @@
       "authorId": "904fd054-fe05-4d3d-9683-dc235e718c53",
       "createdAt": "1757544688971",
       "updatedAt": "1757544688971"
+    },
+    {
+      "bookId": "138bf568-2682-4de5-882f-be6d8b5b166f",
+      "authorId": "50bf09d5-1215-4c37-a45d-bcab25bf88f9",
+      "createdAt": "1757761920598",
+      "updatedAt": "1757761920598"
+    },
+    {
+      "bookId": "138bf568-2682-4de5-882f-be6d8b5b166f",
+      "authorId": "4363c482-7461-4c25-926b-0101ac911fc6",
+      "createdAt": "1757761920598",
+      "updatedAt": "1757761920598"
     }
   ]
 }
