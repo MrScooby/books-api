@@ -9125,6 +9125,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4807000/4807714/599207-352x500.jpg",
       "createdAt": "1757761920598",
       "updatedAt": "1757761920598"
+    },
+    {
+      "id": "b548a246-9074-4db0-b7ec-947d5407bb24",
+      "ISBN": "9788366517349",
+      "lcId": 4911407,
+      "pages": 344,
+      "rating": 2,
+      "title": "Co nas (nie) zabije. Największe plagi w historii ludzkości",
+      "url": "https://lubimyczytac.pl/ksiazka/4911407/co-nas-nie-zabije-najwieksze-plagi-w-historii-ludzkosci",
+      "genreId": "e3475ffd-d202-46ce-b1e0-9b07943e6f1c",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4911000/4911407/810412-352x500.jpg",
+      "createdAt": "1758729849799",
+      "updatedAt": "1758729849799"
     }
   ],
   "genres": [
@@ -11835,6 +11848,12 @@
       "id": "50bf09d5-1215-4c37-a45d-bcab25bf88f9",
       "createdAt": "1757761920598",
       "updatedAt": "1757761920598"
+    },
+    {
+      "name": "Jennifer Wright",
+      "id": "6f79f7d5-3682-4bf3-a274-5a04eea62d7c",
+      "createdAt": "1758729849799",
+      "updatedAt": "1758729849799"
     }
   ],
   "booksOnShelves": [
@@ -19169,6 +19188,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1757761920598",
       "updatedAt": "1757761920598"
+    },
+    {
+      "bookId": "b548a246-9074-4db0-b7ec-947d5407bb24",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1758729849799",
+      "updatedAt": "1758729849799"
+    },
+    {
+      "bookId": "b548a246-9074-4db0-b7ec-947d5407bb24",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1758729849799",
+      "updatedAt": "1758729849799"
     }
   ],
   "shelves": [
@@ -19224,7 +19255,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 266887,
+      "pages": 267231,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -19266,7 +19297,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 14819,
+      "pages": 15163,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -24155,6 +24186,12 @@
       "authorId": "4363c482-7461-4c25-926b-0101ac911fc6",
       "createdAt": "1757761920598",
       "updatedAt": "1757761920598"
+    },
+    {
+      "bookId": "b548a246-9074-4db0-b7ec-947d5407bb24",
+      "authorId": "6f79f7d5-3682-4bf3-a274-5a04eea62d7c",
+      "createdAt": "1758729849799",
+      "updatedAt": "1758729849799"
     }
   ]
 }
