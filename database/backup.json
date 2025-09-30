@@ -9138,6 +9138,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4911000/4911407/810412-352x500.jpg",
       "createdAt": "1758729849799",
       "updatedAt": "1758729849799"
+    },
+    {
+      "id": "bdc1a967-299c-467a-ad28-d5b6668b6fb6",
+      "ISBN": "9780857524195",
+      "lcId": 4811810,
+      "pages": 256,
+      "rating": 4,
+      "title": "The Travelling Cat Chronicles",
+      "url": "https://lubimyczytac.pl/ksiazka/4811810/the-travelling-cat-chronicles",
+      "genreId": "f5fb4fb4-d838-40bd-9037-c251d1223bd6",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4811000/4811810/606832-352x500.jpg",
+      "createdAt": "1759242788310",
+      "updatedAt": "1759242788310"
     }
   ],
   "genres": [
@@ -11854,6 +11867,12 @@
       "id": "6f79f7d5-3682-4bf3-a274-5a04eea62d7c",
       "createdAt": "1758729849799",
       "updatedAt": "1758729849799"
+    },
+    {
+      "name": "Hiro Arikawa",
+      "id": "a6b4e26b-65a8-45e3-9d8f-891b70919270",
+      "createdAt": "1759242788310",
+      "updatedAt": "1759242788310"
     }
   ],
   "booksOnShelves": [
@@ -19200,6 +19219,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1758729849799",
       "updatedAt": "1758729849799"
+    },
+    {
+      "bookId": "bdc1a967-299c-467a-ad28-d5b6668b6fb6",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1759242788310",
+      "updatedAt": "1759242788310"
+    },
+    {
+      "bookId": "bdc1a967-299c-467a-ad28-d5b6668b6fb6",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1759242788310",
+      "updatedAt": "1759242788310"
     }
   ],
   "shelves": [
@@ -19255,7 +19286,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 267231,
+      "pages": 267487,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -19297,7 +19328,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 15163,
+      "pages": 15419,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -24192,6 +24223,12 @@
       "authorId": "6f79f7d5-3682-4bf3-a274-5a04eea62d7c",
       "createdAt": "1758729849799",
       "updatedAt": "1758729849799"
+    },
+    {
+      "bookId": "bdc1a967-299c-467a-ad28-d5b6668b6fb6",
+      "authorId": "a6b4e26b-65a8-45e3-9d8f-891b70919270",
+      "createdAt": "1759242788310",
+      "updatedAt": "1759242788310"
     }
   ]
 }
