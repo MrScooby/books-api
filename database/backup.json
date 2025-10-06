@@ -9151,6 +9151,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4811000/4811810/606832-352x500.jpg",
       "createdAt": "1759242788310",
       "updatedAt": "1759242788310"
+    },
+    {
+      "id": "04b3b9be-9a7e-49d8-aa65-3f6f6366666c",
+      "ISBN": "0143118072",
+      "lcId": 5210978,
+      "pages": 368,
+      "rating": 6,
+      "title": "A Paradise Built in Hell: The Extraordinary Communities That Arise in Disaster",
+      "url": "https://lubimyczytac.pl/ksiazka/5210978/a-paradise-built-in-hell-the-extraordinary-communities-that-arise-in-disaster",
+      "genreId": "fd8acb8c-49aa-4110-aa58-83363a52835d",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/5210000/5210978/1309153-352x500.jpg",
+      "createdAt": "1759772645904",
+      "updatedAt": "1759772645904"
     }
   ],
   "genres": [
@@ -11873,6 +11886,12 @@
       "id": "a6b4e26b-65a8-45e3-9d8f-891b70919270",
       "createdAt": "1759242788310",
       "updatedAt": "1759242788310"
+    },
+    {
+      "name": "Rebecca Solnit",
+      "id": "393d22ef-a8cd-4a17-819a-ac0fa223c82a",
+      "createdAt": "1759772645904",
+      "updatedAt": "1759772645904"
     }
   ],
   "booksOnShelves": [
@@ -19231,6 +19250,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1759242788310",
       "updatedAt": "1759242788310"
+    },
+    {
+      "bookId": "04b3b9be-9a7e-49d8-aa65-3f6f6366666c",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1759772645904",
+      "updatedAt": "1759772645904"
+    },
+    {
+      "bookId": "04b3b9be-9a7e-49d8-aa65-3f6f6366666c",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1759772645904",
+      "updatedAt": "1759772645904"
     }
   ],
   "shelves": [
@@ -19286,7 +19317,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 267487,
+      "pages": 267855,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -19328,7 +19359,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 15419,
+      "pages": 15787,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -24229,6 +24260,12 @@
       "authorId": "a6b4e26b-65a8-45e3-9d8f-891b70919270",
       "createdAt": "1759242788310",
       "updatedAt": "1759242788310"
+    },
+    {
+      "bookId": "04b3b9be-9a7e-49d8-aa65-3f6f6366666c",
+      "authorId": "393d22ef-a8cd-4a17-819a-ac0fa223c82a",
+      "createdAt": "1759772645904",
+      "updatedAt": "1759772645904"
     }
   ]
 }
