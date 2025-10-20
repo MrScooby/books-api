@@ -9164,6 +9164,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/5210000/5210978/1309153-352x500.jpg",
       "createdAt": "1759772645904",
       "updatedAt": "1759772645904"
+    },
+    {
+      "id": "fdc8fe42-9350-43a6-b541-9a5b65034061",
+      "ISBN": "9788377313237",
+      "lcId": 4878905,
+      "pages": 301,
+      "rating": 5,
+      "title": "Zew Cthulhu",
+      "url": "https://lubimyczytac.pl/ksiazka/4878905/zew-cthulhu",
+      "genreId": "53bab2a1-6dc2-4ce8-8721-e3361babe92a",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4878000/4878905/730262-352x500.jpg",
+      "createdAt": "1760991587418",
+      "updatedAt": "1760991587418"
     }
   ],
   "genres": [
@@ -11892,6 +11905,12 @@
       "id": "393d22ef-a8cd-4a17-819a-ac0fa223c82a",
       "createdAt": "1759772645904",
       "updatedAt": "1759772645904"
+    },
+    {
+      "name": "H.P. Lovecraft",
+      "id": "d7456f80-3916-413c-a63c-195bb5e8edf3",
+      "createdAt": "1760991587418",
+      "updatedAt": "1760991587418"
     }
   ],
   "booksOnShelves": [
@@ -19262,6 +19281,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1759772645904",
       "updatedAt": "1759772645904"
+    },
+    {
+      "bookId": "fdc8fe42-9350-43a6-b541-9a5b65034061",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1760991587418",
+      "updatedAt": "1760991587418"
+    },
+    {
+      "bookId": "fdc8fe42-9350-43a6-b541-9a5b65034061",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1760991587418",
+      "updatedAt": "1760991587418"
     }
   ],
   "shelves": [
@@ -19317,7 +19348,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 267855,
+      "pages": 268156,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -19359,7 +19390,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 15787,
+      "pages": 16088,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -24266,6 +24297,12 @@
       "authorId": "393d22ef-a8cd-4a17-819a-ac0fa223c82a",
       "createdAt": "1759772645904",
       "updatedAt": "1759772645904"
+    },
+    {
+      "bookId": "fdc8fe42-9350-43a6-b541-9a5b65034061",
+      "authorId": "d7456f80-3916-413c-a63c-195bb5e8edf3",
+      "createdAt": "1760991587418",
+      "updatedAt": "1760991587418"
     }
   ]
 }
