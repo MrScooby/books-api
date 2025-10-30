@@ -9177,6 +9177,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4878000/4878905/730262-352x500.jpg",
       "createdAt": "1760991587418",
       "updatedAt": "1760991587418"
+    },
+    {
+      "id": "92e1f8dd-7ca4-4919-9bc8-054b10cddd7f",
+      "ISBN": "9788381161381",
+      "lcId": 4803285,
+      "pages": 496,
+      "rating": 8,
+      "title": "Daleka droga do małej, gniewnej planety",
+      "url": "https://lubimyczytac.pl/ksiazka/4803285/daleka-droga-do-malej-gniewnej-planety",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/4803000/4803285/610273-352x500.jpg",
+      "createdAt": "1761866482799",
+      "updatedAt": "1761866482799"
     }
   ],
   "genres": [
@@ -11911,6 +11924,12 @@
       "id": "d7456f80-3916-413c-a63c-195bb5e8edf3",
       "createdAt": "1760991587418",
       "updatedAt": "1760991587418"
+    },
+    {
+      "name": "Becky Chambers",
+      "id": "340115ef-ac8a-45be-8e06-2c0d6189e752",
+      "createdAt": "1761866482799",
+      "updatedAt": "1761866482799"
     }
   ],
   "booksOnShelves": [
@@ -19293,6 +19312,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1760991587418",
       "updatedAt": "1760991587418"
+    },
+    {
+      "bookId": "92e1f8dd-7ca4-4919-9bc8-054b10cddd7f",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1761866482799",
+      "updatedAt": "1761866482799"
+    },
+    {
+      "bookId": "92e1f8dd-7ca4-4919-9bc8-054b10cddd7f",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1761866482799",
+      "updatedAt": "1761866482799"
     }
   ],
   "shelves": [
@@ -19348,7 +19379,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 268156,
+      "pages": 268652,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -19390,7 +19421,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 16088,
+      "pages": 16584,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -24303,6 +24334,12 @@
       "authorId": "d7456f80-3916-413c-a63c-195bb5e8edf3",
       "createdAt": "1760991587418",
       "updatedAt": "1760991587418"
+    },
+    {
+      "bookId": "92e1f8dd-7ca4-4919-9bc8-054b10cddd7f",
+      "authorId": "340115ef-ac8a-45be-8e06-2c0d6189e752",
+      "createdAt": "1761866482799",
+      "updatedAt": "1761866482799"
     }
   ]
 }
