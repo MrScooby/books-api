@@ -9203,6 +9203,19 @@
       "imgUrl": "https://s.lubimyczytac.pl/upload/books/4957000/4957715/959721-352x500.jpg",
       "createdAt": "1762210235510",
       "updatedAt": "1762210235510"
+    },
+    {
+      "id": "ab062879-561d-496c-92e9-70fa1d859b47",
+      "ISBN": "9788324578900",
+      "lcId": 105212,
+      "pages": 272,
+      "rating": 4,
+      "title": "Światło wirtualne",
+      "url": "https://lubimyczytac.pl/ksiazka/105212/swiatlo-wirtualne",
+      "genreId": "4257634b-ee86-44cb-ae65-8fd5e2005d07",
+      "imgUrl": "https://s.lubimyczytac.pl/upload/books/105000/105212/352x500.jpg",
+      "createdAt": "1762623951976",
+      "updatedAt": "1762623951976"
     }
   ],
   "genres": [
@@ -19355,6 +19368,18 @@
       "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "createdAt": "1762210235510",
       "updatedAt": "1762210235510"
+    },
+    {
+      "bookId": "ab062879-561d-496c-92e9-70fa1d859b47",
+      "shelfId": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
+      "createdAt": "1762623951976",
+      "updatedAt": "1762623951976"
+    },
+    {
+      "bookId": "ab062879-561d-496c-92e9-70fa1d859b47",
+      "shelfId": "d84169f3-d824-4191-9597-eb735b18bbf6",
+      "createdAt": "1762623951976",
+      "updatedAt": "1762623951976"
     }
   ],
   "shelves": [
@@ -19410,7 +19435,7 @@
     {
       "id": "3d0e0873-2aca-4b90-b88d-d1c03264f5b4",
       "name": "Przeczytane",
-      "pages": 268972,
+      "pages": 269244,
       "createdAt": "2023-11-22T22:13:27.781Z",
       "updatedAt": "2023-12-23T23:43:00.825Z"
     },
@@ -19452,7 +19477,7 @@
     {
       "id": "d84169f3-d824-4191-9597-eb735b18bbf6",
       "name": "2025",
-      "pages": 16904,
+      "pages": 17176,
       "createdAt": "2025-01-15T22:02:05.569Z",
       "updatedAt": "2025-01-15T22:02:05.569Z"
     }
@@ -24377,6 +24402,12 @@
       "authorId": "2930de4a-91be-4340-939d-5da0a351d756",
       "createdAt": "1762210235510",
       "updatedAt": "1762210235510"
+    },
+    {
+      "bookId": "ab062879-561d-496c-92e9-70fa1d859b47",
+      "authorId": "c5ce08a7-c7c0-4c13-b8ad-dd5d6764dc60",
+      "createdAt": "1762623951976",
+      "updatedAt": "1762623951976"
     }
   ]
 }
