@@ -11,8 +11,6 @@ export interface PaginatedResults<T> {
 }
 
 export interface SearchPaginatedData {
-  // where?: Prisma.BookWhereInput
-  // orderBy?: Prisma.BookOrderByWithRelationInput
   orderDirection?: Order
   page?: number
   perPage?: number

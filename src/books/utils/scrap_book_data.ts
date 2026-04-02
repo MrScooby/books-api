@@ -2,7 +2,7 @@
 
 import axios from 'axios'
 import * as cheerio from 'cheerio'
-import { BookEntity } from 'src/books/entities/book.entity'
+import { BookEntity } from '../entities/book.entity'
 
 export interface URLdata
   extends Pick<BookEntity, 'ISBN' | 'lcId' | 'pages' | 'title' | 'imgUrl'> {
@@ -31,7 +31,7 @@ export default async function scrapBookData(url: string): Promise<URLdata> {
   const urlBody = await getURLbody(url)
   const $ = cheerio.load(urlBody)
 
-  const authors = []
+  const authors: string[] = []
 
   $('a.link-name').each((index, value) => {
     authors.push((value.children[0] as unknown as Text).data)
@@ -45,8 +45,8 @@ export default async function scrapBookData(url: string): Promise<URLdata> {
     pages: Number(
       $('#book-details dl dt:contains("Liczba stron:")').next().text()
     ),
-    ISBN: $('meta[property="books:isbn"]').attr('content'),
-    imgUrl: $('#js-lightboxCover').attr('href')
+    ISBN: $('meta[property="books:isbn"]').attr('content') || null,
+    imgUrl: $('#js-lightboxCover').attr('href') || ''
   }
 
   return bookData

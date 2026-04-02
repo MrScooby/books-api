@@ -16,15 +16,18 @@ export class ShelvesService {
   async findAll(
     query: SearchPaginatedData
   ): Promise<PaginatedResults<ShelfEntity>> {
-    const perPage = Number(query.perPage) || defaultPaginationOptions.perPage
-    const page = Number(query.page) || defaultPaginationOptions.page
+    const perPage = Number(query.perPage) || defaultPaginationOptions.perPage!
+    const page = Number(query.page) || defaultPaginationOptions.page!
 
     const skip = page > 1 ? (page - 1) * perPage : 0
+
+    const orderDirection = query.orderDirection?.toLowerCase() === 'asc' ? 'asc' as const : 'desc' as const
 
     const totalPromise = this.db.shelves.count()
     const dataPromise = this.db.shelves.findMany({
       skip: skip,
-      take: perPage
+      take: perPage,
+      orderBy: { createdAt: orderDirection }
     })
 
     const [total, data] = await Promise.all([totalPromise, dataPromise])
@@ -42,16 +45,16 @@ export class ShelvesService {
     }
   }
 
-  async findOne(name: string): Promise<ShelfDto> {
+  async findOne(id: string): Promise<ShelfDto> {
     const shelf = await this.db.shelves.findUnique({
       where: {
-        name
+        id
       }
     })
 
     if (!shelf) {
       throw new NotFoundException({
-        error: `Shelf with name: ${name} doesn't exists`,
+        error: `Shelf with id: ${id} doesn't exists`,
         status: HttpStatus.NOT_FOUND
       })
     }
@@ -78,12 +81,12 @@ export class ShelvesService {
     }
   }
 
-  async updatePageCount(name: string): Promise<any> {
-    const shelf = await this.db.shelves.findUnique({ where: { name } })
+  async updatePageCount(id: string): Promise<string> {
+    const shelf = await this.db.shelves.findUnique({ where: { id } })
 
     if (!shelf) {
       throw new NotFoundException({
-        error: `Shelf with name: ${name} doesn't exists`,
+        error: `Shelf with id: ${id} doesn't exists`,
         status: HttpStatus.NOT_FOUND
       })
     }
@@ -106,7 +109,7 @@ export class ShelvesService {
     }
 
     if (count === shelf.pages) {
-      return `Shelf "${name}" page count is up to date: ${count}.`
+      return `Shelf "${shelf.name}" page count is up to date: ${count}.`
     }
 
     await this.db.shelves.update({
@@ -118,10 +121,18 @@ export class ShelvesService {
       }
     })
 
-    return `Shelf "${name}" page count changed from ${shelf.pages} to ${count}`
+    return `Shelf "${shelf.name}" page count changed from ${shelf.pages} to ${count}`
   }
 
-  async updatePageCountAll(): Promise<any> {
-    // TODO: update all shelves page count
+  async updatePageCountAll(): Promise<string> {
+    const shelves = await this.db.shelves.findMany()
+    const results: string[] = []
+
+    for (const shelf of shelves) {
+      const result = await this.updatePageCount(shelf.id)
+      results.push(result)
+    }
+
+    return results.join('\n')
   }
 }

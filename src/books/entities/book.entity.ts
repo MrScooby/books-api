@@ -1,12 +1,12 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { Books } from '@prisma/client'
+import { Books } from 'src/generated/prisma/client'
 
 export class BookEntity implements Books {
   @ApiProperty()
   id: string
 
   @ApiProperty()
-  ISBN: string | undefined
+  ISBN: string | null
 
   @ApiProperty()
   lcId: number
@@ -24,7 +24,7 @@ export class BookEntity implements Books {
   url: string
 
   @ApiProperty()
-  genreId: string | undefined
+  genreId: string | null
 
   @ApiProperty()
   imgUrl: string

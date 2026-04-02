@@ -11,10 +11,11 @@ import {
   PaginatedResults,
   SearchPaginatedData
 } from 'src/common/interfaces/pagination'
-import scrapBookData, { URLdata } from '../../scripts/scrap_book_data'
+import scrapBookData, { URLdata } from './utils/scrap_book_data'
 import { DBService } from 'src/db/db.service'
 import { BookDto } from './dto/book.dto'
 import { CreateBookDto } from './dto/create-book.dto'
+import { UpdateBookDto } from './dto/update-book.dto'
 import { BookEntity } from './entities/book.entity'
 import { omit } from '../common/utils/omit.util'
 import { AddToShelfDto } from './dto/add-to-shelf.dto'
@@ -158,7 +159,7 @@ export class BooksService {
 
         return newBook.id
       })
-    } catch (error) {
+    } catch (error: any) {
       throw new InternalServerErrorException({
         error: 'Failed to create book. Transaction failed.',
         status: HttpStatus.INTERNAL_SERVER_ERROR,
@@ -172,15 +173,18 @@ export class BooksService {
   async findAll(
     query: SearchPaginatedData
   ): Promise<PaginatedResults<BookEntity>> {
-    const perPage = Number(query.perPage) || defaultPaginationOptions.perPage
-    const page = Number(query.page) || defaultPaginationOptions.page
+    const perPage = Number(query.perPage) || defaultPaginationOptions.perPage!
+    const page = Number(query.page) || defaultPaginationOptions.page!
 
     const skip = page > 1 ? (page - 1) * perPage : 0
+
+    const orderDirection = query.orderDirection?.toLowerCase() === 'asc' ? 'asc' as const : 'desc' as const
 
     const totalPromise = this.db.books.count()
     const dataPromise = this.db.books.findMany({
       skip: skip,
-      take: perPage
+      take: perPage,
+      orderBy: { createdAt: orderDirection }
     })
 
     const [total, data] = await Promise.all([totalPromise, dataPromise])
@@ -235,10 +239,51 @@ export class BooksService {
     return bookData
   }
 
-  async getTitle(id: string): Promise<string> {
-    const book = await this.findOne(id)
+  async update(id: string, body: UpdateBookDto): Promise<BookDto> {
+    const book = await this.db.books.findUnique({ where: { id } })
 
-    return book.title
+    if (!book) {
+      throw new NotFoundException({
+        error: `Book with id: ${id} doesn't exists`,
+        status: HttpStatus.NOT_FOUND
+      })
+    }
+
+    try {
+      await this.db.$transaction(async (tx) => {
+        await tx.books.update({
+          where: { id },
+          data: {
+            title: body.title,
+            pages: body.pages,
+            rating: body.rating,
+            url: body.url,
+            ISBN: body.ISBN,
+            imgUrl: body.imgUrl,
+            genreId: body.genreId
+          }
+        })
+
+        if (body.authorIds) {
+          await tx.authorsBooks.deleteMany({ where: { bookId: id } })
+
+          await tx.authorsBooks.createMany({
+            data: body.authorIds.map((authorId) => ({
+              bookId: id,
+              authorId
+            }))
+          })
+        }
+      })
+    } catch (e: any) {
+      throw new InternalServerErrorException({
+        error: 'Failed to update book. Transaction failed.',
+        status: HttpStatus.INTERNAL_SERVER_ERROR,
+        details: e.message
+      })
+    }
+
+    return this.findOne(id)
   }
 
   async remove(id: string): Promise<string> {
@@ -265,27 +310,21 @@ export class BooksService {
           where: { id: t.shelfId }
         })
 
-        const promises = []
-
-        promises.push(
-          tx.shelves.update({
+        if (shelf) {
+          await tx.shelves.update({
             where: { id: t.shelfId },
             data: { pages: shelf.pages - book.pages }
           })
-        )
+        }
 
-        promises.push(
-          tx.booksOnShelves.delete({
-            where: {
-              bookId_shelfId: {
-                bookId: id,
-                shelfId: t.shelfId
-              }
+        await tx.booksOnShelves.delete({
+          where: {
+            bookId_shelfId: {
+              bookId: id,
+              shelfId: t.shelfId
             }
-          })
-        )
-
-        return Promise.all(promises)
+          }
+        })
       })
 
       const authors = await tx.authorsBooks.findMany({

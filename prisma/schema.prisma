@@ -1,10 +1,10 @@
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 model Authors {
@@ -15,7 +15,6 @@ model Authors {
   books     AuthorsBooks[]
 }
 
-// TODO: add connected table instead of simple array
 model Genres {
   id        String   @id @default(uuid())
   name      String   @unique
@@ -41,9 +40,9 @@ model Books {
   rating    Int
   title     String           @unique
   url       String
-  genre     Genres?          @relation(fields: [genreId], references: [id])
+  genre     Genres?          @relation(fields: [genreId], references: [id], onDelete: SetNull)
   genreId   String?
-  shelves   BooksOnShelves[] // TODO: add cascade delete for connected fields
+  shelves   BooksOnShelves[]
   authors   AuthorsBooks[]
   imgUrl    String
   createdAt DateTime         @default(now())
@@ -51,9 +50,9 @@ model Books {
 }
 
 model AuthorsBooks {
-  book      Books    @relation(fields: [bookId], references: [id])
+  book      Books    @relation(fields: [bookId], references: [id], onDelete: Cascade)
   bookId    String
-  author    Authors  @relation(fields: [authorId], references: [id])
+  author    Authors  @relation(fields: [authorId], references: [id], onDelete: Cascade)
   authorId  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -62,9 +61,9 @@ model AuthorsBooks {
 }
 
 model BooksOnShelves {
-  book      Books    @relation(fields: [bookId], references: [id])
+  book      Books    @relation(fields: [bookId], references: [id], onDelete: Cascade)
   bookId    String
-  shelf     Shelves  @relation(fields: [shelfId], references: [id])
+  shelf     Shelves  @relation(fields: [shelfId], references: [id], onDelete: Cascade)
   shelfId   String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

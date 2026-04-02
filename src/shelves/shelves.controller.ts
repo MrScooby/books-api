@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Query } from '@nestjs/common'
+import { Controller, Get, Param, Patch, Query } from '@nestjs/common'
 import { ShelvesService } from './shelves.service'
 import {
   SearchPaginatedData,
@@ -18,17 +18,17 @@ export class ShelvesController {
     return await this.shelvesService.findAll(query)
   }
 
-  @Get(':name')
-  async findOne(@Param('name') name: string): Promise<ShelfDto> {
-    return this.shelvesService.findOne(name)
+  @Get(':id')
+  async findOne(@Param('id') id: string): Promise<ShelfDto> {
+    return this.shelvesService.findOne(id)
   }
 
-  @Get('update-page-count/:name')
-  updatePageCount(@Param('name') name: string): Promise<string> {
-    return this.shelvesService.updatePageCount(name)
+  @Patch('update-page-count/:id')
+  updatePageCount(@Param('id') id: string): Promise<string> {
+    return this.shelvesService.updatePageCount(id)
   }
 
-  @Get('update-page-count-all')
+  @Patch('update-page-count-all')
   updatePageCountAll(): Promise<string> {
     return this.shelvesService.updatePageCountAll()
   }

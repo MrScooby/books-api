@@ -1,15 +1,12 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { Shelves } from 'src/generated/prisma/client'
+import { Authors } from 'src/generated/prisma/client'
 
-export class ShelfEntity implements Shelves {
+export class AuthorEntity implements Authors {
   @ApiProperty()
   id: string
 
   @ApiProperty()
   name: string
-
-  @ApiProperty()
-  pages: number
 
   @ApiProperty()
   createdAt: Date

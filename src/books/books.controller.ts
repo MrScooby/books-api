@@ -15,6 +15,7 @@ import {
 import { BooksService } from './books.service'
 import { BookDto } from './dto/book.dto'
 import { CreateBookDto } from './dto/create-book.dto'
+import { UpdateBookDto } from './dto/update-book.dto'
 import { BookEntity } from './entities/book.entity'
 import { AddToShelfDto } from './dto/add-to-shelf.dto'
 
@@ -39,13 +40,16 @@ export class BooksController {
     return this.bookService.findOne(id)
   }
 
-  @Get('title/:id')
-  async getTitle(@Param('id') id: string): Promise<string> {
-    return this.bookService.getTitle(id)
+  @Patch(':id')
+  async updateBook(
+    @Param('id') id: string,
+    @Body() updateBookDto: UpdateBookDto
+  ): Promise<BookDto> {
+    return this.bookService.update(id, updateBookDto)
   }
 
   @Patch('add-on-shelf/:id')
-  update(
+  addOnShelf(
     @Param('id') id: string,
     @Body() addToShelfDto: AddToShelfDto
   ): Promise<BookDto> {
