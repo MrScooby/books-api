@@ -179,9 +179,23 @@ export class BooksService {
   ): Promise<PaginatedResults<BookEntity>> {
     const { params, page, perPage } = parsePagination(query)
 
+    const where: any = {}
+
+    if (query.shelfId) {
+      where.shelves = { some: { shelfId: query.shelfId } }
+    }
+
+    if (query.authorId) {
+      where.authors = { some: { authorId: query.authorId } }
+    }
+
+    if (query.genreId) {
+      where.genreId = query.genreId
+    }
+
     const [total, data] = await Promise.all([
-      this.db.books.count(),
-      this.db.books.findMany(params)
+      this.db.books.count({ where }),
+      this.db.books.findMany({ ...params, where })
     ])
 
     return buildPaginatedResult(data, total, page, perPage)

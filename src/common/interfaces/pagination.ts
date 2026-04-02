@@ -14,6 +14,9 @@ export interface SearchPaginatedData {
   orderDirection?: Order
   page?: number
   perPage?: number
+  shelfId?: string
+  authorId?: string
+  genreId?: string
 }
 
 export interface PaginationParams {
