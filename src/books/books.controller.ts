@@ -11,7 +11,7 @@ import {
 import {
   PaginatedResults,
   SearchPaginatedData
-} from 'src/common/interfaces/pagination'
+} from '../common/interfaces/pagination'
 import { BooksService } from './books.service'
 import { BookDto } from './dto/book.dto'
 import { CreateBookDto } from './dto/create-book.dto'

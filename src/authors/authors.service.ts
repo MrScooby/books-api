@@ -5,13 +5,13 @@ import {
   InternalServerErrorException,
   NotFoundException
 } from '@nestjs/common'
-import { DBService } from 'src/db/db.service'
+import { DBService } from '../db/db.service'
 import {
   SearchPaginatedData,
   PaginatedResults,
   parsePagination,
   buildPaginatedResult
-} from 'src/common/interfaces/pagination'
+} from '../common/interfaces/pagination'
 import { AuthorEntity } from './entities/author.entity'
 import { AuthorDto } from './dto/author.dto'
 import { CreateAuthorDto } from './dto/create-author.dto'

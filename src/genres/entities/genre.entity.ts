@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { Genres } from 'src/generated/prisma/client'
-import { BookEntity } from 'src/books/entities/book.entity'
+import { Genres } from '../../generated/prisma/client'
+import { BookEntity } from '../../books/entities/book.entity'
 
 export class GenreEntity implements Genres {
   @ApiProperty()

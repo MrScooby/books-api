@@ -13,7 +13,7 @@ import { AuthorDto } from './dto/author.dto'
 import {
   SearchPaginatedData,
   PaginatedResults
-} from 'src/common/interfaces/pagination'
+} from '../common/interfaces/pagination'
 import { AuthorEntity } from './entities/author.entity'
 import { CreateAuthorDto } from './dto/create-author.dto'
 import { UpdateAuthorDto } from './dto/update-author.dto'

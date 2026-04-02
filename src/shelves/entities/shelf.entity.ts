@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { Shelves } from 'src/generated/prisma/client'
+import { Shelves } from '../../generated/prisma/client'
 
 export class ShelfEntity implements Shelves {
   @ApiProperty()

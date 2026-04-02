@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { Authors } from 'src/generated/prisma/client'
+import { Authors } from '../../generated/prisma/client'
 
 export class AuthorEntity implements Authors {
   @ApiProperty()

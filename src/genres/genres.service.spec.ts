@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing'
 import { NotFoundException, ConflictException } from '@nestjs/common'
 import { GenresService } from './genres.service'
-import { DBService } from 'src/db/db.service'
+import { DBService } from '../db/db.service'
 
 const mockGenre = {
   id: 'genre-1',

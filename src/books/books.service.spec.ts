@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing'
 import { NotFoundException } from '@nestjs/common'
 import { BooksService } from './books.service'
-import { DBService } from 'src/db/db.service'
+import { DBService } from '../db/db.service'
 
 jest.mock('./utils/scrap_book_data', () => ({
   __esModule: true,

@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing'
 import { NotFoundException } from '@nestjs/common'
 import { ShelvesService } from './shelves.service'
-import { DBService } from 'src/db/db.service'
+import { DBService } from '../db/db.service'
 
 const mockShelf = {
   id: 'shelf-1',

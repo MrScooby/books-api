@@ -5,7 +5,7 @@ import {
   InternalServerErrorException,
   NotFoundException
 } from '@nestjs/common'
-import { DBService } from 'src/db/db.service'
+import { DBService } from '../db/db.service'
 import { ShelfEntity } from './entities/shelf.entity'
 import { CreateShelfDto } from './dto/create-shelf.dto'
 import {
@@ -13,7 +13,7 @@ import {
   PaginatedResults,
   parsePagination,
   buildPaginatedResult
-} from 'src/common/interfaces/pagination'
+} from '../common/interfaces/pagination'
 import { ShelfDto } from './dto/shelf.dto'
 import { omit } from '../common/utils/omit.util'
 

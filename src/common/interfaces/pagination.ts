@@ -1,4 +1,4 @@
-import { Order, defaultPaginationOptions } from 'src/common/constants'
+import { Order, defaultPaginationOptions } from '../constants'
 
 export interface PaginatedResults<T> {
   data: T[]

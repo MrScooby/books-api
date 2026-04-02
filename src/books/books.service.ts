@@ -11,9 +11,9 @@ import {
   SearchPaginatedData,
   parsePagination,
   buildPaginatedResult
-} from 'src/common/interfaces/pagination'
+} from '../common/interfaces/pagination'
 import scrapBookData, { URLdata } from './utils/scrap_book_data'
-import { DBService } from 'src/db/db.service'
+import { DBService } from '../db/db.service'
 import { BookDto } from './dto/book.dto'
 import { CreateBookDto } from './dto/create-book.dto'
 import { UpdateBookDto } from './dto/update-book.dto'

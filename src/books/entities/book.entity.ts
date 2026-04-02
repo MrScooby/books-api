@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { Books } from 'src/generated/prisma/client'
+import { Books } from '../../generated/prisma/client'
 
 export class BookEntity implements Books {
   @ApiProperty()

@@ -12,7 +12,7 @@ import { ShelvesService } from './shelves.service'
 import {
   SearchPaginatedData,
   PaginatedResults
-} from 'src/common/interfaces/pagination'
+} from '../common/interfaces/pagination'
 import { ShelfEntity } from './entities/shelf.entity'
 import { ShelfDto } from './dto/shelf.dto'
 import { CreateShelfDto } from './dto/create-shelf.dto'

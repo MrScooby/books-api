@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing'
 import { NotFoundException, ConflictException } from '@nestjs/common'
 import { AuthorsService } from './authors.service'
-import { DBService } from 'src/db/db.service'
+import { DBService } from '../db/db.service'
 
 const mockAuthor = {
   id: 'author-1',

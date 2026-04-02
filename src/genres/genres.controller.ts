@@ -13,7 +13,7 @@ import { GenreDto } from './dto/genre.dto'
 import {
   SearchPaginatedData,
   PaginatedResults
-} from 'src/common/interfaces/pagination'
+} from '../common/interfaces/pagination'
 import { GenreEntity } from './entities/genre.entity'
 import { CreateGenreDto } from './dto/create-genre.dto'
 import { UpdateGenreDto } from './dto/update-genre.dto'

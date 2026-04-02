@@ -6,13 +6,13 @@ import {
   NotFoundException
 } from '@nestjs/common'
 import { GenreDto } from './dto/genre.dto'
-import { DBService } from 'src/db/db.service'
+import { DBService } from '../db/db.service'
 import {
   SearchPaginatedData,
   PaginatedResults,
   parsePagination,
   buildPaginatedResult
-} from 'src/common/interfaces/pagination'
+} from '../common/interfaces/pagination'
 import { GenreEntity } from './entities/genre.entity'
 import { omit } from '../common/utils/omit.util'
 import { CreateGenreDto } from './dto/create-genre.dto'
