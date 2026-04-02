@@ -6,10 +6,11 @@ import {
   NotFoundException,
   InternalServerErrorException
 } from '@nestjs/common'
-import { defaultPaginationOptions } from 'src/common/constants'
 import {
   PaginatedResults,
-  SearchPaginatedData
+  SearchPaginatedData,
+  parsePagination,
+  buildPaginatedResult
 } from 'src/common/interfaces/pagination'
 import scrapBookData, { URLdata } from './utils/scrap_book_data'
 import { DBService } from 'src/db/db.service'
@@ -32,7 +33,6 @@ export class BooksService {
       newBookId = await this.db.$transaction(async (tx): Promise<string> => {
         const authorsIds = await Promise.all(
           bookData.authors.map(async (authorName) => {
-            // TODO: move to dedicated module
             const author = await tx.authors.findUnique({
               where: {
                 name: authorName
@@ -59,7 +59,6 @@ export class BooksService {
           })
         )
 
-        // TODO: move to dedicated module
         let genre = await tx.genres.findUnique({
           where: {
             name: bookData.genre
@@ -74,7 +73,6 @@ export class BooksService {
           })
         }
 
-        // TODO: move to dedicated module
         const shelves = await Promise.all(
           body.shelves.map(async (shelfName) => {
             const shelf = await tx.shelves.findUnique({
@@ -160,6 +158,12 @@ export class BooksService {
         return newBook.id
       })
     } catch (error: any) {
+      if (error.code === 'P2002' || error.message?.includes('Unique constraint')) {
+        throw new ConflictException({
+          error: 'A book with this title or lcId already exists',
+          status: HttpStatus.CONFLICT
+        })
+      }
       throw new InternalServerErrorException({
         error: 'Failed to create book. Transaction failed.',
         status: HttpStatus.INTERNAL_SERVER_ERROR,
@@ -173,33 +177,14 @@ export class BooksService {
   async findAll(
     query: SearchPaginatedData
   ): Promise<PaginatedResults<BookEntity>> {
-    const perPage = Number(query.perPage) || defaultPaginationOptions.perPage!
-    const page = Number(query.page) || defaultPaginationOptions.page!
+    const { params, page, perPage } = parsePagination(query)
 
-    const skip = page > 1 ? (page - 1) * perPage : 0
+    const [total, data] = await Promise.all([
+      this.db.books.count(),
+      this.db.books.findMany(params)
+    ])
 
-    const orderDirection = query.orderDirection?.toLowerCase() === 'asc' ? 'asc' as const : 'desc' as const
-
-    const totalPromise = this.db.books.count()
-    const dataPromise = this.db.books.findMany({
-      skip: skip,
-      take: perPage,
-      orderBy: { createdAt: orderDirection }
-    })
-
-    const [total, data] = await Promise.all([totalPromise, dataPromise])
-
-    const totalPages = Math.ceil(total / perPage)
-
-    return {
-      data,
-      meta: {
-        total,
-        totalPages,
-        perPage,
-        page
-      }
-    }
+    return buildPaginatedResult(data, total, page, perPage)
   }
 
   async findOne(id: string): Promise<BookDto> {
@@ -251,18 +236,18 @@ export class BooksService {
 
     try {
       await this.db.$transaction(async (tx) => {
-        await tx.books.update({
-          where: { id },
-          data: {
-            title: body.title,
-            pages: body.pages,
-            rating: body.rating,
-            url: body.url,
-            ISBN: body.ISBN,
-            imgUrl: body.imgUrl,
-            genreId: body.genreId
-          }
-        })
+        const data: Record<string, any> = {}
+        if (body.title !== undefined) data.title = body.title
+        if (body.pages !== undefined) data.pages = body.pages
+        if (body.rating !== undefined) data.rating = body.rating
+        if (body.url !== undefined) data.url = body.url
+        if (body.ISBN !== undefined) data.ISBN = body.ISBN
+        if (body.imgUrl !== undefined) data.imgUrl = body.imgUrl
+        if (body.genreId !== undefined) data.genreId = body.genreId
+
+        if (Object.keys(data).length > 0) {
+          await tx.books.update({ where: { id }, data })
+        }
 
         if (body.authorIds) {
           await tx.authorsBooks.deleteMany({ where: { bookId: id } })
@@ -276,6 +261,12 @@ export class BooksService {
         }
       })
     } catch (e: any) {
+      if (e.code === 'P2002' || e.message?.includes('Unique constraint')) {
+        throw new ConflictException({
+          error: 'A book with this title already exists',
+          status: HttpStatus.CONFLICT
+        })
+      }
       throw new InternalServerErrorException({
         error: 'Failed to update book. Transaction failed.',
         status: HttpStatus.INTERNAL_SERVER_ERROR,
@@ -305,52 +296,22 @@ export class BooksService {
         where: { bookId: id }
       })
 
-      const shelvesPromises = booksOnShelves.map(async (t) => {
-        const shelf = await tx.shelves.findUnique({
-          where: { id: t.shelfId }
-        })
-
-        if (shelf) {
-          await tx.shelves.update({
-            where: { id: t.shelfId },
-            data: { pages: shelf.pages - book.pages }
+      await Promise.all(
+        booksOnShelves.map(async (entry) => {
+          const shelf = await tx.shelves.findUnique({
+            where: { id: entry.shelfId }
           })
-        }
 
-        await tx.booksOnShelves.delete({
-          where: {
-            bookId_shelfId: {
-              bookId: id,
-              shelfId: t.shelfId
-            }
-          }
-        })
-      })
-
-      const authors = await tx.authorsBooks.findMany({
-        where: {
-          bookId: id
-        }
-      })
-
-      const authorsPromises: Promise<any>[] = authors.map(async (a) =>
-        tx.authorsBooks.delete({
-          where: {
-            bookId_authorId: {
-              bookId: id,
-              authorId: a.authorId
-            }
+          if (shelf) {
+            await tx.shelves.update({
+              where: { id: entry.shelfId },
+              data: { pages: shelf.pages - book.pages }
+            })
           }
         })
       )
 
-      await Promise.all(shelvesPromises.concat(authorsPromises))
-
-      await tx.books.delete({
-        where: {
-          id
-        }
-      })
+      await tx.books.delete({ where: { id } })
     })
 
     return `Book was deleted.`
@@ -372,7 +333,6 @@ export class BooksService {
       })
     }
 
-    // TODO: move to dedicated module
     let shelf: any
 
     try {

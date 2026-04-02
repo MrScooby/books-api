@@ -6,10 +6,11 @@ import {
   NotFoundException
 } from '@nestjs/common'
 import { DBService } from 'src/db/db.service'
-import { defaultPaginationOptions } from 'src/common/constants'
 import {
   SearchPaginatedData,
-  PaginatedResults
+  PaginatedResults,
+  parsePagination,
+  buildPaginatedResult
 } from 'src/common/interfaces/pagination'
 import { AuthorEntity } from './entities/author.entity'
 import { AuthorDto } from './dto/author.dto'
@@ -24,33 +25,14 @@ export class AuthorsService {
   async findAll(
     query: SearchPaginatedData
   ): Promise<PaginatedResults<AuthorEntity>> {
-    const perPage = Number(query.perPage) || defaultPaginationOptions.perPage!
-    const page = Number(query.page) || defaultPaginationOptions.page!
+    const { params, page, perPage } = parsePagination(query)
 
-    const skip = page > 1 ? (page - 1) * perPage : 0
+    const [total, data] = await Promise.all([
+      this.db.authors.count(),
+      this.db.authors.findMany(params)
+    ])
 
-    const orderDirection = query.orderDirection?.toLowerCase() === 'asc' ? 'asc' as const : 'desc' as const
-
-    const totalPromise = this.db.authors.count()
-    const dataPromise = this.db.authors.findMany({
-      skip: skip,
-      take: perPage,
-      orderBy: { createdAt: orderDirection }
-    })
-
-    const [total, data] = await Promise.all([totalPromise, dataPromise])
-
-    const totalPages = Math.ceil(total / perPage)
-
-    return {
-      data,
-      meta: {
-        total,
-        totalPages,
-        perPage,
-        page
-      }
-    }
+    return buildPaginatedResult(data, total, page, perPage)
   }
 
   async findOne(id: string): Promise<AuthorDto> {

@@ -143,6 +143,15 @@ async function main() {
       }
     ]
   })
+
+  await prisma.shelves.update({
+    where: { id: shelf1.id },
+    data: { pages: book1.pages + book2.pages + book3.pages + book4.pages }
+  })
+  await prisma.shelves.update({
+    where: { id: shelf2.id },
+    data: { pages: book2.pages + book4.pages }
+  })
 }
 main()
   .then(async () => {

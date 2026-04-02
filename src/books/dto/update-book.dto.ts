@@ -1,43 +1,46 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsNumber, IsString, Min, IsOptional, IsArray } from 'class-validator'
-import { CreateBookDto } from './create-book.dto'
+import { IsNumber, IsString, Min, Max, IsOptional, IsArray } from 'class-validator'
 
-export class UpdateBookDto extends CreateBookDto {
-  @ApiProperty()
+export class UpdateBookDto {
+  @ApiProperty({ required: false })
   @IsNumber()
   @Min(1)
-  pages: number
+  @Max(10)
+  @IsOptional()
+  rating?: number
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsNumber()
+  @Min(1)
+  @IsOptional()
+  pages?: number
+
+  @ApiProperty({ required: false })
   @IsString()
   @IsOptional()
-  ISBN: string | undefined
+  ISBN?: string
 
-  @ApiProperty()
-  @IsNumber()
-  lcId: number
-
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @IsString()
-  title: string
+  @IsOptional()
+  title?: string
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @IsString()
-  imgUrl: string
+  @IsOptional()
+  url?: string
 
-  @ApiProperty({
-    description: 'Genre ID for the book',
-    required: false
-  })
+  @ApiProperty({ required: false })
+  @IsString()
+  @IsOptional()
+  imgUrl?: string
+
+  @ApiProperty({ required: false })
   @IsString()
   @IsOptional()
   genreId?: string
 
-  @ApiProperty({
-    description: 'Array of author IDs for the book',
-    type: [String],
-    required: false
-  })
+  @ApiProperty({ required: false, type: [String] })
   @IsArray()
   @IsString({ each: true })
   @IsOptional()

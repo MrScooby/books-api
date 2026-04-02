@@ -7,10 +7,11 @@ import {
 } from '@nestjs/common'
 import { GenreDto } from './dto/genre.dto'
 import { DBService } from 'src/db/db.service'
-import { defaultPaginationOptions } from 'src/common/constants'
 import {
   SearchPaginatedData,
-  PaginatedResults
+  PaginatedResults,
+  parsePagination,
+  buildPaginatedResult
 } from 'src/common/interfaces/pagination'
 import { GenreEntity } from './entities/genre.entity'
 import { omit } from '../common/utils/omit.util'
@@ -24,33 +25,14 @@ export class GenresService {
   async findAll(
     query: SearchPaginatedData
   ): Promise<PaginatedResults<GenreEntity>> {
-    const perPage = Number(query.perPage) || defaultPaginationOptions.perPage!
-    const page = Number(query.page) || defaultPaginationOptions.page!
+    const { params, page, perPage } = parsePagination(query)
 
-    const skip = page > 1 ? (page - 1) * perPage : 0
+    const [total, data] = await Promise.all([
+      this.db.genres.count(),
+      this.db.genres.findMany(params)
+    ])
 
-    const orderDirection = query.orderDirection?.toLowerCase() === 'asc' ? 'asc' as const : 'desc' as const
-
-    const totalPromise = this.db.genres.count()
-    const dataPromise = this.db.genres.findMany({
-      skip: skip,
-      take: perPage,
-      orderBy: { createdAt: orderDirection }
-    })
-
-    const [total, data] = await Promise.all([totalPromise, dataPromise])
-
-    const totalPages = Math.ceil(total / perPage)
-
-    return {
-      data,
-      meta: {
-        total,
-        totalPages,
-        perPage,
-        page
-      }
-    }
+    return buildPaginatedResult(data, total, page, perPage)
   }
 
   async findOne(id: string): Promise<GenreDto> {

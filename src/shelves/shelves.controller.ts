@@ -1,4 +1,13 @@
-import { Controller, Get, Param, Patch, Query } from '@nestjs/common'
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+  Query
+} from '@nestjs/common'
 import { ShelvesService } from './shelves.service'
 import {
   SearchPaginatedData,
@@ -6,10 +15,16 @@ import {
 } from 'src/common/interfaces/pagination'
 import { ShelfEntity } from './entities/shelf.entity'
 import { ShelfDto } from './dto/shelf.dto'
+import { CreateShelfDto } from './dto/create-shelf.dto'
 
 @Controller('shelves')
 export class ShelvesController {
   constructor(private readonly shelvesService: ShelvesService) {}
+
+  @Post()
+  async create(@Body() createShelfDto: CreateShelfDto): Promise<string> {
+    return await this.shelvesService.create(createShelfDto)
+  }
 
   @Get()
   async findAll(
@@ -31,5 +46,10 @@ export class ShelvesController {
   @Patch('update-page-count-all')
   updatePageCountAll(): Promise<string> {
     return this.shelvesService.updatePageCountAll()
+  }
+
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return this.shelvesService.remove(id)
   }
 }
