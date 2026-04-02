@@ -12,9 +12,7 @@ import {
   SearchPaginatedData
 } from 'src/common/interfaces/pagination'
 import scrapBookData, { URLdata } from '../../scripts/scrap_book_data'
-import * as fs from 'fs'
 import { DBService } from 'src/db/db.service'
-import * as backup from '../../database/backup.json'
 import { BookDto } from './dto/book.dto'
 import { CreateBookDto } from './dto/create-book.dto'
 import { BookEntity } from './entities/book.entity'
@@ -27,7 +25,6 @@ export class BooksService {
 
   async create(body: CreateBookDto): Promise<string> {
     const bookData: URLdata = await scrapBookData(body.url)
-    const now = Date.now().toString()
 
     let newBookId: string
     try {
@@ -55,13 +52,6 @@ export class BooksService {
               select: {
                 id: true
               }
-            })
-
-            backup.authors.push({
-              name: authorName,
-              id: newAuthor.id,
-              createdAt: now,
-              updatedAt: now
             })
 
             return newAuthor.id
@@ -165,64 +155,6 @@ export class BooksService {
             id: true
           }
         })
-
-        // Update local backup just in case (until proper db will be deployed on not free hosting)
-        // should be moved to some util service but more probable that I will just delete this all together later
-        backup.books.push({
-          id: newBook.id,
-          ISBN: bookData.ISBN,
-          lcId: bookData.lcId,
-          pages: bookData.pages,
-          rating: body.rating,
-          title: bookData.title,
-          url: body.url,
-          genreId: genre.id,
-          imgUrl: bookData.imgUrl,
-          createdAt: now,
-          updatedAt: now
-        })
-
-        shelves.map((sh) => {
-          backup.booksOnShelves.push({
-            bookId: newBook.id,
-            shelfId: sh.id,
-            createdAt: now,
-            updatedAt: now
-          })
-        })
-
-        shelves.map((sh) => {
-          const shToUpdateIndex = backup.shelves.findIndex(
-            (s) => s.id === sh.id
-          )
-
-          backup.shelves[shToUpdateIndex] = {
-            ...backup.shelves[shToUpdateIndex],
-            pages: backup.shelves[shToUpdateIndex].pages + bookData.pages
-          }
-        })
-
-        authorsIds.map((a) => {
-          backup.authorsBooks.push({
-            bookId: newBook.id,
-            authorId: a,
-            createdAt: now,
-            updatedAt: now
-          })
-        })
-
-        fs.writeFile(
-          './database/backup.json',
-          JSON.stringify(backup),
-          { flag: 'w' },
-          (e) => {
-            if (e) {
-              console.log('Something went wrong. e: ', e)
-            } else {
-              console.log('Local backup created')
-            }
-          }
-        )
 
         return newBook.id
       })
