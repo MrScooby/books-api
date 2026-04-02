@@ -47,11 +47,12 @@ describe('AuthorsService', () => {
   describe('findAll', () => {
     it('should return paginated authors', async () => {
       mockDBService.authors.count.mockResolvedValue(1)
-      mockDBService.authors.findMany.mockResolvedValue([mockAuthor])
+      mockDBService.authors.findMany.mockResolvedValue([{ ...mockAuthor, _count: { books: 3 } }])
 
       const result = await service.findAll({})
 
-      expect(result.data).toEqual([mockAuthor])
+      expect(result.data[0].name).toBe('Stephen King')
+      expect((result.data[0] as any).bookCount).toBe(3)
       expect(result.meta.total).toBe(1)
       expect(result.meta.page).toBe(1)
     })

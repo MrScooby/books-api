@@ -40,6 +40,11 @@ export class BooksController {
     return this.bookService.findOne(id)
   }
 
+  @Get(':id/full')
+  async findOneFull(@Param('id') id: string) {
+    return this.bookService.findOneFull(id)
+  }
+
   @Patch(':id')
   async updateBook(
     @Param('id') id: string,

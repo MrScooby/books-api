@@ -46,11 +46,12 @@ describe('GenresService', () => {
   describe('findAll', () => {
     it('should return paginated genres', async () => {
       mockDBService.genres.count.mockResolvedValue(1)
-      mockDBService.genres.findMany.mockResolvedValue([mockGenre])
+      mockDBService.genres.findMany.mockResolvedValue([{ ...mockGenre, _count: { books: 5 } }])
 
       const result = await service.findAll({})
 
-      expect(result.data).toEqual([mockGenre])
+      expect(result.data[0].name).toBe('Horror')
+      expect((result.data[0] as any).bookCount).toBe(5)
       expect(result.meta.total).toBe(1)
       expect(result.meta.page).toBe(1)
       expect(result.meta.perPage).toBe(20)

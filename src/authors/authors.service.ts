@@ -29,10 +29,18 @@ export class AuthorsService {
 
     const [total, data] = await Promise.all([
       this.db.authors.count(),
-      this.db.authors.findMany(params)
+      this.db.authors.findMany({
+        ...params,
+        include: { _count: { select: { books: true } } }
+      })
     ])
 
-    return buildPaginatedResult(data, total, page, perPage)
+    const withCounts = data.map((a) => ({
+      ...a,
+      bookCount: (a as any)._count?.books ?? 0
+    }))
+
+    return buildPaginatedResult(withCounts, total, page, perPage)
   }
 
   async findOne(id: string): Promise<AuthorDto> {

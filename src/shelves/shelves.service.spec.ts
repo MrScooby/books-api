@@ -58,11 +58,12 @@ describe('ShelvesService', () => {
   describe('findAll', () => {
     it('should return paginated shelves', async () => {
       mockDBService.shelves.count.mockResolvedValue(2)
-      mockDBService.shelves.findMany.mockResolvedValue([mockShelf])
+      mockDBService.shelves.findMany.mockResolvedValue([{ ...mockShelf, _count: { books: 4 } }])
 
       const result = await service.findAll({})
 
-      expect(result.data).toEqual([mockShelf])
+      expect(result.data[0].name).toBe('Read')
+      expect((result.data[0] as any).bookCount).toBe(4)
       expect(result.meta.total).toBe(2)
     })
 

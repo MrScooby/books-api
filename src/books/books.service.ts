@@ -238,6 +238,37 @@ export class BooksService {
     return bookData
   }
 
+  async findOneFull(id: string) {
+    const book = await this.db.books.findUnique({
+      where: { id },
+      include: {
+        genre: true,
+        authors: { include: { author: true } },
+        shelves: { include: { shelf: true } }
+      }
+    })
+
+    if (!book) {
+      throw new NotFoundException({
+        error: `Book with id: ${id} doesn't exists`,
+        status: HttpStatus.NOT_FOUND
+      })
+    }
+
+    return {
+      id: book.id,
+      ISBN: book.ISBN,
+      pages: book.pages,
+      rating: book.rating,
+      title: book.title,
+      url: book.url,
+      imgUrl: book.imgUrl,
+      genre: book.genre ? { id: book.genre.id, name: book.genre.name } : null,
+      authors: book.authors.map((ab) => ({ id: ab.author.id, name: ab.author.name })),
+      shelves: book.shelves.map((bs) => ({ id: bs.shelf.id, name: bs.shelf.name }))
+    }
+  }
+
   async update(id: string, body: UpdateBookDto): Promise<BookDto> {
     const book = await this.db.books.findUnique({ where: { id } })
 

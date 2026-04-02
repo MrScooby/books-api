@@ -28,10 +28,18 @@ export class ShelvesService {
 
     const [total, data] = await Promise.all([
       this.db.shelves.count(),
-      this.db.shelves.findMany(params)
+      this.db.shelves.findMany({
+        ...params,
+        include: { _count: { select: { books: true } } }
+      })
     ])
 
-    return buildPaginatedResult(data, total, page, perPage)
+    const withCounts = data.map((s) => ({
+      ...s,
+      bookCount: (s as any)._count?.books ?? 0
+    }))
+
+    return buildPaginatedResult(withCounts, total, page, perPage)
   }
 
   async findOne(id: string): Promise<ShelfDto> {

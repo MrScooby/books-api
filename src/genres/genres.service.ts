@@ -29,10 +29,18 @@ export class GenresService {
 
     const [total, data] = await Promise.all([
       this.db.genres.count(),
-      this.db.genres.findMany(params)
+      this.db.genres.findMany({
+        ...params,
+        include: { _count: { select: { books: true } } }
+      })
     ])
 
-    return buildPaginatedResult(data, total, page, perPage)
+    const withCounts = data.map((g) => ({
+      ...g,
+      bookCount: (g as any)._count?.books ?? 0
+    }))
+
+    return buildPaginatedResult(withCounts, total, page, perPage)
   }
 
   async findOne(id: string): Promise<GenreDto> {
