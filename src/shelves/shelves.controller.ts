@@ -6,8 +6,10 @@ import {
   Param,
   Patch,
   Post,
-  Query
+  Query,
+  UseGuards
 } from '@nestjs/common'
+import { AdminGuard } from '../common/guards/admin.guard'
 import { ShelvesService } from './shelves.service'
 import {
   SearchPaginatedData,
@@ -22,6 +24,7 @@ export class ShelvesController {
   constructor(private readonly shelvesService: ShelvesService) {}
 
   @Post()
+  @UseGuards(AdminGuard)
   async create(@Body() createShelfDto: CreateShelfDto): Promise<string> {
     return await this.shelvesService.create(createShelfDto)
   }
@@ -39,16 +42,19 @@ export class ShelvesController {
   }
 
   @Patch('update-page-count/:id')
+  @UseGuards(AdminGuard)
   updatePageCount(@Param('id') id: string): Promise<string> {
     return this.shelvesService.updatePageCount(id)
   }
 
   @Patch('update-page-count-all')
+  @UseGuards(AdminGuard)
   updatePageCountAll(): Promise<string> {
     return this.shelvesService.updatePageCountAll()
   }
 
   @Delete(':id')
+  @UseGuards(AdminGuard)
   remove(@Param('id') id: string) {
     return this.shelvesService.remove(id)
   }

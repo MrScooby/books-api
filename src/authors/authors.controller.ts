@@ -6,8 +6,10 @@ import {
   Param,
   Patch,
   Post,
-  Query
+  Query,
+  UseGuards
 } from '@nestjs/common'
+import { AdminGuard } from '../common/guards/admin.guard'
 import { AuthorsService } from './authors.service'
 import { AuthorDto } from './dto/author.dto'
 import {
@@ -23,6 +25,7 @@ export class AuthorsController {
   constructor(private readonly authorsService: AuthorsService) {}
 
   @Post()
+  @UseGuards(AdminGuard)
   async create(@Body() createAuthorDto: CreateAuthorDto): Promise<string> {
     return await this.authorsService.create(createAuthorDto)
   }
@@ -40,6 +43,7 @@ export class AuthorsController {
   }
 
   @Patch(':id')
+  @UseGuards(AdminGuard)
   async update(
     @Param('id') id: string,
     @Body() updateAuthorDto: UpdateAuthorDto
@@ -48,6 +52,7 @@ export class AuthorsController {
   }
 
   @Delete(':id')
+  @UseGuards(AdminGuard)
   remove(@Param('id') id: string) {
     return this.authorsService.remove(id)
   }

@@ -6,8 +6,10 @@ import {
   Param,
   Patch,
   Post,
-  Query
+  Query,
+  UseGuards
 } from '@nestjs/common'
+import { AdminGuard } from '../common/guards/admin.guard'
 import { GenresService } from './genres.service'
 import { GenreDto } from './dto/genre.dto'
 import {
@@ -23,6 +25,7 @@ export class GenresController {
   constructor(private readonly genresService: GenresService) {}
 
   @Post()
+  @UseGuards(AdminGuard)
   async create(@Body() createGenreDto: CreateGenreDto): Promise<string> {
     return await this.genresService.create(createGenreDto)
   }
@@ -40,6 +43,7 @@ export class GenresController {
   }
 
   @Patch(':id')
+  @UseGuards(AdminGuard)
   async update(
     @Param('id') id: string,
     @Body() updateGenreDto: UpdateGenreDto
@@ -48,6 +52,7 @@ export class GenresController {
   }
 
   @Delete(':id')
+  @UseGuards(AdminGuard)
   remove(@Param('id') id: string) {
     return this.genresService.remove(id)
   }

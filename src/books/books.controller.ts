@@ -6,12 +6,14 @@ import {
   Param,
   Patch,
   Post,
-  Query
+  Query,
+  UseGuards
 } from '@nestjs/common'
 import {
   PaginatedResults,
   SearchPaginatedData
 } from '../common/interfaces/pagination'
+import { AdminGuard } from '../common/guards/admin.guard'
 import { BooksService } from './books.service'
 import { BookDto } from './dto/book.dto'
 import { CreateBookDto } from './dto/create-book.dto'
@@ -24,8 +26,10 @@ export class BooksController {
   constructor(private readonly bookService: BooksService) {}
 
   @Post()
-  async create(@Body() createBookDto: CreateBookDto): Promise<string> {
-    return await this.bookService.create(createBookDto)
+  @UseGuards(AdminGuard)
+  async create(@Body() createBookDto: CreateBookDto): Promise<{ id: string }> {
+    const id = await this.bookService.create(createBookDto)
+    return { id }
   }
 
   @Get()
@@ -46,6 +50,7 @@ export class BooksController {
   }
 
   @Patch(':id')
+  @UseGuards(AdminGuard)
   async updateBook(
     @Param('id') id: string,
     @Body() updateBookDto: UpdateBookDto
@@ -54,6 +59,7 @@ export class BooksController {
   }
 
   @Patch('add-on-shelf/:id')
+  @UseGuards(AdminGuard)
   addOnShelf(
     @Param('id') id: string,
     @Body() addToShelfDto: AddToShelfDto
@@ -62,6 +68,7 @@ export class BooksController {
   }
 
   @Delete(':id')
+  @UseGuards(AdminGuard)
   remove(@Param('id') id: string) {
     return this.bookService.remove(id)
   }
