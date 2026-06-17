@@ -14,6 +14,7 @@ export interface SearchPaginatedData {
   orderDirection?: Order
   page?: number
   perPage?: number
+  search?: string
   shelfId?: string
   authorId?: string
   genreId?: string

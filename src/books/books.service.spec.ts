@@ -108,6 +108,34 @@ describe('BooksService', () => {
         expect.objectContaining({ orderBy: { createdAt: 'asc' } })
       )
     })
+
+    it('should filter by title (case-insensitive) when search is provided', async () => {
+      mockDBService.books.count.mockResolvedValue(0)
+      mockDBService.books.findMany.mockResolvedValue([])
+
+      await service.findAll({ search: 'hobbit' })
+
+      const expectedWhere = {
+        title: { contains: 'hobbit', mode: 'insensitive' }
+      }
+      expect(mockDBService.books.findMany).toHaveBeenCalledWith(
+        expect.objectContaining({ where: expectedWhere })
+      )
+      expect(mockDBService.books.count).toHaveBeenCalledWith({
+        where: expectedWhere
+      })
+    })
+
+    it('should not set a title filter when search is absent', async () => {
+      mockDBService.books.count.mockResolvedValue(0)
+      mockDBService.books.findMany.mockResolvedValue([])
+
+      await service.findAll({})
+
+      expect(mockDBService.books.findMany).toHaveBeenCalledWith(
+        expect.objectContaining({ where: {} })
+      )
+    })
   })
 
   describe('findOne', () => {

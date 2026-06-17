@@ -181,6 +181,10 @@ export class BooksService {
 
     const where: any = {}
 
+    if (query.search) {
+      where.title = { contains: query.search, mode: 'insensitive' }
+    }
+
     if (query.shelfId) {
       where.shelves = { some: { shelfId: query.shelfId } }
     }
