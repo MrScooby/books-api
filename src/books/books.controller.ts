@@ -18,6 +18,7 @@ import { BooksService } from './books.service'
 import { BookDto } from './dto/book.dto'
 import { CreateBookDto } from './dto/create-book.dto'
 import { UpdateBookDto } from './dto/update-book.dto'
+import { ReplaceBookDto } from './dto/replace-book.dto'
 import { BookEntity } from './entities/book.entity'
 import { AddToShelfDto } from './dto/add-to-shelf.dto'
 
@@ -56,6 +57,15 @@ export class BooksController {
     @Body() updateBookDto: UpdateBookDto
   ): Promise<BookDto> {
     return this.bookService.update(id, updateBookDto)
+  }
+
+  @Patch(':id/replace')
+  @UseGuards(AdminGuard)
+  async replaceEdition(
+    @Param('id') id: string,
+    @Body() replaceBookDto: ReplaceBookDto
+  ): Promise<BookDto> {
+    return this.bookService.replaceEdition(id, replaceBookDto)
   }
 
   @Patch('add-on-shelf/:id')

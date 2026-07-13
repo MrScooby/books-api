@@ -17,6 +17,7 @@ import { DBService } from '../db/db.service'
 import { BookDto } from './dto/book.dto'
 import { CreateBookDto } from './dto/create-book.dto'
 import { UpdateBookDto } from './dto/update-book.dto'
+import { ReplaceBookDto } from './dto/replace-book.dto'
 import { BookEntity } from './entities/book.entity'
 import { omit } from '../common/utils/omit.util'
 import { AddToShelfDto } from './dto/add-to-shelf.dto'
@@ -320,6 +321,134 @@ export class BooksService {
         error: 'Failed to update book. Transaction failed.',
         status: HttpStatus.INTERNAL_SERVER_ERROR,
         details: e.message
+      })
+    }
+
+    return this.findOne(id)
+  }
+
+  async replaceEdition(id: string, body: ReplaceBookDto): Promise<BookDto> {
+    const book = await this.db.books.findUnique({ where: { id } })
+
+    if (!book) {
+      throw new NotFoundException({
+        error: `Book with id: ${id} doesn't exists`,
+        status: HttpStatus.NOT_FOUND
+      })
+    }
+
+    const bookData: URLdata = await scrapBookData(body.url)
+
+    // Guard against a failed scrape (cheerio selectors miss -> Number() gives NaN).
+    // Without this a NaN page count would corrupt the shelves' page totals below.
+    if (
+      Number.isNaN(bookData.lcId) ||
+      Number.isNaN(bookData.pages) ||
+      !bookData.title
+    ) {
+      throw new BadRequestException({
+        error: 'Could not scrape data from the provided URL',
+        status: HttpStatus.BAD_REQUEST
+      })
+    }
+
+    try {
+      await this.db.$transaction(async (tx) => {
+        const authorsIds = await Promise.all(
+          bookData.authors.map(async (authorName) => {
+            const author = await tx.authors.findUnique({
+              where: {
+                name: authorName
+              },
+              select: {
+                id: true
+              }
+            })
+
+            if (author) {
+              return author.id
+            }
+
+            const newAuthor = await tx.authors.create({
+              data: {
+                name: authorName
+              },
+              select: {
+                id: true
+              }
+            })
+
+            return newAuthor.id
+          })
+        )
+
+        let genre = await tx.genres.findUnique({
+          where: {
+            name: bookData.genre
+          }
+        })
+
+        if (!genre) {
+          genre = await tx.genres.create({
+            data: {
+              name: bookData.genre
+            }
+          })
+        }
+
+        // Keep the shelf associations, but correct their denormalized page totals
+        // by the difference between the new and old edition's page count.
+        const pageDelta = bookData.pages - book.pages
+
+        if (pageDelta !== 0) {
+          const booksOnShelves = await tx.booksOnShelves.findMany({
+            where: { bookId: id }
+          })
+
+          await Promise.all(
+            booksOnShelves.map((entry) =>
+              tx.shelves.update({
+                where: { id: entry.shelfId },
+                data: { pages: { increment: pageDelta } }
+              })
+            )
+          )
+        }
+
+        // Replace author relations with the new edition's authors.
+        await tx.authorsBooks.deleteMany({ where: { bookId: id } })
+        await tx.authorsBooks.createMany({
+          data: authorsIds.map((authorId) => ({ bookId: id, authorId }))
+        })
+
+        // Overwrite every scraped field. rating and shelves stay untouched.
+        await tx.books.update({
+          where: { id },
+          data: {
+            title: bookData.title,
+            lcId: bookData.lcId,
+            pages: bookData.pages,
+            url: body.url,
+            imgUrl: bookData.imgUrl,
+            ISBN: bookData.ISBN,
+            genreId: genre.id
+          }
+        })
+      })
+    } catch (error: any) {
+      if (
+        error.code === 'P2002' ||
+        error.message?.includes('Unique constraint')
+      ) {
+        throw new ConflictException({
+          error: 'A book with this title or lcId already exists',
+          status: HttpStatus.CONFLICT
+        })
+      }
+      throw new InternalServerErrorException({
+        error: 'Failed to replace book. Transaction failed.',
+        status: HttpStatus.INTERNAL_SERVER_ERROR,
+        details: error.message
       })
     }
 

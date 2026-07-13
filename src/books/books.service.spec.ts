@@ -1,7 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing'
-import { NotFoundException } from '@nestjs/common'
+import { NotFoundException, BadRequestException } from '@nestjs/common'
 import { BooksService } from './books.service'
 import { DBService } from '../db/db.service'
+import scrapBookData from './utils/scrap_book_data'
 
 jest.mock('./utils/scrap_book_data', () => ({
   __esModule: true,
@@ -243,6 +244,59 @@ describe('BooksService', () => {
       await expect(
         service.addOnShelf('nonexistent', { shelfName: 'Read' })
       ).rejects.toThrow(NotFoundException)
+    })
+  })
+
+  describe('replaceEdition', () => {
+    const mockedScrap = scrapBookData as unknown as jest.Mock
+
+    it('should throw NotFoundException when book not found', async () => {
+      mockDBService.books.findUnique.mockResolvedValue(null)
+
+      await expect(
+        service.replaceEdition('nonexistent', { url: 'http://lc.pl/x' })
+      ).rejects.toThrow(NotFoundException)
+    })
+
+    it('should throw BadRequestException when the scrape yields invalid data', async () => {
+      mockDBService.books.findUnique.mockResolvedValue(mockBook)
+      mockedScrap.mockResolvedValue({
+        lcId: NaN,
+        title: '',
+        authors: [],
+        genre: '',
+        pages: NaN,
+        ISBN: null,
+        imgUrl: ''
+      })
+
+      await expect(
+        service.replaceEdition('book-1', { url: 'http://bad' })
+      ).rejects.toThrow(BadRequestException)
+    })
+
+    it('should scrape and run the transaction when the book exists', async () => {
+      mockDBService.books.findUnique.mockResolvedValue(mockBook)
+      mockedScrap.mockResolvedValue({
+        lcId: 200,
+        title: 'New Edition',
+        authors: ['Author A'],
+        genre: 'Fantasy',
+        pages: 500,
+        ISBN: '999',
+        imgUrl: 'http://img/new.jpg'
+      })
+      mockDBService.$transaction.mockResolvedValue(undefined)
+      mockDBService.booksOnShelves.findMany.mockResolvedValue([])
+      mockDBService.authorsBooks.findMany.mockResolvedValue([])
+
+      const result = await service.replaceEdition('book-1', {
+        url: 'http://lc.pl/new'
+      })
+
+      expect(mockedScrap).toHaveBeenCalledWith('http://lc.pl/new')
+      expect(mockDBService.$transaction).toHaveBeenCalled()
+      expect(result.id).toBe('book-1')
     })
   })
 })
