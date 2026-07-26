@@ -34,9 +34,9 @@ export class ShelvesService {
       })
     ])
 
-    const withCounts = data.map((s) => ({
+    const withCounts = data.map(({ _count, ...s }) => ({
       ...s,
-      bookCount: (s as any)._count?.books ?? 0
+      bookCount: _count?.books ?? 0
     }))
 
     return buildPaginatedResult(withCounts, total, page, perPage)

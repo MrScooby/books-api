@@ -175,6 +175,22 @@ export class BooksService {
     return newBookId
   }
 
+  async getStats() {
+    const [ownedCount, ownedAgg, totalCount, totalAgg] = await Promise.all([
+      this.db.books.count({ where: { owned: true } }),
+      this.db.books.aggregate({ _sum: { pages: true }, where: { owned: true } }),
+      this.db.books.count(),
+      this.db.books.aggregate({ _sum: { pages: true } })
+    ])
+
+    return {
+      ownedCount,
+      ownedPages: ownedAgg._sum.pages ?? 0,
+      totalCount,
+      totalPages: totalAgg._sum.pages ?? 0
+    }
+  }
+
   async findAll(
     query: SearchPaginatedData
   ): Promise<PaginatedResults<BookEntity>> {
@@ -268,6 +284,7 @@ export class BooksService {
       title: book.title,
       url: book.url,
       imgUrl: book.imgUrl,
+      owned: book.owned,
       genre: book.genre ? { id: book.genre.id, name: book.genre.name } : null,
       authors: book.authors.map((ab) => ({ id: ab.author.id, name: ab.author.name })),
       shelves: book.shelves.map((bs) => ({ id: bs.shelf.id, name: bs.shelf.name }))
@@ -294,6 +311,7 @@ export class BooksService {
         if (body.ISBN !== undefined) data.ISBN = body.ISBN
         if (body.imgUrl !== undefined) data.imgUrl = body.imgUrl
         if (body.genreId !== undefined) data.genreId = body.genreId
+        if (body.owned !== undefined) data.owned = body.owned
 
         if (Object.keys(data).length > 0) {
           await tx.books.update({ where: { id }, data })

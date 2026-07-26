@@ -40,6 +40,11 @@ export class BooksController {
     return await this.bookService.findAll(query)
   }
 
+  @Get('stats')
+  async getStats() {
+    return this.bookService.getStats()
+  }
+
   @Get(':id')
   async findOne(@Param('id') id: string): Promise<BookDto> {
     return this.bookService.findOne(id)

@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsNumber, IsString, Min, Max, IsOptional, IsArray } from 'class-validator'
+import { IsNumber, IsString, Min, Max, IsOptional, IsArray, IsBoolean } from 'class-validator'
 
 export class UpdateBookDto {
   @ApiProperty({ required: false })
@@ -45,4 +45,9 @@ export class UpdateBookDto {
   @IsString({ each: true })
   @IsOptional()
   authorIds?: string[]
+
+  @ApiProperty({ required: false })
+  @IsBoolean()
+  @IsOptional()
+  owned?: boolean
 }

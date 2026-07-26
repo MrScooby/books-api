@@ -12,6 +12,9 @@ export class ShelfEntity implements Shelves {
   pages: number
 
   @ApiProperty()
+  bookCount: number
+
+  @ApiProperty()
   createdAt: Date
 
   @ApiProperty()

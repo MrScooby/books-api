@@ -9,7 +9,8 @@ export class BookDto extends PickType(BookEntity, [
   'title',
   'url',
   'genreId',
-  'imgUrl'
+  'imgUrl',
+  'owned'
 ]) {
   @ApiProperty()
   shelvesIds: string[]

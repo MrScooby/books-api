@@ -45,6 +45,7 @@ model Books {
   shelves   BooksOnShelves[]
   authors   AuthorsBooks[]
   imgUrl    String
+  owned     Boolean          @default(false)
   createdAt DateTime         @default(now())
   updatedAt DateTime         @updatedAt
 }

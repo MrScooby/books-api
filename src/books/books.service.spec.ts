@@ -19,6 +19,7 @@ const mockBook = {
   url: 'http://test.com',
   genreId: 'genre-1',
   imgUrl: 'http://img.com',
+  owned: false,
   createdAt: new Date(),
   updatedAt: new Date()
 }
@@ -29,7 +30,8 @@ const mockDBService = {
     findMany: jest.fn(),
     findUnique: jest.fn(),
     update: jest.fn(),
-    delete: jest.fn()
+    delete: jest.fn(),
+    aggregate: jest.fn()
   },
   booksOnShelves: {
     findMany: jest.fn()
@@ -214,6 +216,72 @@ describe('BooksService', () => {
       } as any)
 
       expect(mockDBService.$transaction).toHaveBeenCalled()
+    })
+
+    it('should include owned in the update data when provided', async () => {
+      mockDBService.books.findUnique
+        .mockResolvedValueOnce(mockBook)
+        .mockResolvedValueOnce({ ...mockBook, owned: true })
+      mockDBService.booksOnShelves.findMany.mockResolvedValue([])
+      mockDBService.authorsBooks.findMany.mockResolvedValue([])
+
+      const tx = {
+        books: { update: jest.fn() },
+        authorsBooks: { deleteMany: jest.fn(), createMany: jest.fn() }
+      }
+      mockDBService.$transaction.mockImplementation(async (cb: any) => cb(tx))
+
+      await service.update('book-1', { owned: true } as any)
+
+      expect(tx.books.update).toHaveBeenCalledWith({
+        where: { id: 'book-1' },
+        data: { owned: true }
+      })
+    })
+  })
+
+  describe('getStats', () => {
+    it('should aggregate owned and total counts and pages', async () => {
+      mockDBService.books.count
+        .mockResolvedValueOnce(3) // owned count
+        .mockResolvedValueOnce(10) // total count
+      mockDBService.books.aggregate
+        .mockResolvedValueOnce({ _sum: { pages: 900 } }) // owned pages
+        .mockResolvedValueOnce({ _sum: { pages: 4000 } }) // total pages
+
+      const result = await service.getStats()
+
+      expect(result).toEqual({
+        ownedCount: 3,
+        ownedPages: 900,
+        totalCount: 10,
+        totalPages: 4000
+      })
+      expect(mockDBService.books.count).toHaveBeenCalledWith({
+        where: { owned: true }
+      })
+      expect(mockDBService.books.aggregate).toHaveBeenCalledWith({
+        _sum: { pages: true },
+        where: { owned: true }
+      })
+    })
+
+    it('should default null page sums to 0', async () => {
+      mockDBService.books.count
+        .mockResolvedValueOnce(0)
+        .mockResolvedValueOnce(0)
+      mockDBService.books.aggregate
+        .mockResolvedValueOnce({ _sum: { pages: null } })
+        .mockResolvedValueOnce({ _sum: { pages: null } })
+
+      const result = await service.getStats()
+
+      expect(result).toEqual({
+        ownedCount: 0,
+        ownedPages: 0,
+        totalCount: 0,
+        totalPages: 0
+      })
     })
   })
 

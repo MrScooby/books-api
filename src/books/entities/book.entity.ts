@@ -30,6 +30,9 @@ export class BookEntity implements Books {
   imgUrl: string
 
   @ApiProperty()
+  owned: boolean
+
+  @ApiProperty()
   createdAt: Date
 
   @ApiProperty()
