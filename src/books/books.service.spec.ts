@@ -60,6 +60,89 @@ describe('BooksService', () => {
     jest.clearAllMocks()
   })
 
+  describe('create', () => {
+    const mockedScrap = scrapBookData as unknown as jest.Mock
+
+    const scrapedData = {
+      lcId: 300,
+      title: 'Unread Book',
+      authors: ['Author A'],
+      genre: 'Fantasy',
+      pages: 420,
+      ISBN: '555',
+      imgUrl: 'http://img/unread.jpg'
+    }
+
+    const mockTx = () => ({
+      authors: {
+        findUnique: jest.fn().mockResolvedValue({ id: 'author-1' }),
+        create: jest.fn()
+      },
+      genres: {
+        findUnique: jest.fn().mockResolvedValue({ id: 'genre-1' }),
+        create: jest.fn()
+      },
+      shelves: {
+        findUnique: jest.fn().mockResolvedValue({ id: 'shelf-1', pages: 1000 }),
+        create: jest.fn(),
+        update: jest.fn()
+      },
+      books: {
+        create: jest.fn().mockResolvedValue({ id: 'new-book' })
+      }
+    })
+
+    it('should create an owned book with no shelves and no rating', async () => {
+      mockedScrap.mockResolvedValue(scrapedData)
+      const tx = mockTx()
+      mockDBService.$transaction.mockImplementation((cb: any) => cb(tx))
+
+      const result = await service.create({
+        url: 'http://lc.pl/unread',
+        owned: true
+      })
+
+      expect(result).toBe('new-book')
+      expect(tx.shelves.findUnique).not.toHaveBeenCalled()
+      expect(tx.shelves.create).not.toHaveBeenCalled()
+      expect(tx.shelves.update).not.toHaveBeenCalled()
+      expect(tx.books.create).toHaveBeenCalledWith(
+        expect.objectContaining({
+          data: expect.objectContaining({
+            owned: true,
+            rating: 0,
+            shelves: { create: [] }
+          })
+        })
+      )
+    })
+
+    it('should default owned to false and update shelf pages when shelves are given', async () => {
+      mockedScrap.mockResolvedValue(scrapedData)
+      const tx = mockTx()
+      mockDBService.$transaction.mockImplementation((cb: any) => cb(tx))
+
+      await service.create({
+        url: 'http://lc.pl/read',
+        rating: 8,
+        shelves: ['2026']
+      })
+
+      expect(tx.shelves.findUnique).toHaveBeenCalledWith(
+        expect.objectContaining({ where: { name: '2026' } })
+      )
+      expect(tx.shelves.update).toHaveBeenCalledWith({
+        where: { id: 'shelf-1' },
+        data: { pages: 1420 }
+      })
+      expect(tx.books.create).toHaveBeenCalledWith(
+        expect.objectContaining({
+          data: expect.objectContaining({ owned: false, rating: 8 })
+        })
+      )
+    })
+  })
+
   describe('findAll', () => {
     it('should return paginated books with defaults', async () => {
       mockDBService.books.count.mockResolvedValue(5)
@@ -127,6 +210,45 @@ describe('BooksService', () => {
       expect(mockDBService.books.count).toHaveBeenCalledWith({
         where: expectedWhere
       })
+    })
+
+    it('should filter to owned books on no shelf when toRead is set', async () => {
+      mockDBService.books.count.mockResolvedValue(0)
+      mockDBService.books.findMany.mockResolvedValue([])
+
+      await service.findAll({ toRead: 'true' })
+
+      const expectedWhere = { owned: true, shelves: { none: {} } }
+      expect(mockDBService.books.findMany).toHaveBeenCalledWith(
+        expect.objectContaining({ where: expectedWhere })
+      )
+      expect(mockDBService.books.count).toHaveBeenCalledWith({
+        where: expectedWhere
+      })
+    })
+
+    it('should let toRead override a shelfId filter', async () => {
+      mockDBService.books.count.mockResolvedValue(0)
+      mockDBService.books.findMany.mockResolvedValue([])
+
+      await service.findAll({ shelfId: 'shelf-1', toRead: '1' })
+
+      expect(mockDBService.books.findMany).toHaveBeenCalledWith(
+        expect.objectContaining({
+          where: { owned: true, shelves: { none: {} } }
+        })
+      )
+    })
+
+    it('should ignore toRead when it is not truthy', async () => {
+      mockDBService.books.count.mockResolvedValue(0)
+      mockDBService.books.findMany.mockResolvedValue([])
+
+      await service.findAll({ toRead: 'false' })
+
+      expect(mockDBService.books.findMany).toHaveBeenCalledWith(
+        expect.objectContaining({ where: {} })
+      )
     })
 
     it('should not set a title filter when search is absent', async () => {
@@ -241,13 +363,17 @@ describe('BooksService', () => {
   })
 
   describe('getStats', () => {
-    it('should aggregate owned and total counts and pages', async () => {
+    it('should aggregate owned, read and to-read counts and pages', async () => {
       mockDBService.books.count
         .mockResolvedValueOnce(3) // owned count
         .mockResolvedValueOnce(10) // total count
+        .mockResolvedValueOnce(8) // read count (on any shelf)
+        .mockResolvedValueOnce(2) // read and owned
+        .mockResolvedValueOnce(1) // owned, on no shelf
       mockDBService.books.aggregate
         .mockResolvedValueOnce({ _sum: { pages: 900 } }) // owned pages
         .mockResolvedValueOnce({ _sum: { pages: 4000 } }) // total pages
+        .mockResolvedValueOnce({ _sum: { pages: 320 } }) // to-read pages
 
       const result = await service.getStats()
 
@@ -255,24 +381,37 @@ describe('BooksService', () => {
         ownedCount: 3,
         ownedPages: 900,
         totalCount: 10,
-        totalPages: 4000
+        totalPages: 4000,
+        readCount: 8,
+        readOwnedCount: 2,
+        toReadCount: 1,
+        toReadPages: 320
       })
       expect(mockDBService.books.count).toHaveBeenCalledWith({
         where: { owned: true }
+      })
+      expect(mockDBService.books.count).toHaveBeenCalledWith({
+        where: { shelves: { some: {} } }
+      })
+      expect(mockDBService.books.count).toHaveBeenCalledWith({
+        where: { owned: true, shelves: { some: {} } }
+      })
+      expect(mockDBService.books.count).toHaveBeenCalledWith({
+        where: { owned: true, shelves: { none: {} } }
       })
       expect(mockDBService.books.aggregate).toHaveBeenCalledWith({
         _sum: { pages: true },
         where: { owned: true }
       })
+      expect(mockDBService.books.aggregate).toHaveBeenCalledWith({
+        _sum: { pages: true },
+        where: { owned: true, shelves: { none: {} } }
+      })
     })
 
     it('should default null page sums to 0', async () => {
-      mockDBService.books.count
-        .mockResolvedValueOnce(0)
-        .mockResolvedValueOnce(0)
-      mockDBService.books.aggregate
-        .mockResolvedValueOnce({ _sum: { pages: null } })
-        .mockResolvedValueOnce({ _sum: { pages: null } })
+      mockDBService.books.count.mockResolvedValue(0)
+      mockDBService.books.aggregate.mockResolvedValue({ _sum: { pages: null } })
 
       const result = await service.getStats()
 
@@ -280,7 +419,11 @@ describe('BooksService', () => {
         ownedCount: 0,
         ownedPages: 0,
         totalCount: 0,
-        totalPages: 0
+        totalPages: 0,
+        readCount: 0,
+        readOwnedCount: 0,
+        toReadCount: 0,
+        toReadPages: 0
       })
     })
   })

@@ -2,9 +2,10 @@ import { ApiProperty } from '@nestjs/swagger'
 import { IsNumber, IsString, Min, Max, IsOptional, IsArray, IsBoolean } from 'class-validator'
 
 export class UpdateBookDto {
+  // 0 means "not rated" — an owned book may not have been read yet.
   @ApiProperty({ required: false })
   @IsNumber()
-  @Min(1)
+  @Min(0)
   @Max(10)
   @IsOptional()
   rating?: number

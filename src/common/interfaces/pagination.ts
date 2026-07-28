@@ -18,6 +18,8 @@ export interface SearchPaginatedData {
   shelfId?: string
   authorId?: string
   genreId?: string
+  /** 'true' narrows the results to owned books that sit on no shelf. */
+  toRead?: string
 }
 
 export interface PaginationParams {

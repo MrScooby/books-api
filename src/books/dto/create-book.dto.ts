@@ -1,19 +1,36 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { ArrayNotEmpty, IsNumber, IsString, Max, Min } from 'class-validator'
+import {
+  IsArray,
+  IsBoolean,
+  IsNumber,
+  IsOptional,
+  IsString,
+  Max,
+  Min
+} from 'class-validator'
 
 export class CreateBookDto {
   @ApiProperty()
   @IsString()
   url: string
 
-  @ApiProperty()
+  // A book that hasn't been read yet has nothing to rate: 0 means "not rated".
+  @ApiProperty({ required: false, default: 0 })
   @IsNumber()
-  @Min(1)
+  @Min(0)
   @Max(10)
-  rating: number
+  @IsOptional()
+  rating?: number
 
-  @ApiProperty()
+  // Owned but unread books sit on no shelf until they are read.
+  @ApiProperty({ required: false, type: [String], default: [] })
+  @IsArray()
   @IsString({ each: true })
-  @ArrayNotEmpty()
-  shelves: string[]
+  @IsOptional()
+  shelves?: string[]
+
+  @ApiProperty({ required: false, default: false })
+  @IsBoolean()
+  @IsOptional()
+  owned?: boolean
 }

@@ -75,7 +75,7 @@ export class BooksService {
         }
 
         const shelves = await Promise.all(
-          body.shelves.map(async (shelfName) => {
+          (body.shelves ?? []).map(async (shelfName) => {
             const shelf = await tx.shelves.findUnique({
               where: {
                 name: shelfName
@@ -124,9 +124,10 @@ export class BooksService {
             title: bookData.title,
             lcId: bookData.lcId,
             pages: bookData.pages,
-            rating: body.rating,
+            rating: body.rating ?? 0,
             url: body.url,
             imgUrl: bookData.imgUrl,
+            owned: body.owned ?? false,
             genre: {
               connect: {
                 id: genre.id
@@ -176,18 +177,43 @@ export class BooksService {
   }
 
   async getStats() {
-    const [ownedCount, ownedAgg, totalCount, totalAgg] = await Promise.all([
+    // A book counts as read once it sits on any shelf. An owned book on no
+    // shelf is still on the to-read pile.
+    const onAnyShelf = { shelves: { some: {} } }
+    const onNoShelf = { shelves: { none: {} } }
+
+    const [
+      ownedCount,
+      ownedAgg,
+      totalCount,
+      totalAgg,
+      readCount,
+      readOwnedCount,
+      toReadCount,
+      toReadAgg
+    ] = await Promise.all([
       this.db.books.count({ where: { owned: true } }),
       this.db.books.aggregate({ _sum: { pages: true }, where: { owned: true } }),
       this.db.books.count(),
-      this.db.books.aggregate({ _sum: { pages: true } })
+      this.db.books.aggregate({ _sum: { pages: true } }),
+      this.db.books.count({ where: onAnyShelf }),
+      this.db.books.count({ where: { owned: true, ...onAnyShelf } }),
+      this.db.books.count({ where: { owned: true, ...onNoShelf } }),
+      this.db.books.aggregate({
+        _sum: { pages: true },
+        where: { owned: true, ...onNoShelf }
+      })
     ])
 
     return {
       ownedCount,
       ownedPages: ownedAgg._sum.pages ?? 0,
       totalCount,
-      totalPages: totalAgg._sum.pages ?? 0
+      totalPages: totalAgg._sum.pages ?? 0,
+      readCount,
+      readOwnedCount,
+      toReadCount,
+      toReadPages: toReadAgg._sum.pages ?? 0
     }
   }
 
@@ -212,6 +238,13 @@ export class BooksService {
 
     if (query.genreId) {
       where.genreId = query.genreId
+    }
+
+    // The to-read pile: owned but on no shelf. It overrides shelfId, since the
+    // two are contradictory by definition.
+    if (query.toRead === 'true' || query.toRead === '1') {
+      where.owned = true
+      where.shelves = { none: {} }
     }
 
     const [total, data] = await Promise.all([
