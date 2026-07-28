@@ -54,7 +54,7 @@ describe('scrapBookData', () => {
       lcId: 102826,
       title: 'Lot na Amalteę. Stażyści',
       authors: ['Arkadij Strugacki', 'Borys Strugacki'],
-      genre: 'fantasy, science fiction',
+      genre: 'Fantastyka, fantasy, science fiction',
       pages: 272,
       ISBN: '9788375105926',
       imgUrl: 'https://s.lubimyczytac.pl/cover.jpg'
@@ -62,13 +62,23 @@ describe('scrapBookData', () => {
   })
 
   // " horror " and "horror" are two different rows under the unique constraint
-  // on Genres.name, so the surrounding whitespace has to go.
-  it('should trim the genre', async () => {
+  // on Genres.name, so the genre goes through normalizeGenre.
+  it('should normalise the genre', async () => {
     mockedAxios.get.mockResolvedValue({ data: pageHtml })
 
     const data = await scrapBookData('http://lc.test/book')
 
-    expect(data.genre).toBe('fantasy, science fiction')
+    expect(data.genre).toBe('Fantastyka, fantasy, science fiction')
+  })
+
+  it('should capitalise a genre that has no alias', async () => {
+    mockedAxios.get.mockResolvedValue({
+      data: '<a class="book__category"> reportaż </a>'
+    })
+
+    const data = await scrapBookData('http://lc.test/book')
+
+    expect(data.genre).toBe('Reportaż')
   })
 
   it('should keep the whole title when it has no leading whitespace', async () => {

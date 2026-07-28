@@ -3,6 +3,7 @@
 import axios from 'axios'
 import * as cheerio from 'cheerio'
 import { BookEntity } from '../entities/book.entity'
+import { normalizeGenre } from './genre_aliases'
 
 export interface URLdata
   extends Pick<BookEntity, 'ISBN' | 'lcId' | 'pages' | 'title' | 'imgUrl'> {
@@ -41,9 +42,9 @@ export default async function scrapBookData(url: string): Promise<URLdata> {
     lcId: Number($('button.btn-rate').attr('data-bookid')),
     title: $('h1.book__title').text().trim(),
     authors,
-    // Untrimmed this stored genres as " horror ", which is a distinct value from
-    // "horror" under the unique constraint on Genres.name.
-    genre: $('a.book__category').text().trim(),
+    // Verbatim this stored " horror " and "horror" as genres distinct from
+    // "Horror" under the unique constraint on Genres.name.
+    genre: normalizeGenre($('a.book__category').text()),
     pages: Number(
       $('#book-details dl dt:contains("Liczba stron:")').next().text()
     ),
