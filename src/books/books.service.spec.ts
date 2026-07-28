@@ -117,6 +117,50 @@ describe('BooksService', () => {
       )
     })
 
+    it('should surface the fetch failure as a bad request, not a 500', async () => {
+      mockedScrap.mockRejectedValue(
+        new Error('Failed to fetch http://lc.pl/gone: HTTP 404')
+      )
+
+      const error = await service
+        .create({ url: 'http://lc.pl/gone' })
+        .catch((e) => e)
+
+      expect(error).toBeInstanceOf(BadRequestException)
+      expect(error.getResponse().error).toBe(
+        'Failed to fetch http://lc.pl/gone: HTTP 404'
+      )
+      expect(mockDBService.$transaction).not.toHaveBeenCalled()
+    })
+
+    it('should reject the scrape when no authors were found', async () => {
+      mockedScrap.mockResolvedValue({ ...scrapedData, authors: [] })
+
+      await expect(
+        service.create({ url: 'http://lc.pl/unread' })
+      ).rejects.toThrow(BadRequestException)
+      expect(mockDBService.$transaction).not.toHaveBeenCalled()
+    })
+
+    it('should name every field the scrape failed to produce', async () => {
+      mockedScrap.mockResolvedValue({
+        ...scrapedData,
+        title: '',
+        pages: NaN,
+        authors: []
+      })
+
+      const error = await service
+        .create({ url: 'http://lc.pl/unread' })
+        .catch((e) => e)
+
+      expect(error).toBeInstanceOf(BadRequestException)
+      expect(error.getResponse()).toEqual({
+        error: 'Could not scrape pages, title, authors from the provided URL',
+        status: 400
+      })
+    })
+
     it('should default owned to false and update shelf pages when shelves are given', async () => {
       mockedScrap.mockResolvedValue(scrapedData)
       const tx = mockTx()
@@ -484,6 +528,31 @@ describe('BooksService', () => {
       await expect(
         service.replaceEdition('book-1', { url: 'http://bad' })
       ).rejects.toThrow(BadRequestException)
+    })
+
+    // Without this guard a markup change would delete the existing authors and
+    // put nothing back, since the transaction replaces them wholesale.
+    it('should refuse to replace when the scrape found no authors', async () => {
+      mockDBService.books.findUnique.mockResolvedValue(mockBook)
+      mockedScrap.mockResolvedValue({
+        lcId: 200,
+        title: 'New Edition',
+        authors: [],
+        genre: 'Fantasy',
+        pages: 500,
+        ISBN: '999',
+        imgUrl: 'http://img/new.jpg'
+      })
+
+      const error = await service
+        .replaceEdition('book-1', { url: 'http://lc.pl/new' })
+        .catch((e) => e)
+
+      expect(error).toBeInstanceOf(BadRequestException)
+      expect(error.getResponse().error).toBe(
+        'Could not scrape authors from the provided URL'
+      )
+      expect(mockDBService.$transaction).not.toHaveBeenCalled()
     })
 
     it('should scrape and run the transaction when the book exists', async () => {

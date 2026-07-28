@@ -26,8 +26,47 @@ import { AddToShelfDto } from './dto/add-to-shelf.dto'
 export class BooksService {
   constructor(private db: DBService) {}
 
+  // A markup change on lubimyczytac.pl surfaces as missing fields rather than an
+  // error, so reject the scrape instead of storing a half-empty book. Missing
+  // authors used to slip through here and left books with no author at all.
+  private assertScraped(data: URLdata): void {
+    const missing: string[] = []
+
+    if (Number.isNaN(data.lcId)) missing.push('lcId')
+    if (Number.isNaN(data.pages)) missing.push('pages')
+    if (!data.title) missing.push('title')
+    if (data.authors.length === 0) missing.push('authors')
+
+    if (missing.length > 0) {
+      throw new BadRequestException({
+        error: `Could not scrape ${missing.join(', ')} from the provided URL`,
+        status: HttpStatus.BAD_REQUEST
+      })
+    }
+  }
+
+  // Both a failed request and an unusable page are the caller's problem (a bad
+  // URL) or ours (stale selectors) — either way, say which instead of letting a
+  // raw Error surface as an opaque 500.
+  private async scrape(url: string): Promise<URLdata> {
+    let data: URLdata
+
+    try {
+      data = await scrapBookData(url)
+    } catch (e: any) {
+      throw new BadRequestException({
+        error: e.message ?? 'Could not fetch the provided URL',
+        status: HttpStatus.BAD_REQUEST
+      })
+    }
+
+    this.assertScraped(data)
+
+    return data
+  }
+
   async create(body: CreateBookDto): Promise<string> {
-    const bookData: URLdata = await scrapBookData(body.url)
+    const bookData: URLdata = await this.scrape(body.url)
 
     let newBookId: string
     try {
@@ -388,20 +427,10 @@ export class BooksService {
       })
     }
 
-    const bookData: URLdata = await scrapBookData(body.url)
-
-    // Guard against a failed scrape (cheerio selectors miss -> Number() gives NaN).
-    // Without this a NaN page count would corrupt the shelves' page totals below.
-    if (
-      Number.isNaN(bookData.lcId) ||
-      Number.isNaN(bookData.pages) ||
-      !bookData.title
-    ) {
-      throw new BadRequestException({
-        error: 'Could not scrape data from the provided URL',
-        status: HttpStatus.BAD_REQUEST
-      })
-    }
+    // A failed scrape must not reach the transaction: a NaN page count would
+    // corrupt the shelves' page totals below, and an empty author list would
+    // wipe the book's existing authors.
+    const bookData: URLdata = await this.scrape(body.url)
 
     try {
       await this.db.$transaction(async (tx) => {
