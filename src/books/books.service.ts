@@ -599,7 +599,7 @@ export class BooksService {
           name: shelfName
         }
       })
-    } catch (e) {
+    } catch {
       throw new BadRequestException({
         error: `Shelf with name: ${shelfName} doesn't exists`,
         status: HttpStatus.BAD_REQUEST

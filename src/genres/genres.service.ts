@@ -31,6 +31,10 @@ export class GenresService {
       this.db.genres.count(),
       this.db.genres.findMany({
         ...params,
+        // Busiest genre first — that is the useful order for browsing, and it has
+        // to be done in the query so it holds across pages rather than only
+        // within the current one. Name breaks ties so paging stays deterministic.
+        orderBy: [{ books: { _count: 'desc' } }, { name: 'asc' }],
         include: { _count: { select: { books: true } } }
       })
     ])

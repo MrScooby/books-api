@@ -31,6 +31,12 @@ export class AuthorsService {
       this.db.authors.count(),
       this.db.authors.findMany({
         ...params,
+        // Most-read author first, done in the query so the order holds across all
+        // pages rather than only within the one being rendered. Hundreds of
+        // authors tie on a single book, and without the unique name as a
+        // tiebreaker those ties come back in an arbitrary order per query — which
+        // made paging repeat some authors and skip others entirely.
+        orderBy: [{ books: { _count: 'desc' } }, { name: 'asc' }],
         include: { _count: { select: { books: true } } }
       })
     ])

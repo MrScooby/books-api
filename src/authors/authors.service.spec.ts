@@ -70,6 +70,40 @@ describe('AuthorsService', () => {
         expect.objectContaining({ skip: 10, take: 5 })
       )
     })
+
+    // Regression guard. Ordering by the relation count alone is not a total order:
+    // hundreds of authors tie on a single book, and Postgres is free to return
+    // tied rows in a different sequence for every LIMIT/OFFSET query. Paging the
+    // full list then repeated some authors and skipped others — 445 rows came back
+    // as only 395 distinct authors. The unique `name` makes the sort total.
+    it('should order by book count desc, broken by a unique column', async () => {
+      mockDBService.authors.count.mockResolvedValue(0)
+      mockDBService.authors.findMany.mockResolvedValue([])
+
+      await service.findAll({})
+
+      const { orderBy } = mockDBService.authors.findMany.mock.calls[0][0]
+
+      expect(Array.isArray(orderBy)).toBe(true)
+      expect(orderBy[0]).toEqual({ books: { _count: 'desc' } })
+      // `name` is @unique in the schema, so it cannot leave ties behind
+      expect(orderBy[orderBy.length - 1]).toEqual({ name: 'asc' })
+      expect(orderBy).toHaveLength(2)
+    })
+
+    it('should keep the book-count ordering regardless of orderDirection', async () => {
+      mockDBService.authors.count.mockResolvedValue(0)
+      mockDBService.authors.findMany.mockResolvedValue([])
+
+      await service.findAll({ orderDirection: 'ASC' as any })
+
+      const { orderBy } = mockDBService.authors.findMany.mock.calls[0][0]
+
+      // parsePagination hands back an orderBy of { createdAt } — findAll has to
+      // override it, or the list silently reverts to creation order.
+      expect(orderBy).not.toHaveProperty('createdAt')
+      expect(orderBy[0]).toEqual({ books: { _count: 'desc' } })
+    })
   })
 
   describe('findOne', () => {

@@ -69,6 +69,36 @@ describe('GenresService', () => {
         expect.objectContaining({ skip: 10, take: 10 })
       )
     })
+
+    // Same contract as AuthorsService.findAll. Genres currently fit on one page so
+    // an unstable tie order would not be visible, but there are real ties (two
+    // genres on 24 books), so paging would break the moment the list grows.
+    it('should order by book count desc, broken by a unique column', async () => {
+      mockDBService.genres.count.mockResolvedValue(0)
+      mockDBService.genres.findMany.mockResolvedValue([])
+
+      await service.findAll({})
+
+      const { orderBy } = mockDBService.genres.findMany.mock.calls[0][0]
+
+      expect(Array.isArray(orderBy)).toBe(true)
+      expect(orderBy[0]).toEqual({ books: { _count: 'desc' } })
+      // `name` is @unique in the schema, so it cannot leave ties behind
+      expect(orderBy[orderBy.length - 1]).toEqual({ name: 'asc' })
+      expect(orderBy).toHaveLength(2)
+    })
+
+    it('should keep the book-count ordering regardless of orderDirection', async () => {
+      mockDBService.genres.count.mockResolvedValue(0)
+      mockDBService.genres.findMany.mockResolvedValue([])
+
+      await service.findAll({ orderDirection: 'ASC' as any })
+
+      const { orderBy } = mockDBService.genres.findMany.mock.calls[0][0]
+
+      expect(orderBy).not.toHaveProperty('createdAt')
+      expect(orderBy[0]).toEqual({ books: { _count: 'desc' } })
+    })
   })
 
   describe('findOne', () => {
