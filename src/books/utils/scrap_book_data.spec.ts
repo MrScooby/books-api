@@ -15,7 +15,7 @@ const pageHtml = `
     <a class="dashBoardActivity__singleInfoBookAuthor" href="https://lubimyczytac.pl/autor/3905/borys-strugacki">Borys Strugacki</a>
   </span>
   <button class="btn-rate" data-bookid="102826"></button>
-  <a class="book__category">fantasy, science fiction</a>
+  <a class="book__category"> fantasy, science fiction </a>
   <div id="book-details"><dl><dt>Liczba stron:</dt><dd>272</dd></dl></div>
   <meta property="books:isbn" content="9788375105926">
   <a id="js-lightboxCover" href="https://s.lubimyczytac.pl/cover.jpg"></a>
@@ -59,6 +59,16 @@ describe('scrapBookData', () => {
       ISBN: '9788375105926',
       imgUrl: 'https://s.lubimyczytac.pl/cover.jpg'
     })
+  })
+
+  // " horror " and "horror" are two different rows under the unique constraint
+  // on Genres.name, so the surrounding whitespace has to go.
+  it('should trim the genre', async () => {
+    mockedAxios.get.mockResolvedValue({ data: pageHtml })
+
+    const data = await scrapBookData('http://lc.test/book')
+
+    expect(data.genre).toBe('fantasy, science fiction')
   })
 
   it('should keep the whole title when it has no leading whitespace', async () => {

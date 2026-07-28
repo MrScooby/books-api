@@ -41,7 +41,9 @@ export default async function scrapBookData(url: string): Promise<URLdata> {
     lcId: Number($('button.btn-rate').attr('data-bookid')),
     title: $('h1.book__title').text().trim(),
     authors,
-    genre: $('a.book__category').text(),
+    // Untrimmed this stored genres as " horror ", which is a distinct value from
+    // "horror" under the unique constraint on Genres.name.
+    genre: $('a.book__category').text().trim(),
     pages: Number(
       $('#book-details dl dt:contains("Liczba stron:")').next().text()
     ),
